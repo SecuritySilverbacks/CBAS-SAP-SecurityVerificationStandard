@@ -8,7 +8,7 @@ The CBAS - SAP Security Maturity Model (CBAS-SSMM) project allows organizations 
 
 ## Whats In It For Me (WIIFM)
 
-The project is intended to be used by different professionals:
+The project intends to be used by different professionals:
 
 - SAP Security Experts
 - non-SAP Security Experts
