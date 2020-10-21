@@ -10,7 +10,9 @@ Prerequisite: DT-P-AE-M01-001
 
 ## Description
 
-Identifying and collecting security related activities is important for evidence collection following a security incident or event. The security audit log might contain sensitive data that needs to be stored and encrypted properly.  
+Security audit logs:
+
+Identifying and collecting security-related activities is important for evidence collection following a security incident or event. The security audit log might contain sensitive data that needs to be stored and encrypted properly.  
 
 ## Implementation
 
@@ -34,11 +36,11 @@ Activating security audit logs depends on which logs your organization wants to 
 
 Personal identifiable information can be found in certain security audit logs, make sure to follow any data protection regulations your organizations falls under when storing personal information.
 
-Alerts can be configured when a certain event occurs or a threshold is reached, this helps automate the review process of security audit logs and reduces work load from administrators. Sending logs to a central location helps to achieve setting up alerts.
+Alerts can be configured when a certain event occurs or a threshold is reached, this helps automate the review process of security audit logs and reduces workload from administrators. Sending logs to a central location helps to achieve setting up alerts.
 
 ## Verification of Control
 
-- [ ]
+- [ ] Configure alerts for important events to reactively respond to security events
 
 
 ## References:
