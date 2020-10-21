@@ -14,7 +14,7 @@ In order to properly secure the Remote Function Call (RFC) interface that is use
 
 ## Implementation
 
-For all RFC connections a uniform administrative guideline must be available; ownership and usage of the RFC connection should be clearly documented. A complete inventory must also be defined and documented for all RFC connections.
+For all RFC connections, a uniform administrative guideline must be available; ownership and usage of the RFC connection should be clearly documented. A complete inventory must also be defined and documented for all RFC connections.
 
 Any RFC connections that are not in use must be deleted. (Documentation should reflect the same)
 
