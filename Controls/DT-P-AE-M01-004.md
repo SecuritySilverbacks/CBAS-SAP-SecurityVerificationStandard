@@ -28,7 +28,7 @@ Alerts can be configured when a certain event occurs or a threshold is reached, 
 - [ ] Set the rec/client parameter to enable logging
 - [ ] Set the rec/client parameter to collect from all clients
 - [ ] Define tables to be logged using transaction SE13
-- [ ] Use transaction SCU3 to get an overview of all tables that have table logging enabled
+- [ ] Use transaction SCU3 to get an overview of all tables that have table logging enabled and the changes to these tables
 - [ ] Configure alerts for important events to reactively respond to any changes in tables
 
 ## References:
