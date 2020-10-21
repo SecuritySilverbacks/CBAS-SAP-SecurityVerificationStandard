@@ -27,7 +27,7 @@ Each area is used to extract and analyze data for different activities that occu
 
 Note: each area is described in its respective control
 
-## Proof of Control / Verification of Control
+## Verification of Control
 
 - [ ] A policy has been defined and created to identify, collect, acquire and preserve information from different log tools
 
