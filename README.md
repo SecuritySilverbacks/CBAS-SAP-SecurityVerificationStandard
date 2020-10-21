@@ -8,7 +8,7 @@ The CBAS - SAP Security Maturity Model (CBAS-SSMM) project allows organizations 
 
 ## Whats In It For Me (WIIFM)
 
-The project
+The project is intended to be used by different professionals:
 
 - SAP Security Experts
 - non-SAP Security Experts
@@ -16,13 +16,37 @@ The project
 - Auditors
 - Advisors
 
+The project helps teams assess, plan, and verify security controls that affect SAP implementations in their organizations.
+
 ## Maturity Model
 
 
 
 ## Controls
 
+We aim to create controls in a structured, easy, and understandable way.
 
+- Every control follows the same identification schema and structure
+- Markdown language used for presenting the controls
+- Excel tool to present maturity levels, risk areas represented by the [NO MONKEY Security Matrix](NMSM.md), and implementation status
 
+#### Control Header:
 
-## References 
+- NIST Security Function
+- NIST Category
+- [IPAC Model](NMSM.md)
+- SAP Technology
+- Maturity Level
+- Defender (People, Process, Technology)
+- Control Prerequisite
+
+#### Control Structure:
+
+- Description of the control
+- Implementing the control
+- Verification of the control
+- References
+
+#### Example:
+
+<img src="img/control_example.png"><br>
