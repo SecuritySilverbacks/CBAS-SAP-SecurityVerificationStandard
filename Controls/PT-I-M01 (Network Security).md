@@ -34,7 +34,7 @@ The architecture of SAP systems should be properly documented which should inclu
 - [ ] ACLs are in place to filter unwanted traffic
 - [ ] Only recommended ports are allowed to access the network.  
 - [ ] SAP systems are on a separate subnet inside the organization
-- [ ] Documentation provides an illustrative view of the SAP architecture
+- [ ] Documentation providing an illustrative view of the SAP architecture
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A3 Network Security/ Netzsicherheit
