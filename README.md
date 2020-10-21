@@ -49,4 +49,4 @@ We aim to create controls in a structured, easy, and understandable way.
 
 #### Example:
 
-<img src="img/control_example.png"><br>
+<img src="img/control.png"><br>
