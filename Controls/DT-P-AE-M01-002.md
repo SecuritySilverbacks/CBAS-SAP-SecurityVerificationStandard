@@ -4,15 +4,13 @@ Category: Anomalies and Events
 Technology: SAP ERP
 Maturity Level: 1
 IPAC: Platform (P)
-Defender: Process
+Defender: Technology
 Prerequisite:
 ---
 
 ## Description
 
-Identifying and collecting security related activities is important for evidence collection following a security incident or event. The security audit log might contain sensitive data that needs to be stored and encrypted properly.
-
-Personal identifiable information can be found in certain security audit logs, make sure to follow any data protection regulations your organizations falls under when storing personal information.  
+Identifying and collecting security related activities is important for evidence collection following a security incident or event. The security audit log might contain sensitive data that needs to be stored and encrypted properly.  
 
 ## Implementation
 
@@ -34,10 +32,11 @@ Activating security audit logs depends on which logs your organization wants to 
 - Errors that occur in the Virus Scan Interface
 - Unsuccessful password checks for a specific user in a specific client
 
-
+Personal identifiable information can be found in certain security audit logs, make sure to follow any data protection regulations your organizations falls under when storing personal information.
 
 ## Verification of Control
 
+- [ ]
 
 
 ## References:
