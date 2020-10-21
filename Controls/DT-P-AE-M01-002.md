@@ -5,7 +5,7 @@ Technology: SAP ERP
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
-Prerequisite:
+Prerequisite: DT-P-AE-M01-001
 ---
 
 ## Description
@@ -33,6 +33,8 @@ Activating security audit logs depends on which logs your organization wants to 
 - Unsuccessful password checks for a specific user in a specific client
 
 Personal identifiable information can be found in certain security audit logs, make sure to follow any data protection regulations your organizations falls under when storing personal information.
+
+Alerts can be configured when a certain event occurs or a threshold is reached, this helps automate the review process of security audit logs and reduces work load from administrators. Sending logs to a central location helps to achieve setting up alerts.
 
 ## Verification of Control
 
