@@ -10,14 +10,14 @@ Prerequisite:
 
 ## Description
 
-The organization is responsible in defining policies and procedures when identifying, collecting, acquiring and preserving data that is used for evidence.
+The organization is responsible for defining policies and procedures when identifying, collecting, acquiring, and preserving data that is used for evidence.
 
 ## Implementation
 
 Areas of acquiring important logs within the organization's SAP ERP:
 
 1. Security audit log - DT-P-AE-M01-002
-2. System log - DT-P-AE-M01-003 
+2. System log - DT-P-AE-M01-003
 3. Table logging - DT-P-AE-M01-004
 4. Workload Monitor - DT-P-AE-M01-005
 5. Read Access Logging - DT-P-AE-M01-006
