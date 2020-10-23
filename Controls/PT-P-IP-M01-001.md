@@ -5,7 +5,7 @@ Technology: SAP HANA
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Process
-Prerequisite:
+Prerequisite: NA
 ---
 
 ## Description
