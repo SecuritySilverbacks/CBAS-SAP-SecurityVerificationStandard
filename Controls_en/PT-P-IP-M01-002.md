@@ -18,9 +18,10 @@ To reduce any potential threats found in vulnerable SAP systems and maintain the
 SAP Security Notes are usually released every second Tuesday of every month. These notes help in mitigating discovered vulnerabilities throughout SAP systems.
 
 Places to get the latest SAP security notes and support packages:
+- SAP Software Update Manager (license is required)
 - SAP Patch Management tool (start with SPAM transaction; it will require a maintenance certificate)
 - Identify SAP security notes for the system by using SNOTE transaction
-- SAP Security Notes found in found in the SAP Support Launchpad 
+- SAP Security Notes found in the SAP Support Launchpad
 
 It is necessary to follow a patch management process [1] in order to maintain the availability and integrity of production systems.
 
