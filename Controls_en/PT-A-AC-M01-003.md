@@ -55,9 +55,11 @@ The below standard users, found in ABAP systems, are required to be managed and 
 - [ ] EARLYWATCH
   - [ ] The user should not exist in any client
 
-  
+
 - [ ] Other users created by the SAP Solution Manager (SOLMAN_BTC, CONTENTSERV, SMD_BI_RFC, SMD_RFC, SMDAGENT_SAPSolutionManagerSID, SMD_ADMIN, SMD_AGT, SAPSUPPORT, SOLMAN_ADMIN)
   - [ ] Default password must be changed
+
+- [ ] Self registration for users must be switched off
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A5 Configuration and protection of the SAP user administration / Konfiguration und Absicherung der SAP-Benutzerverwaltung
