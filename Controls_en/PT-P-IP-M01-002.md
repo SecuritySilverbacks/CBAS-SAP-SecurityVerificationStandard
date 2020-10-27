@@ -1,10 +1,10 @@
 ---
 Security Function: PT
 Category: Information Protection Processes and Procedures
-Technology: SAP ABAP
+Technology: SAP ABAP, SAP JAVA, SAP HANA
 Maturity Level: 1
 IPAC: Platform (P)
-Defender: Process / Technology 
+Defender: Process / Technology
 Prerequisite:
 ---
 
