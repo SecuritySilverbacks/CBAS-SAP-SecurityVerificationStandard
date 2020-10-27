@@ -4,7 +4,7 @@ Category: Information Protection Processes and Procedures
 Technology: SAP ABAP
 Maturity Level: 1
 IPAC: Platform (P)
-Defender: Process (P) / Technology (T)
+Defender: Process / Technology 
 Prerequisite:
 ---
 
