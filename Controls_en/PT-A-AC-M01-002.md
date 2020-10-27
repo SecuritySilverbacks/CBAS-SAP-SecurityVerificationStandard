@@ -1,9 +1,9 @@
 ---
 Security Function: PT
 Category: Identity Management, Authentication and Access Control
-Subcategory:
+Technology: SAP ABAP
 Maturity Level: 1
-IPAC: Access (A))
+IPAC: Access (A)
 Defender: Process
 Prerequisite:
 ---
@@ -16,7 +16,7 @@ SAP user administration should be only allowed to administrators that are identi
 
 Rights to administer users in SAP should only be given to users that have the same job role or identified by the organization(1).
 
-logging and monitoring SAP administrators allows easier identification of administrative misuse.
+Logging and monitoring SAP administrators allows easier identification of administrative misuse.
 
 (1) - Most user administrators are from the IT department in organizations. Some organizations leave the user administration to HR, which is more preferable.
 
@@ -28,8 +28,8 @@ logging and monitoring SAP administrators allows easier identification of admini
 - [ ] Monitoring is available to detect any misuse with user administration
 
 ## References:
-- BSI APP.4.2 SAP-ERP-System, APP.4.2.A5 Configuration and orotection of the SAP user administration / Konfiguration und Absicherung der SAP-Benutzerverwaltung
-- SAP Security Baseline Template V2.0: 2.3.1
+- BSI APP.4.2 SAP-ERP-System, APP.4.2.A5 Configuration and protection of the SAP user administration / Konfiguration und Absicherung der SAP-Benutzerverwaltung
+- SAP Security Baseline Template V2.1: 2.3.1
 - CIS CSC 1, 5, 15, 16
 - COBIT 5 DSS05.04, DSS06.03
 - ISA 62443-2-1:2009 4.3.3.5.1
