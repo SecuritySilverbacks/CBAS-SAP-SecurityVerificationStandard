@@ -18,7 +18,24 @@ The project intends to be used by different professionals:
 
 The project helps teams assess, plan, and verify security controls that affect SAP implementations in their organizations.
 
-## Maturity Model
+## Maturity Levels
+
+We follow different methodologies and standards to define the different controls for each maturity level.
+
+In our initial release, and for defining maturity level 1, we want to create a security baseline every organization MUST maintain to secure SAP applications.
+
+#### Maturity level 1:
+
+The first maturity level is the initial baseline and is derived from the below standards:
+
+- SAP Security Baseline Template V2.1
+- German Federal Office for Information Security - BSI 4.2 SAP ERP System
+- German Federal Office for Information Security - BSI 4.6 SAP ABAP Programming
+- SAP security white papers - used for critical areas missing in the security baseline template and BSI standards
+
+#### Maturity level 2:
+
+#### Maturity level 3:
 
 
 
