@@ -48,9 +48,9 @@ then
 	cd ..
 	echo " done."
 else
-	echo " No OWASP ASVS found in directory $lang"
+	echo " No OWASP CBAS found in directory $lang"
 fi
 
 
 echo
-echo "Generated OWASP Application Security Verification Standard $vers"
+echo "Generated OWASP CBAS SAP Security Maturity Model $vers"

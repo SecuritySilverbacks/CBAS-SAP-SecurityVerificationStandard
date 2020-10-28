@@ -25,9 +25,8 @@
     '''
 
 import os
-import re
+import regex as re
 import json
-from xml.sax.saxutils import escape
 import csv
 import dicttoxml
 
@@ -39,23 +38,23 @@ except ImportError:
 
 class CBASSMM:
     cbas = {}
-    cbas['Name'] = "SAP Security Maturity Model"
-    cbas['ShortName'] = "CBAS-SMM"
+    cbas['Name'] = "Core Business Application - SAP Security Maturity Model"
+    cbas['ShortName'] = "CBAS-SAPSMM"
     cbas['Version'] = ""
     cbas['Description'] = "#todo"
-    cbas['Boilerplate'] = "boilerplate"
-    cbas['Controls'] = "Controls"
+    cbas['Controls'] = []
+    boilerplate = "boilerplate"
+    controls = "Controls"
 
     cbas_flat = []
 
     def __init__(self, language):
 
         regex = re.compile('Version (([\d.]+){3})')
-        self.cbas['Boilerplate'] = self.cbas['Boilerplate'] + "_" + language
-        self.cbas['Controls'] = self.cbas['Controls'] + "_" + language
+        self.boilerplate = self.boilerplate + "_" + language
+        self.controls = self.controls + "_" + language
 
-        #loading the boilerplate
-        for line in open(os.path.join(self.cbas['Boilerplate'], "0x01-Frontispiece.md"), encoding="utf8"):
+        for line in open(os.path.join(self.boilerplate, "0x01-Frontispiece.md"), encoding="utf8"):
             m = re.search(regex, line)
             if m:
                 self.cbas['Version'] = m.group(1)
@@ -63,76 +62,90 @@ class CBASSMM:
 
         regex = re.compile('## About the Standard\n\n(.*)')
 
-        with open(os.path.join(self.cbas['Boilerplate'], "0x01-Frontispiece.md"), encoding="utf8") as content:
+        with open(os.path.join(self.boilerplate, "0x01-Frontispiece.md"), encoding="utf8") as content:
             m = re.search(regex, content.read())
             if m:
                 self.cbas['Description'] = m.group(1)
 
         self.cbas['Requirements'] = chapters = []
 
+        for filename in os.listdir(self.controls):
+            control = {}
+            control['Shortcode'] = ""
+            control['Security Function'] = ""
+            control['CSF Category'] = ""
+            control['Technology'] = ""
+            control['Maturity Level'] = ""
+            control['IPAC'] = []
+            control['Defender'] = []
+            control['Prerequisites'] = []
 
-        for file in os.listdir(self.cbas['Controls']):
-            header = {};
-            header['Identifier'] = ""
-            header['SecurityFunction'] = ""
-            header['Category'] = ""
-            header['Technology'] = ""
-            header['MaturityLevel'] = ""
-            header['IPAC'] = ""
-            header['Defender'] = []
-            header['Prerequisits'] = []
+            control['Description'] = ""
+            control['Implementation'] = ""
+            control['Verification'] = []
+            control['References'] = []
 
-            content = {}
-            content['Description'] = ""
-            content['Implementation'] = ""
-            content['VerificationOfControl'] = []
-            content['References'] = []
+            control['Shortcode'] = filename.replace(".md", "")
 
-            # re.match("0x\d{2}-V", file)
-            regex = re.compile('0x\d{2}-(V([0-9]{1,3}))-(\w[^-.]*)')
-            m = re.search(regex, file)
-            if m:
-
+            with open(os.path.join(self.controls, filename), encoding="utf8" ) as file:
+                text = file.read()
+                regex = re.compile('(?<=##.*\\n)([^#]*)(?!##)') #select the body
+                m = re.findall(regex, text)
                 if m:
+                    control['Description'] = m[0]
+                    control['Implementation'] = m[1]    
+                    control['Verification'] = m[2].splitlines()
+                    control['References'] = m[3].splitlines()
+                regex = re.compile('(?<=---.*\\n)([^#]*)(?=---)') #select the header
+                m = re.findall(regex, text)
+                if m:
+                    head = m[0]
+                    for header in head.splitlines():
+                        if 'Security Function:' in header :
+                            control['Security Function'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                            continue
+                        elif 'Category:' in header :
+                            control['CSF Category'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                            continue
+                        elif 'Technology:' in header :
+                            control['Technology'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                            continue
+                        elif 'Maturity Level:' in header :
+                            control['Maturity Level'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                            continue
+                        elif 'IPAC:' in header :
+                            regex = re.compile('(?<=\()[IPAC](?=\))') #select the header
+                            m = re.findall(regex, header)
+                            for match in m:
+                                control['IPAC'].append(match)
+                            continue
+                        elif 'Defender:' in header :
+                            for match in header.split(sep=':', maxsplit=1)[1].strip().split(sep=' '):
+                                control['Defender'].append(match)
+                            continue
+                        elif 'Prerequisites:' in header :
+                            for match in header.split(sep=':', maxsplit=1)[1].strip().split(sep=' '):
+                                control['Prerequisites'].append(match)
+                            continue
+                
+                self.cbas['Controls'].append(control)
+                    
+                control_flat = {}
+                control_flat['Shortcode'] = control['Shortcode'] 
+                control_flat['Security Function'] = control['Security Function']
+                control_flat['CSF Category'] = control['CSF Category'] 
+                control_flat['Technology'] = control['Technology'] 
+                control_flat['Maturity Level'] = control['Maturity Level'] 
+                control_flat['IPAC'] = "".join(control['IPAC'])
+                control_flat['Defender'] = "".join(control['Defender'])
+                control_flat['Prerequisites'] = "".join(control['Prerequisites'])
 
-                    req_flat = {}
-                    req_flat['chapter_id'] = chapter['Shortcode']
-                    req_flat['chapter_name'] = chapter['Name']
-                    req_flat['section_id'] = section['Shortcode']
-                    req_flat['section_name'] = section['Name']
+                control_flat['Description'] = control['Description']
+                control_flat['Implementation'] = control['Implementation']
+                control_flat['Verification'] = "".join(control['Verification'])
+                control_flat['References'] = "".join(control['References'])
 
-                    req = {}
-                    req_flat['req_id'] = req['Shortcode'] = "V" + m.group(1)
-                    req['Ordinal'] = int(m.group(1).rsplit('.', 1)[1])
-                    req_flat['req_description'] = req['Description'] = m.group(2)
-
-                    level1 = {}
-                    level2 = {}
-                    level3 = {}
-
-                    req_flat['level1'] = m.group(3).strip(' ')
-                    req_flat['level2'] = m.group(4).strip(' ')
-                    req_flat['level3'] = m.group(5).strip(' ')
-
-                    level1['Required'] = m.group(3).strip() != ''
-                    level2['Required'] = m.group(4).strip() != ''
-                    level3['Required'] = m.group(5).strip() != ''
-
-                    level1['Requirement'] = ("Optional" if m.group(3).strip('✓ ') == "o" else m.group(3).strip('✓ '))
-                    level2['Requirement'] = ("Optional" if m.group(4).strip('✓ ') == "o" else m.group(4).strip('✓ '))
-                    level3['Requirement'] = ("Optional" if m.group(5).strip('✓ ') == "o" else m.group(5).strip('✓ '))
-
-                    req['L1'] = level1
-                    req['L2'] = level2
-                    req['L3'] = level3
-
-                    req['CWE'] = [int(i.strip()) for i in filter(None, m.group(6).strip().split(','))]
-                    req_flat['cwe'] = m.group(6).strip()
-                    req['NIST'] = [str(i.strip()) for i in filter(None,m.group(7).strip().split('/'))]
-                    req_flat['nist'] = m.group(7).strip()
-
-                    section['Items'].append(req)
-                    self.cbas_flat.append(req_flat)
+                self.cbas_flat.append(control_flat)
 
     def to_json(self):
         ''' Returns a JSON-formatted string '''
@@ -145,7 +158,7 @@ class CBASSMM:
         ''' Returns CSV '''
         si = StringIO()
 
-        writer = csv.DictWriter(si, ['csfsecurityfunction_id', 'csfcategory_name', 'ipac_id', 'ipac_name', 'technology', 'maturitylevel', 'prerequisits', 'description', 'implementation', 'verification', 'references'])
+        writer = csv.DictWriter(si, ['Shortcode', 'Technology', 'Defender', 'Implementation', 'Security Function', 'Maturity Level', 'Description', 'CSF Category', 'Prerequisites', 'References', 'IPAC', 'Verification'])
         writer.writeheader()
         writer.writerows(self.cbas_flat)
 

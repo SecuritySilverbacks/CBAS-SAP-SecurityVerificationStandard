@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?><root><Name>Core Business Application - SAP Security Maturity Model</Name><ShortName>CBAS-SAPSMM</ShortName><Version>0.8</Version><Description>The SAP Security Maturity Model is a definition of controls to help SAP using organizations, security professionals,  service providers, tool vendors to define, test and verify the security of business critical SAP infrastructures.</Description><Controls><item><Shortcode>DT-P-AE-M01-003</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+System logs:
+
+Identifying and collecting system problems through system logs is important to enabling the system to run with good performance. Maintaining the healthiness of your system and keeping it running avoids any service disruptions that may be caused by errors.
+
+</Description><Implementation>
+Whether your organization is running a UNIX or Windows host, systems logs should be checked on a regular basis. It is recommended to send the logs to a central location to avoid any logs that might overwritten once the buffer is full; especially in Windows hosts.
+
+Alerts can be configured when a certain event occurs or a threshold is reached, this helps automate the review process of system logs and reduces workload from administrators. Sending logs to a central location helps to achieve setting up alerts.
+
+</Implementation><Verification><item></item><item>- [ ] Check system logs through the SM21 transaction</item><item>- [ ] Configure alerts for certain events such as rollbacks and system error messages to reactively respond and fix issues</item></Verification><References></References></item><item><Shortcode>PT-I-IP-M01-001</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> RFC Connections</Technology><Maturity_Level> 1</Maturity_Level><IPAC></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+In order to properly secure the Remote Function Call (RFC) interface that is used as a communication interface between SAP systems, all RFC connections, RFC authorizations and RFC interfaces must be considered.
+</Description><Implementation>
+For all RFC connections, a uniform administrative guideline must be available; ownership and usage of the RFC connection should be clearly documented. A complete inventory must also be defined and documented for all RFC connections.
+
+Any RFC connections that are not in use must be deleted. (Documentation should reflect the same)
+
+</Implementation><Verification><item></item><item>- [ ] Determine if an RFC connection is in use through using the RFC runtime monitor transaction SRTM6 or the workload monitor transaction ST03N</item><item>- [ ] Delete any RFC connections not in use</item><item>- [ ] Guidelines in regards to existing RFC connections are available and up to date</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Securing the SAP RFC interface/ Absicherung der SAP-RFC-Schnittstelle</item><item>- SAP Security Baseline Template V2.0: 2.3.2.3</item></References></item><item><Shortcode>file1</Shortcode><Security_Function></Security_Function><CSF_Category></CSF_Category><Technology></Technology><Maturity_Level> 1</Maturity_Level><IPAC></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>&lt;applicability towards reducing the threat&gt;
+
+</Description><Implementation>&gt; Authorization to SAP application should be regularly monitored, verified, revoked, managed, issued and audited
+</Implementation><Verification><item>&gt; Operations: Consulted. Operations department defines the required access to individuals for the different SAP applications based on their job roles and based on need to know principle.</item><item></item><item>&gt; Security: Responsible. Accountable. Security department is responsible to make sure that authorization is controlled and implemented as per permissions provided by operations department.</item><item></item><item>Baseline:</item><item></item><item>&lt;SAP Security Baseline 2.3.3&gt;</item><item></item><item>&gt; Audit: Informed. Audit department to be informed about the necessary changes for their own records.</item></Verification><References><item>&gt; Operations:</item><item></item><item>&gt; Security: Accountable. Security department should be able to control and identify the implementation of access controls by the below points:</item><item>&gt; - Monitor: Logs are configured to be sent to a central log server or SIEM solution.</item><item>&gt; - Revoke: User access to be removed or disabled from a directory service or SAP application.</item><item></item><item>&gt; Audit: Responsibility. Audit department needs to make sure that access control is properly</item><item>&gt; - Monitored: Identify if access control logs are being configured on a central log system aor SIEM.</item><item>&gt; - Revoked: Identify users that have left the organization and determine whether their access has been disabled or revoked from the directory services and SAP applications.</item><item>&gt; - Issue: Compare user rights based on roles and need to know permissions defined by the operation department.</item></References></item><item><Shortcode>DT-P-AE-M01-007</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+User information system:
+
+Important tool for both internal and external audit. It helps identifying anomalies in different lists found in the user information tool.
+</Description><Implementation>
+It is recommended to regularly check the different information available through the user information system to keep your SAP system in compliance with internal policies or external regulations as well as determining any changes that have not been internally approved.
+
+Usage:
+- Show list of authorizations
+- Show list of users that are assigned to critical or high classification authorizations
+- Show transactions contained in specific roles
+- Compare roles, users, profiles, and authorizations in a single system or across systems
+- Display change documents for the authorization profile of users, security policies, and CUA settings
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- [SAP Support](https://help.sap.com/doc/saphelp_nw73ehp1/7.31.19/en-US/52/671261439b11d1896f0000e8322d00/content.htm?no_cache=true)</item></References></item><item><Shortcode>PT-A-AC-M01-001</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Identity Management, Authentication and Access Control</CSF_Category><Technology> SAP Database</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>A</item></IPAC><Defender><item>Technology</item></Defender><Prerequisites></Prerequisites><Description>
+Access to SAP databases must be protected from unauthorized access and misuse.  
+</Description><Implementation>
+Default SAP IDs are not to be allowed to access the SAP database. Removing other IDs and users from accessing the database allows the principle of least privilege, separation of duties, and need to know.
+
+Check the transaction log file for unneeded accounts. The transaction file can be viewed by executing R3trans -d.
+
+Users that are allowed to access the database are limited to only the tables that allows them to complete their job.
+</Implementation><Verification><item></item><item>- [ ] SAPR3, SAP &lt;SID&gt;, or SAPABAP1 disabled to access the database</item><item>- [ ] Users not required to access the database are removed</item><item>- [ ] Data manipulation only given to SAP support</item><item>- [ ] Users that are required to access the database are not to be given permissions to Table USR\*, Table T000, SAPUSER, RFCDES, PA\*, HCL\*, and any other tables not required to get their job done</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A7 Securing the SAP database/ Absicherung der SAP-Datenbanken</item></References></item><item><Shortcode>DT-P-AE-M01-006</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+Read access logging:
+
+An important tool used to monitor and record any read access to classified or sensitive data found in SAP systems. The tool helps when investigating a security breach or information leak.  
+
+</Description><Implementation>
+The below configuration steps are required to be in place to monitor and configure different read access logs.
+
+1. Identify what type of data to log through the read access logging
+2. Mention a purpose for logging the data; helps identify regulatory data
+3. Define the channels to monitor
+4. Define the log domains of the different channels
+5. Define a condition for the application to log the data
+
+</Implementation><Verification><item></item><item>- [ ] Configure and monitor the read access logging through the SRALMANAGER transaction</item></Verification><References></References></item><item><Shortcode>PT-I-IP-M01-004</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> RFC Connections</Technology><Maturity_Level> 1</Maturity_Level><IPAC></IPAC><Defender><item>Technology</item></Defender><Prerequisites></Prerequisites><Description>
+
+</Description><Implementation>
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A7 Securing the SAP database/ Absicherung der SAP-Datenbanken</item></References></item><item><Shortcode>DT-P-AE-M01-002</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Technology</item></Defender><Prerequisites></Prerequisites><Description>
+Security audit logs:
+
+Identifying and collecting security-related activities is important for evidence collection following a security incident or event. The security audit log might contain sensitive data that needs to be stored and encrypted properly.  
+</Description><Implementation>
+Activating security audit logs depends on which logs your organization wants to collect. Available logs are shown below:
+
+- Successful and unsuccessful dialog logon attempts
+- Successful and unsuccessful RFC logon attempts
+- RFCs to function modules
+- Changes to user master records
+- Successful and unsuccessful transaction starts
+- Successful and unsuccessful report starts
+- Changes to the audit configuration
+- Activation and deactivation of the HTTP security session management or instances in which HTTP security sections were hard-exited
+- File downloads
+- Access to the file system that coincides with the valid logical paths and file names specified in the system  (particularly helpful in an analysis phase to determine where access to files takes place before activating the actual validation)
+- ICF recorder entries or changes to the administration settings
+- The use of digital signatures performed by the system
+- Viruses found by the Virus Scan Interface
+- Errors that occur in the Virus Scan Interface
+- Unsuccessful password checks for a specific user in a specific client
+
+Personal identifiable information can be found in certain security audit logs, make sure to follow any data protection regulations your organizations falls under when storing personal information.
+
+Alerts can be configured when a certain event occurs or a threshold is reached, this helps automate the review process of security audit logs and reduces workload from administrators. Sending logs to a central location helps to achieve setting up alerts.
+</Implementation><Verification><item></item><item>- [ ] Configure alerts for important events to reactively respond to security events</item><item></item></Verification><References></References></item><item><Shortcode>DT-T-M01</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Technology</item></Defender><Prerequisites></Prerequisites><Description>
+
+</Description><Implementation>
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A26 Protection of the customer&apos;s own code in the SAP ERP system (S) / Schutz des kundeneigenen Codes im SAP-ERP-System (S)</item><item>- CIS CSC 3, 11</item><item>- COBIT 5 BAI01.06, BAI06.01</item><item>- ISA 62443-2-1:2009 4.3.4.3.2, 4.3.4.3.3</item><item>- ISA 62443-3-3:2013 SR 7.6</item><item>- ISO/IEC 27001:2013 A.12.1.2, A.12.5.1, A.12.6.2, A.14.2.2, A.14.2.3, A.14.2.4</item><item>- NIST SP 800-53 Rev. 4 CM-3, CM-4, SA-10</item></References></item><item><Shortcode>file</Shortcode><Security_Function></Security_Function><CSF_Category></CSF_Category><Technology></Technology><Maturity_Level> 1</Maturity_Level><IPAC></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>&lt;Do we need objective??&gt;
+</Description><Implementation>&gt; SAP applications and solution to be inventoried within the organization
+</Implementation><Verification><item>&gt; Operations: Accountable. Operations department responsible for making sure that all SAP applications and solution are inventoried and updated on a regular basis.</item><item></item><item>&gt; Security: Consulted. Security department is to advise the operations department for any updates in regards to application versioning and changes.</item><item></item><item>&gt; Audit: Informed. Audit department to be informed about the necessary changes for their own records.</item></Verification><References><item>&gt; Operations: Accountable.</item><item></item><item>&gt; Security:</item><item></item><item>&gt; Audit: Responsibility. Audit department needs to make sure that SAP application and solutions are inventoried and updated on a regular basis.</item></References></item><item><Shortcode>PT-P-IP-M01-006</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> SAP ABAP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Technology</item><item>(T)</item></Defender><Prerequisites></Prerequisites><Description>
+
+</Description><Implementation>
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Secure configuration of the SAP ABAP stack (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)</item></References></item><item><Shortcode>PT-P-IP-M01-002</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> SAP ABAP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Technology</item><item>(T)</item></Defender><Prerequisites></Prerequisites><Description>
+
+</Description><Implementation>
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Secure configuration of the SAP ABAP stack (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)</item></References></item><item><Shortcode>PT-P-IP-M01-003</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> SAP ABAP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Technology</item><item>(T)</item></Defender><Prerequisites></Prerequisites><Description>
+
+</Description><Implementation>
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Secure configuration of the SAP ABAP stack (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)</item></References></item><item><Shortcode>PT-C-IP-M01-001</Shortcode><Security_Function></Security_Function><CSF_Category></CSF_Category><Technology></Technology><Maturity_Level></Maturity_Level><IPAC></IPAC><Defender></Defender><Prerequisites></Prerequisites><Description>
+Implementing custom code in the organization should have a defined change management process. This enables organizations to determine whether custom applications should be used as a replacement to existing applications or removed from the organization.
+</Description><Implementation>
+A standard and defined change management process should cover the controls, defined below, when delivering or handling custom applications that will be, or already, integrated with the organizations SAP ecosystem(1).
+
+(1) - This can be amended to the organizations change management if exists
+</Implementation><Verification><item></item><item>- [ ] Implementing policies that clearly define the installation of custom applications</item><item>- [ ] Modifying custom code to be limited and only done when necessary</item><item>- [ ] Changes are tested to avoid any impact on operations</item><item>- [ ] Installation and removal of custom applications properly documented and tracked</item><item>- [ ] A Secure Software Development Lifecycle (SSDLC) defined when customizing, changing, developing, and integrating application</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A26 Protection of the customer&apos;s own code in the SAP ERP system (S) / Schutz des kundeneigenen Codes im SAP-ERP-System (S)</item><item>- CIS CSC 3, 11</item><item>- COBIT 5 BAI01.06, BAI06.01</item><item>- ISA 62443-2-1:2009 4.3.4.3.2, 4.3.4.3.3</item><item>- ISA 62443-3-3:2013 SR 7.6</item><item>- ISO/IEC 27001:2013 A.12.1.2, A.12.5.1, A.12.6.2, A.14.2.2, A.14.2.3, A.14.2.4</item><item>- NIST SP 800-53 Rev. 4 CM-3, CM-4, SA-10</item></References></item><item><Shortcode>PT-P-IP-M01-004</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> SAP ABAP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Technology</item><item>(T)</item></Defender><Prerequisites></Prerequisites><Description>
+
+</Description><Implementation>
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Secure configuration of the SAP ABAP stack (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)</item></References></item><item><Shortcode>PT-A-IP-M01-001</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> ABAP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item><item>A</item></IPAC><Defender><item>Process</item><item>&amp;</item><item>Technology</item></Defender><Prerequisites></Prerequisites><Description>
+ Standard user IDs allowed to access SAP systems should be properly managed and configured. This will allow organizations to follow the least privilege principle.
+</Description><Implementation>
+Default passwords for the standard user IDs should be changed and the companies password policy(1) should be applied.
+
+Standard user IDs that are not required should be deleted or disabled.
+
+Standard user IDs such as EARLYWATCH should not exist in any client.
+
+Self registration should not be allowed and turned off for better access control.
+
+(1) - Password policies changes across different organizations depending on several criteria&apos;s such criticality of the industry, local or federal laws, security standards that are mandatory to the industry and so on  
+</Implementation><Verification><item></item><item>- [ ] Default password for standard user IDs are changed</item><item>- [ ] Password policy is applied properly across SAP systems</item><item>- [ ] Standard user IDs are deleted and disabled when not in use</item><item>- [ ] User self registration is turned off</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Protection of the delivered SAP standard user IDs / Absicherung der ausgelieferten SAP-Standardbenutzer-Kennungen</item><item>- SAP Security Baseline Template V2.0: 2.3.1</item></References></item><item><Shortcode>PT-P-IP-M01-005</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> SAP ABAP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Technology</item><item>(T)</item></Defender><Prerequisites></Prerequisites><Description>
+
+</Description><Implementation>
+
+</Implementation><Verification><item></item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Secure configuration of the SAP ABAP stack (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)</item></References></item><item><Shortcode>PT-P-IP-M01-001</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> SAP HANA</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+SAP database contains critical information and data for different departments within an organization. The data must always be backed up, protected through encryption, maintained and reviewed on regular basis, and tested regularly.   
+</Description><Implementation></Implementation><Verification><item></item><item>Database system backups and tenant backups are required to be done on a scheduled and consistent manner. A full database should be done on a weekly basis, and a differential or incremental backup throughout the week.</item></Verification><References><item></item><item>In case the backups have been compromised, an encryption is required to maintain the confidentiality of the backed up data. Encryption keys are stored and secured in a separate system or location than the backup data.</item></References></item><item><Shortcode>DT-P-AE-M01-005</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+Workload monitor:
+
+The workload monitor helps with analyzing system statistics in SAP systems. An important part of the workload monitor is its capability to collect activities performed by users against the system. This avoids nonrepudiation and helps in analyzing changes or security events that caused an incident to take place.
+</Description><Implementation>
+Workload monitor is deactivated by default, and needs to be activated when investigating events or incidents caused by users.
+
+Tracking user activity may not be permitted in different parts of the world. Make sure to follow any data protection regulations your organizations falls under when tracking use activity.
+</Implementation><Verification><item></item><item>- [ ] Start the workload monitor using the STO3N transaction</item></Verification><References></References></item><item><Shortcode>DT-P-AE-M01-001</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+The organization is responsible for defining policies and procedures when identifying, collecting, acquiring, and preserving data that is used for evidence.
+</Description><Implementation>
+Areas of acquiring important logs within the organization&apos;s SAP ERP:
+
+1. Security audit log - DT-P-AE-M01-002
+2. System log - DT-P-AE-M01-003
+3. Table logging - DT-P-AE-M01-004
+4. Workload Monitor - DT-P-AE-M01-005
+5. Read Access Logging - DT-P-AE-M01-006
+6. User Information System -  DT-P-AE-M01-007
+
+Each area is used to extract and analyze data for different activities that occur in the system.
+
+Note: each area is described in its respective control
+</Implementation><Verification><item></item><item>- [ ] A policy has been defined and created to identify, collect, acquire and preserve information from different log tools</item><item></item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A32 Real-time recording and alarming of irregular processes (H) / Echtzeiterfassung und Alarmierung von irregulären Vorgängen (H)</item></References></item><item><Shortcode>PT-I-IP-M01-003</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> SAP RFC</Technology><Maturity_Level> 1</Maturity_Level><IPAC></IPAC><Defender><item>Technology</item></Defender><Prerequisites></Prerequisites><Description>
+RFC gateways are commonly found on ABAP, Java and stand-alone systems. Securing access for the different RFC connections mitigates unauthenticated and un-administered access from taking place.
+</Description><Implementation>
+Profile parameters should be set for the different systems to restrict access from different RFC connections.
+
+Profile parameters:
+
+1. - [ ] gw/sec_info to be set to filename secinfo (ACL file)
+2. - [ ] gw/reg_info to be set to filename reginfo (ACL file)
+3. - [ ] gw/reg_no_conn_info set to 1 or higher odd numbers
+4. - [ ] gw/acl_mode set to 1 (initial security environment)
+5. - [ ] gw/monitor set to 1 (monitoring to be set to local access only)
+6. - [ ] gw/sim_mode set to 0 (can temporarily be set to 1 to test ACL files, and find missing entries to be added to the ACL. Do not keep the value to 1)
+7. - [ ] gw/rem_start set to disable or SSH_SHELL (An acceptable method to allow the start of programs via the RFC gateway)
+</Implementation><Verification><item></item><item>- [ ] Profile parameters are set as per the implementation section</item><item>- [ ] Missing entries are detected and added to the access control list (see no. 6 in implementation section)</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Securing the SAP RFC interface/ Absicherung der SAP-RFC-Schnittstelle</item><item>- SAP Security Baseline Template V2.0: 2.3.2.3</item><item>- SAP Note 1480644</item><item>- SAP Note 1408081</item><item>- SAP Note 1444282</item><item>- SAP Note 1298433</item><item>- SAP Note 64016</item><item>- SAP Note 1689663</item></References></item><item><Shortcode>PT-I-PT-M01-001</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Protective Technology</CSF_Category><Technology></Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>I</item></IPAC><Defender><item>Technology</item></Defender><Prerequisites></Prerequisites><Description>
+SAP network implementations should be managed, monitored, and controlled to protect information in applications and systems.
+
+The control involves the need to securely configure the SAP Router and Web Dispatcher to act as an application-level gateways in the DMZ zone.
+</Description><Implementation>
+External traffic:
+
+The SAP router and web dispatcher should be available in the demilitarized (DMZ) zone in order to filter appropriate traffic before entering through the firewall.  
+
+Internal traffic:
+
+SAP systems should be placed on a separate subnet within the internal network. This allows an easier way to manage policies and protection for SAP systems.
+
+Governance:
+
+The architecture of SAP systems should be properly documented which should include but not limited to connections, communications, data flow, users and used protocols.
+
+</Implementation><Verification><item></item><item>- [ ] SAP Router and Web dispatcher placed in DMZ zone</item><item>- [ ] ACLs are in place to filter unwanted traffic</item><item>- [ ] Only recommended ports are allowed to access the network.  </item><item>- [ ] SAP systems are on a separate subnet inside the organization</item><item>- [ ] Documentation providing an illustrative view of the SAP architecture</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A3 Network Security/ Netzsicherheit</item><item>- CIS CSC 8, 12, 15</item><item>- COBIT 5 DSS05.02, APO13.01</item><item>- ISA 62443-3-3:2013 SR 3.1, SR 3.5, SR 3.8, SR 4.1, SR 4.3, SR 5.1, SR 5.2, SR 5.3, SR 7.1, SR 7.6</item><item>- ISO/IEC 27001:2013 A.13.1.1, A.13.2.1, A.14.1.3</item><item>- NIST SP 800-53 Rev. 4 AC-4, AC-17, AC-18, CP-8, SC-7, SC-19, SC-20, SC-21, SC-22, SC-23, SC-24, SC-25, SC-29, SC-32, SC-36, SC-37, SC- 38, SC-39, SC-40, SC-41, SC-43</item></References></item><item><Shortcode>PT-I-IP-M01-002</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Information Protection Processes and Procedures</CSF_Category><Technology> RFC Connections</Technology><Maturity_Level> 1</Maturity_Level><IPAC></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+Managing RFC connections between different systems of different classification levels is required in order to mitigate privilege escalation to sensitive or production systems.
+</Description><Implementation>
+As a rule of thumb, connections from lower classification systems, such as development or test systems, to high classification systems, such as production systems, should not use a trusted system logon or store user credentials.
+
+Connectivity configuration data is the only thing that can be stored in the different systems.
+
+</Implementation><Verification><item></item><item>- [ ] Authentication is required on every connection from lower to higher classification system</item><item>- [ ] To determine RFC connections that store user credentials use the RSRFCCHK report in all systems locally</item><item>- [ ] Restrict authorization to maintain RFC destinations in transaction SM59 by strictly controlling  authorization  object S_RFC_ADM</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Securing the SAP RFC interface/ Absicherung der SAP-RFC-Schnittstelle</item><item>- SAP Security Baseline Template V2.0: 2.3.2.3</item></References></item><item><Shortcode>DT-P-AE-M01-004</Shortcode><Security_Function> DT</Security_Function><CSF_Category> Anomalies and Events</CSF_Category><Technology> SAP ERP</Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>P</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+Table logging:
+
+Identifying and collecting logs to identify changes in critical tables is necessary to maintain the integrity of data available in different tables.
+
+</Description><Implementation>
+Activate the table logging in the profile parameter rec/client. It is recommended to set this parameter to log from all clients within your SAP environment.
+
+As a rule of thumb, choose tables that are either classified with the highest classification level or choose tables depending on the criticality of data found in them.
+
+Alerts can be configured when a certain event occurs or a threshold is reached, this helps automate the review process of table logging and reduces workload from administrators. Sending logs to a central location helps to achieve setting up alerts.
+</Implementation><Verification><item></item><item>- [ ] Set the rec/client parameter to enable logging</item><item>- [ ] Set the rec/client parameter to collect from all clients</item><item>- [ ] Define tables to be logged using transaction SE13</item><item>- [ ] Use transaction SCU3 to get an overview of all tables that have table logging enabled and the changes to these tables</item><item>- [ ] Configure alerts for important events to reactively respond to any changes in tables</item></Verification><References></References></item><item><Shortcode>PT-A-AC-M01-002</Shortcode><Security_Function> PT</Security_Function><CSF_Category> Identity Management, Authentication and Access Control</CSF_Category><Technology></Technology><Maturity_Level> 1</Maturity_Level><IPAC><item>A</item></IPAC><Defender><item>Process</item></Defender><Prerequisites></Prerequisites><Description>
+SAP user administration should be only allowed to administrators that are identified by the organization and have the appropriate rights to handle the creation, deletion, assigning roles and profiles, and password management of users.
+</Description><Implementation>
+Rights to administer users in SAP should only be given to users that have the same job role or identified by the organization(1).
+
+logging and monitoring SAP administrators allows easier identification of administrative misuse.
+
+(1) - Most user administrators are from the IT department in organizations. Some organizations leave the user administration to HR, which is more preferable.
+
+</Implementation><Verification><item></item><item>- [ ] Identify SAP user administrators and verify that these roles are given to only allowed users</item><item>- [ ] Logs are available to verify the misuse of administrative actions</item><item>- [ ] Monitoring is available to detect any misuse with user administration</item></Verification><References><item>- BSI APP.4.2 SAP-ERP-System, APP.4.2.A5 Configuration and orotection of the SAP user administration / Konfiguration und Absicherung der SAP-Benutzerverwaltung</item><item>- SAP Security Baseline Template V2.0: 2.3.1</item><item>- CIS CSC 1, 5, 15, 16</item><item>- COBIT 5 DSS05.04, DSS06.03</item><item>- ISA 62443-2-1:2009 4.3.3.5.1</item><item>- ISA 62443-3-3:2013 SR 1.1, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9</item><item>- ISO/IEC 27001:2013 A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</item><item>- NIST SP 800-53 Rev. 4 AC-1, AC-2, IA-1, IA-2, IA-3, IA-4, IA-5, IA-6, IA-7, IA-8, IA-9, IA-10, IA-11</item></References></item></Controls><Requirements></Requirements></root>
