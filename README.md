@@ -26,7 +26,7 @@ In our initial release, and for defining maturity level 1, we want to create a s
 
 #### Maturity level 1:
 
-The first maturity level is the initial baseline and is derived from the below standards:
+The first maturity level is the initial baseline and derived from the below standards:
 
 - SAP Security Baseline Template V2.1
 - German Federal Office for Information Security - BSI 4.2 SAP ERP System
