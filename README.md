@@ -40,7 +40,7 @@ The first maturity level is the initial baseline and derived from the below stan
 We aim to create controls in a structured, easy, and understandable way.
 
 - Every control follows the same identification schema and structure
-- Markdown language used f1or presenting the controls
+- Markdown language used for presenting the controls
 - Excel tool to present maturity levels, risk areas represented by the [NO MONKEY Security Matrix](NMSM.md), and implementation status
 
 #### Control Header:
