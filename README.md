@@ -43,6 +43,10 @@ We aim to create controls in a structured, easy, and understandable way.
 - Markdown language used for presenting the controls
 - Excel tool to present maturity levels, risk areas represented by the [NO MONKEY Security Matrix](https://github.com/NO-MONKEY/CBAS-SAP/blob/master/No_MONKEY_Security_Matrix.md), and implementation status
 
+Check our current released controls [here](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/tree/master/Controls_en).
+
+We are continuously adding controls to cover the different maturity levels defined in the project. You can check our [projects](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/projects/1) page to stay updated for upcoming controls.
+
 #### Control Header:
 
 - NIST Security Function
