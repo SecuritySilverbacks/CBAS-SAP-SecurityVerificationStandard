@@ -41,7 +41,7 @@ We aim to create controls in a structured, easy, and understandable way.
 
 - Every control follows the same identification schema and structure
 - Markdown language used for presenting the controls
-- Excel tool to present maturity levels, risk areas represented by the [NO MONKEY Security Matrix](NMSM.md), and implementation status
+- Excel tool to present maturity levels, risk areas represented by the [NO MONKEY Security Matrix](https://github.com/NO-MONKEY/CBAS-SAP/blob/master/No_MONKEY_Security_Matrix.md), and implementation status
 
 #### Control Header:
 
