@@ -14,31 +14,12 @@ SAP database contains critical information and data for different departments wi
 
 ## Implementation
 
-#### Backup:
-
 Database system backups and tenant backups are required to be done on a scheduled and consistent manner. A full database should be done on a weekly basis, and a differential or incremental backup throughout the week.
-
-#### Encryption:
-
-In case the backups have been compromised, an encryption is required to maintain the confidentiality of the backed up data. Encryption keys are stored and secured in a separate system or location than the backup data.
-
-#### Store:
-
-
-
-#### Test:
-
-Validating that a backup completed successfully is not enough to determine if restoration is possible. Scheduling a monthly restoration activity to ensure backups are verified and can successfully be restored is mandatory for you disaster and contingency plan.
 
 ## Verification of Control
 
-- [ ] Complete database scheduled on a weekly baselines
+- [ ] A full database backup scheduled on a weekly bases
 - [ ] Differential or incremental backups scheduled throughout the weekly
-- [ ] Data is encrypted and can't be decrypted or accessed if backup is compromised
-- [ ] Backup drives are stored in an offsite area
-- [ ] Backup drives are offline and can't be accessed by unauthorized personnel
-- [ ] Verify backup has completed successfully
-- [ ] Restore data to verify backups
 
 ## References:
 - CIS CSC 10
