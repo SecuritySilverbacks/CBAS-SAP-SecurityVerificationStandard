@@ -22,7 +22,7 @@ Users that are allowed to access the database are limited to only the tables tha
 
 ## Verification of Control
 
-- [ ] SAPR3, SAP <SID>, or SAPABAP1 disabled to access the database
+- [ ] SAPR3, SAPSID, or SAPABAP1 disabled to access the database
 - [ ] Users not required to access the database are removed
 - [ ] Data manipulation only given to SAP support
 - [ ] Users that are required to access the database are not to be given permissions to Table USR\*, Table T000, SAPUSER, RFCDES, PA\*, HCL\*, and any other tables not required to get their job done
