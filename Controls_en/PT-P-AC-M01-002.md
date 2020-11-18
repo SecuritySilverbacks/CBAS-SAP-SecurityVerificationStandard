@@ -16,7 +16,7 @@ Authorization, permission, and access for SAP standard users must properly be se
 
 Like local users and domain users on a Windows machine, SAP standard users must have the appropriate permissions and authorizations within the OS.
 
-- [ ] Restrict access to root, SAPsid, dbsid
+- [ ] Restrict access to root, SAPsid, and dbsid users on each system  
 - [ ] Lock dbsid user from all application serves after initial installation
 - [ ] SAPsid should not have any rights for interactive logon
 
