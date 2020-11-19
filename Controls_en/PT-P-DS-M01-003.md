@@ -5,7 +5,7 @@ Technology: SAP Java
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
-Prerequisite: PT-P-IP-M01-002
+Prerequisite: 
 ---
 
 ## Description
