@@ -5,7 +5,7 @@ Technology: SAP RFC
 Maturity Level: 1
 IPAC: Integration
 Defender: Technology
-Prerequisite: PT-I-P-M01-002
+Prerequisite: PT-I-P-M01-001
 ---
 
 ## Description
@@ -33,7 +33,7 @@ Profile parameters:
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Securing the SAP RFC interface/ Absicherung der SAP-RFC-Schnittstelle
-- SAP Security Baseline Template V2.0: 2.3.2.3
+- SAP Security Baseline Template V2.0: 2.3.2.3.1
 - SAP Note 1480644
 - SAP Note 1408081
 - SAP Note 1444282
