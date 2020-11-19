@@ -1,30 +1,31 @@
 ---
 Security Function: PT
-Category: Information Protection Processes and Procedures
-Technology: SAP HANA
+Category: Identity Management, Authentication and Access Control
+Technology: SAP Database
 Maturity Level: 1
-IPAC: Platform (P)
-Defender: Process
-Prerequisite: NA
+IPAC: Access (A)
+Defender: Technology
+Prerequisite:
 ---
 
 ## Description
 
-SAP database contains critical information and data for different departments within an organization. The data must always be backed up, protected through encryption, maintained and reviewed on regular basis, and tested regularly.   
+Access to SAP databases must be protected from unauthorized access and misuse.  
 
 ## Implementation
 
-Database system backups and tenant backups are required to be done on a scheduled and consistent manner. A full database should be done on a weekly basis, and a differential or incremental backup throughout the week.
+Default SAP IDs are not to be allowed to access the SAP database. Removing other IDs and users from accessing the database allows the principle of least privilege, separation of duties, and need to know.
+
+Check the transaction log file for unneeded accounts. The transaction file can be viewed by executing R3trans -d.
+
+Users that are allowed to access the database are limited to only the tables that allows them to complete their job.
 
 ## Verification of Control
 
-- [ ] A full database backup scheduled on a weekly bases
-- [ ] Differential or incremental backups scheduled throughout the weekly
+- [ ] SAPR3, SAPSID, or SAPABAP1 disabled to access the database
+- [ ] Users not required to access the database are removed
+- [ ] Data manipulation only given to SAP support
+- [ ] Users that are required to access the database are not to be given permissions to Table USR\*, Table T000, SAPUSER, RFCDES, PA\*, HCL\*, and any other tables not required to get their job done
 
 ## References:
-- CIS CSC 10
-- COBIT 5 APO13.01, DSS01.01, DSS04.07
-- ISA 62443-2-1:2009 4.3.4.3.9
-- ISA 62443-3-3:2013 SR 7.3, SR 7.4
-- ISO/IEC 27001:2013 A.12.3.1, A.17.1.2, A.17.1.3, A.18.1.3
-- NIST SP 800-53 Rev. 4 CP-4, CP-6, CP-9
+- BSI APP.4.2 SAP-ERP-System, APP.4.2.A7 Securing the SAP database/ Absicherung der SAP-Datenbanken
