@@ -1,33 +1,37 @@
 ---
 Security Function: PT
 Category: Information Protection Processes and Procedures
-Technology: SAP HANA
+Technology: SAP ABAP, SAP JAVA, SAP HANA
 Maturity Level: 1
 IPAC: Platform (P)
-Defender: Process
-Prerequisite: PT-P-IP-M01-001
+Defender: Process / Technology
+Prerequisite:
 ---
 
 ## Description
 
-SAP database contains critical information and data for different departments within an organization. The data must always be backed up, protected through encryption, maintained and reviewed on regular basis, and tested regularly.   
+To reduce any potential threats found in vulnerable SAP systems and maintain the organization's required security level, security professionals must regularly update security and software updates.
+
 
 ## Implementation
 
-Encrypting data on backup devices is required in order to maintain the confidentiality and integrity of the data; the encryption allows protection against compromised backup data. Encryption keys are stored and secured in a separate system or location than the backup data.
+SAP Security Notes are usually released every second Tuesday of every month. These notes help in mitigating discovered vulnerabilities throughout SAP systems.
 
+Places to get the latest SAP security notes and support packages:
+- SAP Software Update Manager (license is required)
+- SAP Patch Management tool (start with SPAM transaction; it will require a maintenance certificate)
+- Identify SAP security notes for the system by using SNOTE transaction
+- SAP Security Notes found in the SAP Support Launchpad
+
+It is necessary to follow a patch management process [1] in order to maintain the availability and integrity of production systems.
+
+[1] - It is recommended create a patch management process, if there is no process already existing in your organization; the process should also be applied to non-SAP solutions.
 
 ## Verification of Control
 
-- [ ] Data is encrypted and can't be decrypted or accessed if backup is compromised
-- [ ] Backup drives are stored in an offsite area
-- [ ] Backup drives are offline and can't be accessed by unauthorized personnel
-
+- [ ] Schedule a regular patching process to SAP systems
+- [ ] Create/Follow a patch management process to maintain integrity and availability of SAP systems
 
 ## References:
-- CIS CSC 10
-- COBIT 5 APO13.01, DSS01.01, DSS04.07
-- ISA 62443-2-1:2009 4.3.4.3.9
-- ISA 62443-3-3:2013 SR 7.3, SR 7.4
-- ISO/IEC 27001:2013 A.12.3.1, A.17.1.2, A.17.1.3, A.18.1.3
-- NIST SP 800-53 Rev. 4 CP-4, CP-6, CP-9
+- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Secure configuration of the SAP ABAP stack (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)
+- SAP Security Baseline Template V2.0: 2.2.2.1
