@@ -10,7 +10,7 @@ Prerequisite: NA
 
 ## Description
 
-In order to properly secure the Remote Function Call (RFC) interface that is used as a communication interface between SAP systems, all RFC connections, RFC authorizations and RFC interfaces must be considered.
+To properly secure the Remote Function Call (RFC) interface used as a communication interface between SAP systems, all RFC connections, RFC authorizations, and RFC interfaces must be considered.
 
 ## Implementation
 
