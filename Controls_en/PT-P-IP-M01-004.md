@@ -1,38 +1,28 @@
 ---
 Security Function: PT
 Category: Information Protection Processes and Procedures
-Technology: SAP Kernel
+Technology: SAP ERP
 Maturity Level: 1
 IPAC: Platform (P)
-Defender: Technology 
+Defender: Process / Technology
 Prerequisite:
 ---
 
 ## Description
 
-To reduce any potential threats found in the SAP kernel and maintain the organization's required security level, security professionals must regularly update the kernel.
-
-Note: The SAP kernel has a separate update mechanism then other SAP systems
-
+The organization is responsible to properly document and comply with the defined security guidelines when installing an SAP ERP system.
 
 ## Implementation
 
-In order to check your organization's current kernel release:
-1. Navigate to system > status
-2. Press shift + F5 to get the kernel info
+Security guidelines for different SAP functional units, technology, or specific areas such as authorizations can be aligned with SAPs security guides.
 
-Places to get the latest SAP kernel updates:
-- SAP Software Update Manager (license is required)
-- SAP Security Notes found in the SAP Support Launchpad
+It is important to document all security guidelines that have been included in the installation or current deployment.
 
-It is necessary to follow a patch management process [1] in order to maintain the availability and integrity of production systems.
-
-[1] - It is recommended create a patch management process, if there is no process already existing in your organization; the process should also be applied to non-SAP solutions.
+The operating system chosen for hosting SAP ERP should be hardened and secured adequately as per the organization's security policies.
 
 ## Verification of Control
 
-- [ ] Schedule a regular patching process to the SAP kernel
-- [ ] Create/Follow a patch management process to maintain integrity and availability of SAP systems
-
+- [ ] Verify security guidelines documentation for installed SAP systems
 
 ## References:
+- BSI APP.4.2 SAP-ERP-System, APP.4.2.A11 Secure installation of a SAP ERP system (S) / Sichere Installation eines SAP-ERP-Systems (S)
