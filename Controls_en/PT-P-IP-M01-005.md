@@ -16,7 +16,7 @@ Setting a strong password policy is essential to protect from unauthorized acces
 
 Below helps organization's set a password policy for ABAP systems:
 
-- [ ] Set Minimum password length (1) with the profile parameter login/min_password_lng >= 12
+- [ ] Set minimum password length (1) with the profile parameter login/min_password_lng >= 12
 - [ ] Set a maximum number of days a password can be unused with profile parameter login/password_max_idle_initial (set between 1 to 14)
 - [ ] Set an expiry for passwords to be changed with profile parameter login/password_expiration_time <= 90
 - [ ] Define a password history size with the profile parameter login/password_history_size >= 5
