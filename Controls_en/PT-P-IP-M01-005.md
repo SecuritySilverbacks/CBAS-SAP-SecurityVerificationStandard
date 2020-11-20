@@ -18,7 +18,7 @@ Below helps organization's set a password policy for ABAP systems:
 
 - [ ] Set Minimum password length (1) with the profile parameter login/min_password_lng >= 12
 - [ ] Set a maximum number of days a password can be unused with profile parameter login/password_max_idle_initial (set between 1 to 14)
-- [ ] Set expiry for passwords to be changed with profile parameter login/password_expiration_time <= 90
+- [ ] Set an expiry for passwords to be changed with profile parameter login/password_expiration_time <= 90
 - [ ] Define a password history size with the profile parameter login/password_history_size >= 5
 - [ ] Do not store passwords for old kernels to interpret by setting profile parameter login/password_downwards_compatibility=0
 - [ ] To enforce users to comply with the password policy set profile parameter login/password_compliance_to_current_policy=1
@@ -31,7 +31,7 @@ Below helps organization's set a password policy for ABAP systems:
 - [ ] Disable password login when the organization is using other authentication methods with the profile parameter login/disable_password_logon > 0
 - [ ] When using Single Sign-on (SSO) authentication method it is mandatory to check whether a users passwords needs changing with the profile parameter login/password_change_for_SSO
 - [ ] Define a period of time (measured in days) that a user is able to change their password again with the profile parameter login/password_change_waittime > 0
-- [ ] Set the hashing algorithm and encoding for new password with the profile parameter login/password_hash_algorithm = encoding=RFC2307, algorithm=iSSHA-512, iterations=15000, saltsize=256
+- [ ] Set the hashing algorithm and encoding for new password with the profile parameter login/password_hash_algorithm = encoding=RFC2307, algorithm=iSSHA-512, iterations=15000, saltsize=256 (Profile parameter login/password_downwards_compatibility should not equal to 5 or the hashing algorithm profile parameter will not make sense)
 
 Setting password complexity:
 - [ ] Set profile parameter login/min_password_digits >= 1
