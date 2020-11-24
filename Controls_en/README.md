@@ -2,13 +2,13 @@
 
 - NIST Security Function
 - NIST Category
-- [IPAC Model](NMSM.md)
+- [IPAC Model](https://github.com/NO-MONKEY/CBAS-SAP/blob/master/No_MONKEY_Security_Matrix.md)
 - SAP Technology
 - Maturity Level
 - Defender (People, Process, Technology)
 - Control Prerequisite
 
-*[Appendix A](Appendix/Appendix_A_Acronyms.md) lists the acronyms used in either the control header or the naming convention for controls.*
+*[Appendix A](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/blob/master/Appendix/Appendix_A_Acronyms.md) lists the acronyms used in either the control header or the naming convention for controls.*
 
 ## Control Structure:
 
