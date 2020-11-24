@@ -51,7 +51,7 @@ We are continuously adding controls to cover the different maturity levels defin
 
 - NIST Security Function
 - NIST Category
-- [IPAC Model](NMSM.md)
+- [IPAC Model](https://github.com/NO-MONKEY/CBAS-SAP/blob/master/No_MONKEY_Security_Matrix.md)
 - SAP Technology
 - Maturity Level
 - Defender (People, Process, Technology)
