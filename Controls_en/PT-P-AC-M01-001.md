@@ -1,16 +1,16 @@
 ---
 Security Function: Protect
 Category: Identity Management, Authentication and Access Control
-Technology: Windows OS
+Technology: Windows OS, Linux
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
-Prerequisite: PT-P-IP-M01-013
+Prerequisite: PT-P-IP-M01-012, PT-P-IP-M01-013
 ---
 
 ## Description
 
-Authorization, permission, and access for SAP standard users must properly be secured and configured within the Windows OS.
+Authorization, permission, and access for SAP standard users must properly be secured and configured within the operating system in use.
 
 ## Implementation
 
@@ -30,6 +30,7 @@ Note: SAP systems should not be installed on domain controllers
 
 ## References
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementation of security requirements for the Windows (S) operating system / Umsetzung von Sicherheitsanforderungen für das Betriebssystem Windows (S)
+- BSI APP.4.2 SAP-ERP-System, APP.4.2.A17 Implementation of security requirements for the Unix (S) operating system / Umsetzung von Sicherheitsanforderungen für das Betriebssystem Unix (S)
 - CIS CSC 3, 5, 12, 14, 15, 16, 18
 - COBIT 5 DSS05.04
 - ISA 62443-2-1:2009 4.3.3.7.3
