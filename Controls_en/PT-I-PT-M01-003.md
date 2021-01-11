@@ -32,7 +32,7 @@ The control illustrates how to configure the SAProuter to use SNC.
 
 - [ ] Submit the \<csrfile\> file to your Certificate Authority (CA) to receive the certificate to proceed
 
-- [ ]  Copy content of the received certificate to a file on your SAProuter system and import with the following command *sapgenpse import_own_cert -c \<certca\> -r \<root CA certificate\> -p local.pse*. The \<certca\> is the file received from your CA and <root CA certificate> is the root certificate from the CA
+- [ ]  Copy content of the received certificate to a file on your SAProuter system and import with the following command *sapgenpse import_own_cert -c \<certca\> -r \<root CA certificate\> -p local.pse*. The \<certca\> is the file received from your CA and \<root CA certificate\> is the root certificate from the CA
 
 - [ ] Generate the credentials file with the following command *sapgenpse seclogin -p local.pse \<pse password\>*
 
