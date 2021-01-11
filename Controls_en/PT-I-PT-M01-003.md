@@ -12,7 +12,7 @@ Prerequisite: PT-I-PT-M01-001
 
 Any communication with or between different SAP systems must be encrypted. The Secure Network Communication (SNC) enables you to encrypt communications between different systems.
 
-SNC can only be used with SAP protocols, any other internet protocols should be protected using the TLS encryption.
+SNC can only be used with SAP protocols, any other internet protocols should be protected by enabling TLS.
 
 ## Implementation
 
