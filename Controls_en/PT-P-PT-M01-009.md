@@ -1,9 +1,9 @@
 ---
 Security Function: PT
-Category: Identity Management, Authentication and Access Control
+Category: Protective Technology
 Technology: Message Server  
 Maturity Level: 1
-IPAC: Access (A)
+IPAC: Platform (P)
 Defender: Technology
 Prerequisite:
 ---
