@@ -16,6 +16,7 @@ Security Audit Logs (SAL) are important to be activated and properly configured 
 
 It is important to activate and properly configure profile parameters pertaining to security audit logs. The following parameters help to do so:
 
+- [ ] Use transaction RSAU_CONFIG or SM19 to set the required parameters
 - [ ] rsau/enable = 1
 - [ ] Specify the location of the security audit log by setting the rsau/local/file
 - [ ] rsau/integrity = 1
@@ -24,13 +25,22 @@ It is important to activate and properly configure profile parameters pertaining
 - [ ] rsau/user_selection = 1
 - [ ] Specify the maximum length of the log by setting the rsau/max_diskspace_local
 
+Kernel Parameters that are recommended to be active:
+
+- [ ] Audit active
+- [ ] Generic user selection
+- [ ] Protection format active
+
 It is recommended to send the logs to a centralized log server to better analyze and filter logs. This will also help in maintaining the size on the actual system.
+
+With transaction RSAU_CONFIG, further parameters can be configured depending on your organizations requirements.
 
 Note: Reference DT-P-AE-M01-002 controls for identifying available logs that can be collected for your requirements
 
 ## Verification of Control
 
 - [ ] Verify that security audit logs are enabled by checking the rsau/enable parameter
+- [ ] Verify that security audit logs kernel parameters are configured
 - [ ] Verify if all events are for critical users, such as SAP*, DDIC, SAPCPIC, emergency and support users, are collected and audited for all clients
 - [ ] Verify if all critical events for all clients are collected and audited
 
