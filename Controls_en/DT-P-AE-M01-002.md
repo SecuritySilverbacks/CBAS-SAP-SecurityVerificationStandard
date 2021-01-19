@@ -4,7 +4,7 @@ Category: Anomalies and Events
 Technology: SAP ERP
 Maturity Level: 1
 IPAC: Platform (P)
-Defender: Technology
+Defender: Process
 Prerequisite: DT-P-AE-M01-001
 ---
 
