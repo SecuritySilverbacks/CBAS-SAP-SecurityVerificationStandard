@@ -1,7 +1,7 @@
 ---
 Security Function: PT
 Category: Information Protection Processes and Procedures
-Technology: SAP RFC
+Technology: RFC Connections
 Maturity Level: 1
 IPAC: Integration
 Defender: Technology
