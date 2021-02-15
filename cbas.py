@@ -88,12 +88,15 @@ class CBASSMM:
             control['Shortcode'] = filename.replace(".md", "")
 
             with open(os.path.join(self.controls, filename), encoding="utf8" ) as file:
+                if filename in {'Control_Template.md', 'README.md'}:
+                    continue
+
                 text = file.read()
                 regex = re.compile('(?<=##.*\\n)([^#]*)(?!##)') #select the body
                 m = re.findall(regex, text)
                 if m:
                     control['Description'] = m[0]
-                    control['Implementation'] = m[1]    
+                    control['Implementation'] = m[1]
                     control['Verification'] = m[2].splitlines()
                     control['References'] = m[3].splitlines()
                 regex = re.compile('(?<=---.*\\n)([^#]*)(?=---)') #select the header
@@ -127,15 +130,15 @@ class CBASSMM:
                             for match in header.split(sep=':', maxsplit=1)[1].strip().split(sep=' '):
                                 control['Prerequisites'].append(match)
                             continue
-                
+
                 self.cbas['Controls'].append(control)
-                    
+
                 control_flat = {}
-                control_flat['Shortcode'] = control['Shortcode'] 
+                control_flat['Shortcode'] = control['Shortcode']
                 control_flat['Security Function'] = control['Security Function']
-                control_flat['CSF Category'] = control['CSF Category'] 
-                control_flat['Technology'] = control['Technology'] 
-                control_flat['Maturity Level'] = control['Maturity Level'] 
+                control_flat['CSF Category'] = control['CSF Category']
+                control_flat['Technology'] = control['Technology']
+                control_flat['Maturity Level'] = control['Maturity Level']
                 control_flat['IPAC'] = "".join(control['IPAC'])
                 control_flat['Defender'] = "".join(control['Defender'])
                 control_flat['Prerequisites'] = "".join(control['Prerequisites'])

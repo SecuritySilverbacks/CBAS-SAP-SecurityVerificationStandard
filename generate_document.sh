@@ -42,7 +42,7 @@ fi
 echo -n "Generating OWASP CBAS SAP Security Maturity Model $vers ($lang)..."
 if [ -d "$lang" ];
 then
-	cd "$lang"
+	cd "Controls_${lang}"
 	generate_docx $lang $vers
 	# generate_html $lang
 	cd ..

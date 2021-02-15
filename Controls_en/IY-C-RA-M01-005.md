@@ -4,8 +4,8 @@ Category: Risk Assessment
 Technology: ABAP
 Maturity Level: 1
 IPAC: Customizing (C)
-Defender: _People, Process, Technology_
-Prerequisite: _A control that is required to be in place before the current one_
+Defender: Process
+Prerequisite: IY-C-RA-M01-001, IY-C-RA-M01-004
 ---
 
 ## Description
@@ -14,27 +14,29 @@ Use of protective mechanisms
 
 The SAP standard system provides companies with various mechanisms to protect their data. For this reason, the security strategies of many companies are based on the knowledge that the mechanisms in the SAP standard systems provide a solid foundation and are not (or should not be) compromised.
 These mechanisms include:
-- Client separation
+- Client/tenant separation
 - Identity management
 - Roles and authorizations
-- Separated development, test and productive systems
+- Separation of development, test and production
 - Logging
-
-
-
 
 ## Implementation
 
-1.	ABAP programs must not undermine the security mechanisms of the SAP standard system.
-2.	If the SAP standard system has earmarked a security mechanism for specific tasks, then this security mechanism should also be used in ABAP programs.
-3.	In the target system release, in which the application is to be run, the ABAP code should not use any obsolete language elements. The coding should be tested using the extended syntax check and any deficits should be eliminated.
-4.	Customer-specific tables should generally be delivered with the maintenance setting “Display/maintenance not allowed” for table view maintenance. If table maintenance is required, then a maintenance view should be created for this table.
-
+1. As part of code change review process all custom code has to be checked to carry that:
+    - it must not undermine the security mechanisms of the SAP standard system.
+    - If the SAP standard system has earmarked a security mechanism for specific tasks, then this security mechanism should also be used in change's custom code.
+    - In the target system release, in which the application is to be run, the ABAP code shouldn't use any obsolete language elements.
+    - The coding should be tested using the extended syntax check and any deficits should be eliminated.
+    - Customer-specific database tables should generally be delivered for disallowing manual data maintenance by SAP standard tools. If manual table maintenance is required, then a maintenance application (maintenance view) should be created.
 
 ## Verification of control
 
-_Steps to verify if a control exists_
+- [ ] Audit if the source code review is carried out and documented on all custom code changes to verify the correct use of protective mechanisms.
 
 ## References
 
-_References_
+- CIS CSC 4
+- COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04
+- ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12
+- ISO/IEC 27001:2013 Clause 6.1.2
+- NIST SP 800-53 Rev. 4 RA-3, SI-5, PM-12, PM-16

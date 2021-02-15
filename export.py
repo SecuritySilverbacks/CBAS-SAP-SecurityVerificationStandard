@@ -29,7 +29,7 @@
 import argparse
 from cbas import CBASSMM
 
-parser = argparse.ArgumentParser(description='Export the ASVS requirements.')
+parser = argparse.ArgumentParser(description='Export the CBAS SAP SMM requirements.')
 parser.add_argument('--format', choices=['json', 'xml', 'csv'], default='json')
 parser.add_argument('--language', default='en')
 

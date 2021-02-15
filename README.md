@@ -34,6 +34,7 @@ The first maturity level is the initial baseline and derived from the below stan
 - German Federal Office for Information Security - BSI 4.2 SAP ERP System
 - German Federal Office for Information Security - BSI 4.6 SAP ABAP Programming
 - SAP security white papers - used for critical areas missing in the security baseline template and BSI standards
+- OWASP Application Security Verification Standard ASVS 2.0
 
 ## Controls
 
