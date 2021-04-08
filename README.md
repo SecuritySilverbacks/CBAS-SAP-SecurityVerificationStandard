@@ -1,6 +1,6 @@
 # SAP Security Maturity Model
 
-__*We have included the OWASP Maturity Model - References file to understand on how the mappings between the different standards and baelines used in maturity level 1 are derived.*__
+__*We have included the [OWASP Maturity Model - References](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/blob/master/OWASP%20Maturity%20Model%20-%20References.xlsx) file to understand on how the mappings between the different standards and baelines used in maturity level 1 are derived.*__
 
 <img src="img/Silverback.png" width="150"/><br>
 
