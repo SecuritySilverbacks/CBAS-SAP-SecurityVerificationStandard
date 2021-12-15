@@ -21,7 +21,7 @@ Any RFC connections that are not in use must be deleted. (Documentation should r
 
 ## Verification of Control
 
-- [ ] Determine if an RFC connection is in use through using the RFC runtime monitor transaction SRTM6 or the workload monitor transaction ST03N
+- [ ] Determine if an RFC connection is in use through using the RFC runtime monitor transaction SRTM or the workload monitor transaction ST03N
 - [ ] Delete any RFC connections not in use
 - [ ] Guidelines in regards to existing RFC connections are available and up to date
 
