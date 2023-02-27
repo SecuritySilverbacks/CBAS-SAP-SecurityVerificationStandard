@@ -1,11 +1,11 @@
-# SAP Security Maturity Model
+# SAP Security Verification Standard
 
-__*We have included the [OWASP Maturity Model - References](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/blob/master/OWASP%20Maturity%20Model%20-%20References.xlsx) file to understand on how the mappings between the different standards and baelines used in maturity level 1 are derived.*__
+__*We have included the [OWASP Maturity Model - References](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/blob/master/OWASP%20Maturity%20Model%20-%20References.xlsx) file to understand on how the mappings between the different standards and baselines are used in maturity level 1.*__
 
 <img src="img/Silverback.png" width="150"/><br>
 
 
-The CBAS - SAP Security Maturity Model (CBAS-SSMM) project allows organizations to determine their SAP security posture based on controls used to define a maturity level that organizations can maintain or adopt. This enables organizations to plan and enhance their security mechanisms when protecting SAP resources.
+The CBAS - SAP Security Verification Standard (CBAS-SSVS) project allows organizations to determine their SAP security posture based on controls used to define a maturity level that organizations can maintain or adopt. This enables organizations to plan and enhance their security mechanisms when protecting SAP resources.
 
 
 ## Whats In It For Me (WIIFM)
@@ -32,7 +32,7 @@ In our initial release, and for defining maturity level 1, we want to create a s
 
 The first maturity level is the initial baseline and derived from the below standards:
 
-- SAP Security Baseline Template V2.1
+- SAP Security Baseline Template V2.4
 - German Federal Office for Information Security - BSI 4.2 SAP ERP System
 - German Federal Office for Information Security - BSI 4.6 SAP ABAP Programming
 - SAP security white papers - used for critical areas missing in the security baseline template and BSI standards
@@ -44,7 +44,7 @@ We aim to create controls in a structured, easy, and understandable way.
 
 - Every control follows the same identification schema and structure
 - Markdown language used for presenting the controls
-- Excel tool to present maturity levels, risk areas represented by the [NO MONKEY Security Matrix](https://github.com/NO-MONKEY/CBAS-SAP/blob/master/No_MONKEY_Security_Matrix.md), and implementation status
+- Excel tool to present maturity levels, risk areas represented by the [NO MONKEY Security Matrix](https://www.no-monkey.com/sap-security-matrix/), and implementation status
 
 Check our current released controls [here](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/tree/master/Controls_en).
 
@@ -54,7 +54,7 @@ We are continuously adding controls to cover the different maturity levels defin
 
 - NIST Security Function
 - NIST Category
-- [IPAC Model](https://github.com/NO-MONKEY/CBAS-SAP/blob/master/No_MONKEY_Security_Matrix.md)
+- [SAP Operational Area](https://www.no-monkey.com/sap-security-matrix/)
 - SAP Technology
 - Maturity Level
 - Defender (People, Process, Technology)
@@ -75,8 +75,8 @@ We are continuously adding controls to cover the different maturity levels defin
 
 
 ## Leaders
-- [Waseem Ajrab](mailto:waseem.ajrab@no-monkey.com)
-- [Marco Hammel](mailto:marco.hammel@no-monkey.com)
+- [Waseem Ajrab](https://twitter.com/waseem_ajrab)
+- [Marco Hammel](https://www.linkedin.com/in/marcohammel/)
 
 
 ## Communication channel
