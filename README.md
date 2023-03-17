@@ -5,7 +5,7 @@ __*We have included the [OWASP Maturity Model - References](https://github.com/N
 <img src="img/Silverback.png" width="150"/><br>
 
 
-The CBAS - SAP Security Verification Standard (CBAS-SSVS) project allows organizations to determine their SAP security posture based on controls used to define a maturity level that organizations can maintain or adopt. This enables organizations to plan and enhance their security mechanisms when protecting SAP resources.
+The CBAS - SAP Security Verification Standard (SSVS) project allows organizations to determine their SAP security posture based on controls used to define a standard security baseline that organizations can maintain and adopt. This enables organizations to plan and enhance their security mechanisms when protecting SAP resources.
 
 
 ## Whats In It For Me (WIIFM)
