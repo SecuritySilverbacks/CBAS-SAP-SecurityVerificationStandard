@@ -1,7 +1,7 @@
 # SAP Security Verification Standard (SSVS)
 
 __*We have included the [OWASP SSVS -
-Mapping](https://github.com/NO-MONKEY/CBAS-SAP-SecurityVerificationStandard/blob/master/OWASP%20SSVS%20-%20Mapping.xlsx) file to understand on how the mappings between the different standards and baselines are used.*__
+Mapping](https://github.com/NO-MONKEY/CBAS-SAP-SecurityVerificationStandard/blob/master/OWASP%20SSVS%20-%20Mapping.xlsx) file to show the mappings between the different standards and baselines used in the project.*__
 
 <img src="img/Silverback.png" width="150"/><br>
 
