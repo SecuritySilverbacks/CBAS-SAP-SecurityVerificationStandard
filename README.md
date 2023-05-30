@@ -1,6 +1,7 @@
-# SAP Security Verification Standard
+# SAP Security Verification Standard (SSVS)
 
-__*We have included the [OWASP Maturity Model - References](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/blob/master/OWASP%20Maturity%20Model%20-%20References.xlsx) file to understand on how the mappings between the different standards and baselines are used in maturity level 1.*__
+__*We have included the [OWASP SSVS -
+Mapping](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/blob/master/OWASP%20Maturity%20Model%20-%20References.xlsx) file to understand on how the mappings between the different standards and baselines are used.*__
 
 <img src="img/Silverback.png" width="150"/><br>
 
@@ -51,9 +52,9 @@ We are continuously adding controls to cover the different maturity levels defin
 
 - NIST Security Function
 - NIST Category
-- [SAP Operational Area](https://www.no-monkey.com/sap-security-matrix/)
+- [SAP Operational Areas](https://www.no-monkey.com/sap-security-matrix/)
 - SAP Technology
-- Maturity Level
+- Maturity Level __*(will be removed in the next release)*__
 - Defender (People, Process, Technology)
 - Control Prerequisite
 
