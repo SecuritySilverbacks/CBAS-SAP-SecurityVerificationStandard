@@ -24,7 +24,7 @@ Alerts can be configured when a certain event occurs or a threshold is reached, 
 
 ## Verification of Control
 
-- [ ] Check system logs through the SM21 transaction
-- [ ] Configure alerts for certain events such as rollbacks and system error messages to reactively respond and fix issues
+- Check system logs through the SM21 transaction
+- Configure alerts for certain events such as rollbacks and system error messages to reactively respond and fix issues
 
 ## References:

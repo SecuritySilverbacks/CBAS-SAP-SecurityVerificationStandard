@@ -24,7 +24,7 @@ If specific functionality in an application cannot be run (by a tester) in the t
 2. Custom developments that should not be used in systems processing productive data shall not be deployed to according systems
 
 3. As part of code change review process all custom code has to be checked to carry that:
-  - security requirements are implemented with standardized and traceable procedures. Concealment is an elusive security strategy.
+  - security requirements are implemented with standardized and traceable procedures. Concealment is not a valid security strategy.
   - The change implements an architecture and uses interfaces in such a way that implemented security mechanisms for the protection of your business logic cannot be circumvented by side-effects or by reusing components of the change's implementation.
   - No part of the implementation uses code code obfuscation like the ABAP code hiding feature available up the ABAP release 7.4x
   - The implementation does not limit to run code based on system variables like sy-mandt and sy-sysid, providing the information to an ABAP program on the executing system in which it is currently being run if testing can't simulate the target system accordingly.

@@ -16,20 +16,20 @@ Security Audit Logs (SAL) are important to be activated and properly configured 
 
 It is important to activate and properly configure profile parameters pertaining to security audit logs. The following parameters help to do so:
 
-- [ ] Use transaction RSAU_CONFIG or SM19 to set the required parameters
-- [ ] rsau/enable = 1
-- [ ] Specify the location of the security audit log by setting the rsau/local/file
-- [ ] rsau/integrity = 1
-- [ ] rsau/log_peer_address = 1 (note: the parameter can cause warnings, but these can be ignored without any problems)
-- [ ] rsau/selection_slots ≥ 10 5
-- [ ] rsau/user_selection = 1
-- [ ] Specify the maximum length of the log by setting the rsau/max_diskspace_local
+- Use transaction RSAU_CONFIG or SM19 to set the required parameters
+- rsau/enable = 1
+- Specify the location of the security audit log by setting the rsau/local/file
+- rsau/integrity = 1
+- rsau/log_peer_address = 1 (note: the parameter can cause warnings, but these can be ignored without any problems)
+- rsau/selection_slots ≥ 10 5
+- rsau/user_selection = 1
+- Specify the maximum length of the log by setting the rsau/max_diskspace_local
 
-Kernel Parameters that are recommended to be active:
+The following minimal settings of the security audit log must be implemented:
 
-- [ ] Audit active
-- [ ] Generic user selection
-- [ ] Protection format active
+- Auditing should be active
+- Active filter with generic user selection for all critical events
+- Log protection format active
 
 It is recommended to send the logs to a centralized log server to better analyze and filter logs. This will also help in maintaining the size on the actual system.
 
@@ -39,10 +39,10 @@ Note: Reference DT-P-AE-M01-002 controls for identifying available logs that can
 
 ## Verification of Control
 
-- [ ] Verify that security audit logs are enabled by checking the rsau/enable parameter
-- [ ] Verify that security audit logs kernel parameters are configured
-- [ ] Verify if all events are for critical users, such as SAP*, DDIC, SAPCPIC, emergency and support users, are collected and audited for all clients
-- [ ] Verify if all critical events for all clients are collected and audited
+- Verify that security audit logs are enabled by checking the rsau/enable parameter
+- Verify that security audit logs minimal settings are configured
+- Verify if all events are for critical users, such as SAP*, DDIC, SAPCPIC, emergency and support users, are collected and audited for all clients
+- Verify if all critical events for all clients are collected and audited
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)

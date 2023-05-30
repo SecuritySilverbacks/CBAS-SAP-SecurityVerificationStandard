@@ -1,7 +1,7 @@
 ---
 Security Function: PT
 Category: Protective Technology
-Technology:
+Technology: All
 Maturity Level: 1
 IPAC: Integration (I)
 Defender: Technology
@@ -18,11 +18,11 @@ The control involves the need to securely configure the SAP Router and Web Dispa
 
 External traffic:
 
-The SAP router and web dispatcher should be available in the demilitarized (DMZ) zone in order to filter appropriate traffic before entering through the firewall.  
+The SAP router and web dispatcher should be available in the demilitarized (DMZ) zone in order to filter appropriate traffic before being routed through another firewall.  
 
 Internal traffic:
 
-SAP systems should be placed on a separate subnet within the internal network. This allows an easier way to manage policies and protection for SAP systems.
+SAP systems should be placed on a separate subnet within the internal network. This allows an easier way to manage network access policies for SAP systems.
 
 Governance:
 
@@ -31,11 +31,11 @@ The architecture of SAP systems should be properly documented which should inclu
 
 ## Verification of Control
 
-- [ ] SAP Router and Web dispatcher placed in DMZ zone
-- [ ] ACLs are in place to filter unwanted traffic
-- [ ] Only recommended ports are allowed to access the network.  
-- [ ] SAP systems are on a separate subnet inside the organization
-- [ ] Documentation providing an illustrative view of the SAP architecture
+- SAP Router and Web dispatcher placed in DMZ zone
+- ACLs are in place to filter unwanted traffic
+- Only necessary ports are allowed to access the network.  
+- SAP systems are on a separate subnet inside the organization
+- Documentation providing an illustrative view of the SAP architecture
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A3 Network Security/ Netzsicherheit

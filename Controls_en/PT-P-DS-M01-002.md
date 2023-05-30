@@ -10,7 +10,7 @@ Prerequisite:
 
 ## Description
 
-To reduce the amount of information disclosed during reconnaissance, it is recommended to remove any system version information or detailed error logs that can be gathered to exploit possible vulnerabilities that might arise from this information.
+To reduce the amount of information disclosed during reconnaissance by adversaries, it is recommended to remove any system version information or detailed error logs that can be gathered to exploit possible vulnerabilities that might arise from this information.
 
 ## Implementation
 

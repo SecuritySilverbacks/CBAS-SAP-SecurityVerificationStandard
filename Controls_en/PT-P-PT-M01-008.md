@@ -16,17 +16,17 @@ Security Audit Logs (SAL) are important to be activated and properly configured 
 
 It is important to activate and properly configure the audit trail for HANA in the SAP HANA Administration Console. The following parameters help to do so:
 
-- [ ] global_auditing_state = true in global.ini file, section auditing configuration
-- [ ] Audit policies should be configured as per the companies security requirements
-- [ ] Set the default_audit_trail_type = SYSLOGPROTOCOL or CSTABLE in global.ini file, section auditing configuration. More information on Audit Trail Layout can be found [here](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/2.0.03/en-US/0a57444d217649bf94a19c0b68b470cc.html)
+- global_auditing_state = true in global.ini file, section auditing configuration
+- Audit policies should be configured as per the companies security requirements
+- Set the default_audit_trail_type = SYSLOGPROTOCOL or CSTABLE in global.ini file, section auditing configuration. More information on Audit Trail Layout can be found [here](https://help.sap.com/docs/SAP_HANA_PLATFORM/b3ee5778bc2e4a089d3299b82ec762a7/0a57444d217649bf94a19c0b68b470cc.html)
 
 Note: Critical users must be monitored
 
 ## Verification of Control
 
-- [ ] Verify that security audit logs are enabled by checking the parameter global_auditing_state = true in global.ini file, section auditing configuration
-- [ ] Verify if all events are for critical users are collected and audited
-- [ ] Verify that the CSVFILE is not used to log security-critical information
+- Verify that security audit logs are enabled by checking the parameter global_auditing_state = true in global.ini file, section auditing configuration
+- Verify if all events are for critical users are collected and audited
+- Verify that the CSVFILE is not used to log security-critical information
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)

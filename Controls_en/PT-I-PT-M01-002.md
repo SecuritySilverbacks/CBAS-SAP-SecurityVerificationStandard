@@ -16,23 +16,23 @@ When using SAPGUI or RFC connections to access published SAP systems that pertai
 
 Implementing secure connections from external networks or the internet requires continuous tuning and adjustments to deny unauthorized access to SAP systems. The below implementation is a baseline to allow organizations to implement secure connections to their internal systems.
 
-- [ ] Configure your firewall to allow only one port, 32NN, where NN is the organization's instance number for the SAProuter
-- [ ] Configure SNC(1) to allow and authorize SAP support to login to your system securely. (This is mainly for support purposes)
-- [ ] Configure an implicit deny on the last line of the ACL file (routtab file), (Deny all traffic with the following rule D * * *)
-- [ ] Configure authorized connections using SAPGUI to use SAProuter for connection
-- [ ] Configure authorized connections to use a secure password (Update routtab file for example P * * 3201 secure_password, allows requests to port 3201 if a password is used)
-- [ ] Continuous monitoring of the dev_route log. This will enable security teams to tune their ACLs according to their needs
+- Configure your firewall to allow only one port, 32NN, where NN is the organization's instance number for the SAProuter
+- Configure SNC(1) to allow and authorize SAP support to login to your system securely. (This is mainly for support purposes)
+- Configure an implicit deny on the last line of the ACL file (routtab file), (Deny all traffic with the following rule D * * *)
+- Configure authorized connections using SAPGUI to use SAProuter for connection
+- In case a connection from unmanaged devices is required configure a specific authorized connections by using a secure password (Update routtab file for example P * * 3201 secure_password, allows requests to port 3201 if a password is used)
+- Continuous monitoring of the dev_route log. This will enable security teams to tune their ACLs according to their needs
 
 
 (1) - Reference control PT-I-PT-M01-003 to configure and enable SNC
 
 ## Verification of Control
 
-- [ ] Verify ACL file (routtab) to allocate any unwanted or misconfigured rules
-- [ ] Verify that an implicit deny is avaiable in the ACL file (i.e. D * * *)
-- [ ] Verify that a secure password is configured for authorized traffic
-- [ ] Verify that connections coming from SAPGUI are configured to us the SAProuter
-- [ ] Verify that the firewall is configured to allow the one port number for SAProuter
+- Verify ACL file (routtab) to allocate any unwanted or misconfigured rules
+- Verify that an implicit deny is avaiable in the ACL file (i.e. D * * *)
+- Verify that a secure password is configured for authorized traffic
+- Verify that connections coming from SAPGUI are configured to us the SAProuter
+- Verify that the firewall is configured to allow the one port number for SAProuter
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A3 Network Security/ Netzsicherheit

@@ -16,19 +16,19 @@ Security Audit Logs (SAL) are important to be activated and properly configured 
 
 It is important to activate and properly configure the UME properties pertaining to security audit logs. The following parameters help to do so:
 
-- [ ] ume.secaudit.get_object_name = TRUE
-- [ ] ume.secaudit.log_actor = TRUE
-- [ ] ume.logon.security_policy.log_client_hostaddress = TRUE
-- [ ] ume.logon.security_policy.log_client_hostname = FALSE (requires DNS lookup, which impacts system performance)
-- [ ] enable.xml.hardener = TRUE
+- ume.secaudit.get_object_name = TRUE
+- ume.secaudit.log_actor = TRUE
+- ume.logon.security_policy.log_client_hostaddress = TRUE
+- ume.logon.security_policy.log_client_hostname = FALSE (requires DNS lookup, which impacts system performance)
+- enable.xml.hardener = TRUE
 
-It is recommended to change the default severity of information being logged and set to a severity that your organization requires. The default severity is set to Info.
+It is recommended to change the level of information being logged according to the protection needs of the application. The minimal severity level should be set to *"Info"*.
 
 ## Verification of Control
 
-- [ ] Verify that security audit logs UME properties are configured
-- [ ] Verify what is being logged by logging into the Netweaver Administrator and then navigate to -> Troubleshooting -> Logs and Traces -> Log Configuration, from Show filed choose 'Logging Categories'
-- [ ] Verify the severity of information being logged
+- Verify that security audit logs UME properties are configured
+- Verify what is being logged by logging into the Netweaver Administrator and then navigate to -> Troubleshooting -> Logs and Traces -> Log Configuration, from Show filed choose 'Logging Categories'
+- Verify the log level settings for the severity level to be logged.
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)

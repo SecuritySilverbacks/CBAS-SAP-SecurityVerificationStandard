@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 ''' Tool for converting the OWASP CBAS SAP Security Maturity Model controls to various formats.
 
@@ -27,19 +27,24 @@
     '''
 
 import argparse
+import yaml
 from cbas import CBASSMM
 
 parser = argparse.ArgumentParser(description='Export the CBAS SAP SMM requirements.')
 parser.add_argument('--format', choices=['json', 'xml', 'csv'], default='json')
 parser.add_argument('--language', default='en')
+parser.add_argument('--config', default='export.yaml')
 
 args = parser.parse_args()
 
-m = CBASSMM(args.language)
+with open(args.config, mode='r') as configfile:
+    config = yaml.safe_load(configfile)
 
-if args.format == "csv":
-    print(m.to_csv())
-elif args.format == "xml":
-    print(m.to_xml())
-else:
-    print(m.to_json())
+    m = CBASSMM(source_language=args.language, config=config)
+
+    if args.format == "csv":
+        print(m.to_csv())
+    elif args.format == "xml":
+        print(m.to_xml())
+    else:
+        print(m.to_json())

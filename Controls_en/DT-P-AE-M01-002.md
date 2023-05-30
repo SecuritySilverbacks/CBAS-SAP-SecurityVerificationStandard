@@ -29,7 +29,7 @@ Activating security audit logs depends on which logs your organization wants to 
 - File downloads
 - Access to the file system that coincides with the valid logical paths and file names specified in the system  (particularly helpful in an analysis phase to determine where access to files takes place before activating the actual validation)
 - ICF recorder entries or changes to the administration settings
-- The use of digital signatures performed by the system
+- The use of digital signature validations performed by the system
 - Viruses found by the Virus Scan Interface
 - Errors that occur in the Virus Scan Interface
 - Unsuccessful password checks for a specific user in a specific client
@@ -40,7 +40,7 @@ Alerts can be configured when a certain event occurs or a threshold is reached, 
 
 ## Verification of Control
 
-- [ ] Configure alerts for important events to reactively respond to security events
+- Configure alerts for important events to reactively respond to security events
 
 
 ## References:

@@ -1,11 +1,11 @@
 ---
 Security Function: PT
 Category: Information Protection Processes and Procedures
-Technology: RFC Connections
+Technology: SAP ABAP
 Maturity Level: 1
-IPAC: Integration
+IPAC: Integration (I)
 Defender: Process
-Prerequisite: NA
+Prerequisite:
 ---
 
 ## Description

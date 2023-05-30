@@ -16,18 +16,18 @@ Single Sign-On (SSO) is recommended to be configured when multiple SAP systems a
 
 In order to protect issued logon tickets during transport, in Java based systems, the below profile parameters are required to be in place.  
 
-- [ ] Use HTTPS by setting ume.logon.security.enforce_secure_cookie = true
-- [ ] Set an expiry for the issued ticket by setting login.ticket_lifetime ≤ 8 (hh:mm)
-- [ ] Declare a cookie as HTTPonly by setting ume.logon.httponlycookie = true, this denies access to the issued cookie from the clients web browser by other applications such as Javascript access, plug-ins and so on.
+- Use HTTPS by setting ume.logon.security.enforce_secure_cookie = true
+- Set an expiry for the issued ticket by setting login.ticket_lifetime ≤ 8 (hh:mm)
+- Declare a cookie as HTTPonly by setting ume.logon.httponlycookie = true, this denies access to the issued cookie from the clients web browser by other applications such as Javascript access, plug-ins and so on.
 
 
 Note: This control assumes that SSO is already configured and used in the organization.
 
 ## Verification of Control
 
-- [ ] Verify if HTTPS profile parameter is set by checking ume.logon.security.enforce_secure_cookie = true
-- [ ] Verify if an expiry exists for issued logon tickets by verifying login.ticket_lifetime ≤ 8
-- [ ] Verify if the profile parameter ume.logon.httponlycookie = true
+- Verify if HTTPS profile parameter is set by checking ume.logon.security.enforce_secure_cookie = true
+- Verify if an expiry exists for issued logon tickets by verifying login.ticket_lifetime ≤ 8
+- Verify if the profile parameter ume.logon.httponlycookie = true
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A31 Configuration of SAP Single Sign-On (S) / Konfiguration von SAP Single-Sign-On (S)

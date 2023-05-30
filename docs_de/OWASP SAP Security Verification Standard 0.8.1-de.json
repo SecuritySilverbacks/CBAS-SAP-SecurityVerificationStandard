@@ -1,0 +1,1340 @@
+{
+  "Name": "Core Business Application - SAP Security Maturity Model",
+  "ShortName": "CBAS-SAPSMM",
+  "Version": "0.8",
+  "Description": "The SAP Security Maturity Model is a definition of controls to help SAP using organizations, security professionals,  service providers, tool vendors to define, test and verify the security of business critical SAP infrastructures.",
+  "Controls": [
+    {
+      "Shortcode": "DT-P-AE-M01-003",
+      "Security Function": "DT",
+      "CSF Category": "Anomalien und Ereignisse",
+      "Technology": "SAP ERP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nSystemprotokolle:\n\nDas Erkennen und Sammeln von Systemproblemen anhand von Systemprotokollen ist wichtig, damit das System mit guter Leistung l\u00e4uft. Indem Sie Ihr System gesund erhalten und am Laufen halten, vermeiden Sie fehlerbedingte Serviceunterbrechungen.\n\n",
+      "Implementation": "\nUnabh\u00e4ngig davon, ob Ihr Unternehmen einen UNIX- oder Windows-Host betreibt, sollten die Systemprotokolle regelm\u00e4\u00dfig \u00fcberpr\u00fcft werden. Es wird empfohlen, die Protokolle an einen zentralen Ort zu speichern, um zu vermeiden, dass Protokolle \u00fcberschrieben werden, sobald der Puffer voll ist; insbesondere bei Windows-Hosts.\n\nSie k\u00f6nnen Warnmeldungen konfigurieren, wenn ein bestimmtes Ereignis eintritt oder ein Schwellenwert erreicht wird. Dies tr\u00e4gt dazu bei, den \u00dcberpr\u00fcfungsprozess von Systemprotokollen zu automatisieren und die Arbeitsbelastung der Administratoren zu verringern. Das Versenden von Protokollen an eine zentrale Stelle hilft bei der Einrichtung von Alarmen.\n\n",
+      "Verification": [
+        "",
+        "- Pr\u00fcfen Sie Systemprotokolle \u00fcber die Transaktion SM21.",
+        "- Konfigurieren Sie Alarme f\u00fcr bestimmte Ereignisse wie Rollbacks und Systemfehlermeldungen, um reaktiv zu reagieren und Probleme zu beheben"
+      ],
+      "References": []
+    },
+    {
+      "Shortcode": "PT-P-AC-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Benutzerverwaltung, Authentifizierung und Zugriffskontrolle",
+      "Technology": "Betriebssystem",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDie Autorisierung, die Berechtigung und der Zugriff f\u00fcr SAP-Standardbenutzer m\u00fcssen innerhalb des verwendeten Betriebssystems ordnungsgem\u00e4\u00df gesichert und konfiguriert werden.\n",
+      "Implementation": "\nWie lokale Benutzer und Dom\u00e4nenbenutzer auf einem Windows-Rechner m\u00fcssen auch SAP-Standardbenutzer \u00fcber die entsprechenden Rechte und Berechtigungen innerhalb des Betriebssystems verf\u00fcgen.\n\n- Beschr\u00e4nken Sie den Zugriff auf die Benutzer root, SAPsid und dbsid auf jedem System\n- Sperren Sie den Benutzer dbsid nach der Erstinstallation f\u00fcr alle Anwendungsdienste\n- SAPsid sollte keine Rechte f\u00fcr die interaktive Anmeldung haben\n\nHinweis: SAP-Systeme d\u00fcrfen nicht auf Dom\u00e4nencontrollern installiert werden.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, dass das SAP-System nicht auf dem Dom\u00e4nencontroller installiert ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob alle Einschr\u00e4nkungen f\u00fcr SAP-Benutzer in Kraft sind.",
+        ""
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementierung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Windows (S) / Umsetzung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Windows (S)",
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A17 Implementierung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Unix (S) / Umsetzung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Unix (S)",
+        "- CIS CSC 3, 5, 12, 14, 15, 16, 18",
+        "- COBIT 5 DSS05.04",
+        "- ISA 62443-2-1:2009 4.3.3.7.3",
+        "- ISA 62443-3-3:2013 SR 2.1",
+        "- ISO/IEC 27001:2013 A.6.1.2, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5",
+        "- NIST SP 800-53 Rev. 4 AC-1, AC-2, AC-3, AC-5, AC-6, AC-14, AC-16, AC-24"
+      ]
+    },
+    {
+      "Shortcode": "PT-I-IP-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "I"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nUm die Remote Function Call (RFC)-Schnittstelle, die als Kommunikationsschnittstelle zwischen SAP-Systemen verwendet wird, richtig abzusichern, m\u00fcssen alle RFC-Verbindungen, RFC-Berechtigungen und RFC-Schnittstellen ber\u00fccksichtigt werden.\n",
+      "Implementation": "\nF\u00fcr alle RFC-Verbindungen muss eine einheitliche Verwaltungsvorgabe vorhanden sein; Eigentum und Nutzung der RFC-Verbindung sollten eindeutig dokumentiert sein. Au\u00dferdem muss ein vollst\u00e4ndiges Inventar f\u00fcr alle RFC-Verbindungen definiert und dokumentiert werden.\n\nAlle RFC-Verbindungen, die nicht verwendet werden, m\u00fcssen gel\u00f6scht werden. (Die Dokumentation sollte dies ebenfalls widerspiegeln)\n\n",
+      "Verification": [
+        "",
+        "- Feststellen, ob eine RFC-Verbindung verwendet wird, indem Sie die RFC-Laufzeitmonitor-Transaktion SRTM oder die Workload-Monitor-Transaktion ST03N verwenden.",
+        "- L\u00f6schen Sie alle nicht verwendeten RFC-Verbindungen.",
+        "- Vorgaben in Bezug auf bestehende RFC-Verbindungen sind verf\u00fcgbar und auf dem neuesten Stand."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Absicherung der SAP-RFC-Schnittstelle/ Absicherung der SAP-RFC-Schnittstelle",
+        "- SAP Security Baseline Template V2.0: 2.3.2.3"
+      ]
+    },
+    {
+      "Shortcode": "PT-I-PT-M01-003",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnik",
+      "Technology": "SAProuter",
+      "Maturity Level": "1",
+      "IPAC": [
+        "I"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nJede Kommunikation mit oder zwischen verschiedenen SAP-Systemen muss verschl\u00fcsselt werden. Mit Secure Network Communication (SNC) k\u00f6nnen Sie die Kommunikation zwischen verschiedenen Systemen verschl\u00fcsseln.\n\nSNC kann nur mit SAP-Protokollen verwendet werden. Alle anderen Internetprotokolle sollten durch Aktivierung von TLS gesch\u00fctzt werden.\n",
+      "Implementation": "\nStellen Sie sicher, dass Sie die Public Key Infrastructure (PKI) kennen und verstehen, bevor Sie fortfahren.\n\nDie Steuerung veranschaulicht, wie Sie den SAProuter f\u00fcr die Verwendung von SNC konfigurieren.\n\n- Laden Sie die CommonCryptoLib vom SAP-Supportportal herunter und extrahieren Sie sie.\n\n- Setzen Sie die Umgebungsvariable SNC_LIB = \\<Pfad zur CommonCryptoLib\\>.\n\n- Setzen Sie die Umgebungsvariable SECUDIR = \\<Saprouter-Verzeichnis\\>/sec\n\n- Signieren Sie ein Zertifikat f\u00fcr Ihren SAProuter \u00fcber eine Zertifizierungsstelle (CA) Ihres Vertrauens oder \u00fcber SAP\n\n- Erzeugen Sie Ihre pers\u00f6nlichen Sicherheitsumgebungsdateien (PSE), indem Sie den folgenden Befehl dort ausf\u00fchren, wo Sie Ihre SAProuter-Dateien abgelegt haben. *sapgenpse get_pse -v -a sha256WithRsaEncryption -s 2048 -r \\<csrfile\\> -p local.pse -x \\<password\\> \"CN=\\<Ihr spezifisches CN\\>\"*. \\<csrfile\\> ist der von Ihnen gew\u00e4hlte Dateiname, der f\u00fcr Ihre Certificate Signing Request (CSR) verwendet werden soll.\n\n- Senden Sie die Datei \\<csrfile\\> an Ihre Zertifizierungsstelle (CA), um das Zertifikat zu erhalten und fortzufahren\n\n- Kopieren Sie den Inhalt des empfangenen Zertifikats in eine Datei auf Ihrem SAProuter-System und importieren Sie es mit dem folgenden Befehl *sapgenpse import_own_cert -c \\<certca\\> -r \\<root CA certificate\\> -p local.pse*. \\<certca\\> ist die von Ihrer CA erhaltene Datei und \\<Stammzertifikat der CA\\> ist das Stammzertifikat der CA\n\n- Erzeugen Sie die Datei mit den Anmeldeinformationen mit dem folgenden Befehl *sapgenpse seclogin -p local.pse \\<pse password\\>*.\n\n- Test, um zu pr\u00fcfen, ob alles korrekt konfiguriert und installiert ist *sapgenpse get_my_name -v -n Issuer*.\n\n- Setzen Sie eine ACL in Ihrer saprouttab-Datei, um SNC-Verbindungen zuzulassen.\n\n- Starten Sie den SAProuter mit seinem SNC-Namen\n\nUm die Kommunikation mit externen SAP-Produkten, wie z.B. SAP Single Sign-On, zu sichern, sollten Sie die Sicherheitshinweise f\u00fcr dieses spezielle Produkt beachten.\n\nHinweis: Vor SAP NetWeaver 7.40 wird die Registerkarte SNC nur angezeigt, wenn der Parameter snc/enable aktiviert ist.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob alles korrekt konfiguriert und installiert ist *sapgenpse get_my_name -v -n Issuer*.",
+        "- \u00dcberpr\u00fcfen Sie die ACL-Datei (saprouttab), um zu \u00fcberpr\u00fcfen, ob SNC-Verbindungen erlaubt sind.",
+        ""
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A18 Abschaltung von unsicherer Kommunikation/ Disconnection of unsafe communication",
+        "- CIS CSC 8, 12, 15",
+        "- COBIT 5 DSS05.02, APO13.01",
+        "- ISA 62443-3-3:2013 SR 3.1, SR 3.5, SR 3.8, SR 4.1, SR 4.3, SR 5.1, SR 5.2, SR 5.3, SR 7.1, SR 7.6",
+        "- ISO/IEC 27001:2013 A.13.1.1, A.13.2.1, A.14.1.3",
+        "- NIST SP 800-53 Rev. 4 AC-4, AC-17, AC-18, CP-8, SC-7, SC-19, SC-20, SC-21, SC-22, SC-23, SC-24, SC-25, SC-29, SC-32, SC-36, SC-37, SC-38, SC-39, SC-40, SC-41, SC-43"
+      ]
+    },
+    {
+      "Shortcode": "DT-P-AE-M01-007",
+      "Security Function": "DT",
+      "CSF Category": "Anomalien und Ereignisse",
+      "Technology": "SAP ERP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nBenutzerinformationssystem:\n\nEin wichtiges Werkzeug f\u00fcr die interne und externe Pr\u00fcfung. Es hilft bei der Identifizierung von Anomalien in verschiedenen Listen, die im Benutzerinformationstool gefunden werden.\n",
+      "Implementation": "\nEs wird empfohlen, die verschiedenen Informationen, die \u00fcber das Benutzerinformationssystem verf\u00fcgbar sind, regelm\u00e4\u00dfig zu \u00fcberpr\u00fcfen, um Ihr SAP-System in \u00dcbereinstimmung mit internen Richtlinien oder externen Vorschriften zu halten und alle \u00c4nderungen zu ermitteln, die nicht intern genehmigt wurden.\n\nVerwendung:\n- Pflege von kritischen Berechtigungen und Berechtigungskombinationen\n- Pr\u00fcfung der Benutzer, denen kritische oder sensible Berechtigungen zugewiesen sind\n- Pr\u00fcfung welche Transaktionen in bestimmten Rollen enthalten sind\n- Rollen, Benutzer, Profile und Berechtigungen in einem einzelnen System oder system\u00fcbergreifend vergleichen\n- Pr\u00fcfung von \u00c4nderungsbelegen f\u00fcr das Berechtigungsprofil von Benutzern, Sicherheitsrichtlinien und ZBV-Einstellungen.\n\n",
+      "Verification": [
+        "",
+        ""
+      ],
+      "References": [
+        "- [SAP Support](https://help.sap.com/doc/saphelp_nw73ehp1/7.31.19/en-US/52/671261439b11d1896f0000e8322d00/content.htm?no_cache=true)"
+      ]
+    },
+    {
+      "Shortcode": "IY-C-RA-M01-003",
+      "Security Function": "IY",
+      "CSF Category": "Risikobewertung",
+      "Technology": "ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "C"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nSchutz von sicherheitsrelevanten Daten.\n\nSAP-Systeme enthalten gro\u00dfe Mengen an gesch\u00e4ftskritischen Daten. Das SAP-Standardsystem bietet verschiedene Mechanismen, um diese kritischen Daten vor unberechtigtem Zugriff zu sch\u00fctzen.\nFehler in kundenspezifischen Entwicklungen k\u00f6nnen jedoch unbefugte Zugriffe und Datenverluste erm\u00f6glichen. Wenn sich ein Mitarbeiter unbefugt Zugang zu Daten verschafft, kann er diese Daten anschlie\u00dfend in eine Umgebung \u00fcbertragen, die vom Unternehmen nicht mehr kontrolliert werden kann.\n\n",
+      "Implementation": "\n1. Die Spezifikation der \u00c4nderung enth\u00e4lt eine knappe Beschreibung der erforderlichen Datenschutzanpassungen gem\u00e4\u00df der \u00c4nderung.\n\n2. Im Rahmen des Code Change Review-Prozesses muss der gesamte benutzerdefinierte Code auf folgende Eigenschaften \u00fcberpr\u00fcft werden:\n  - Gesch\u00e4ftskritische Daten werden durch das Programm vor unbefugtem Zugriff gesch\u00fctzt werden.\n  - Unternehmensregeln und insbesondere gesetzliche Vorschriften beachtet werden:\n    - Umgang mit Anmeldedaten Diese Anforderungen an den Datenschutz m\u00fcssen insbesondere bei der Verarbeitung und Verwaltung von Anmeldedaten beachtet werden. Dazu geh\u00f6ren neben Login-Tokens, Passw\u00f6rtern und anderen m\u00f6glichen Authentifizierungsfaktoren auch Benutzernamen und Identit\u00e4tsinformationen von Benutzern. Authentifizierungsmerkmale m\u00fcssen bei der Speicherung, der \u00dcbertragung und bei der Eingabe den Anforderungen strengster Vertraulichkeit gen\u00fcgen. Zum Beispiel:\n      - Das Speichern von Kennw\u00f6rtern im Quelltext von Programmen ist ein Versto\u00df gegen diese Anforderung.\n      - Die Anzeige von Kennw\u00f6rtern im Klartext auf Anmeldebildschirmen ist ein Versto\u00df gegen diese Anforderung.\n      - Das Speichern von Passw\u00f6rtern im Klartext in Datenbanktabellen oder im Datensystem ist ein Versto\u00df gegen diese Anforderung.\n    Identit\u00e4tsinformationen m\u00fcssen auch in den von der Software erstellten Protokoll- und Ereignisdaten mit besonderer Sorgfalt gegen unbefugte und unangemessene Zugriffe gesch\u00fctzt werden.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfung, ob die Datenschutzanforderungen spezifiziert und dokumentiert sind und ihre \u00dcberpr\u00fcfung im Testprotokoll der \u00c4nderung dokumentiert ist.",
+        "- Pr\u00fcfen Sie, ob die \u00dcberpr\u00fcfung des Quellcodes bei allen benutzerdefinierten Code\u00e4nderungen auf die korrekte Umsetzung der Datenschutzkriterien durchgef\u00fchrt und dokumentiert wird."
+      ],
+      "References": [
+        "",
+        "- CIS CSC 4",
+        "- COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04",
+        "- ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12",
+        "- ISO/IEC 27001:2013 Klausel 6.1.2",
+        "- NIST SP 800-53 Rev. 4 RA-3, SI-5, PM-12, PM-16",
+        "- OWASP ASVS 2.0 V8.3.1, V8.3.4"
+      ]
+    },
+    {
+      "Shortcode": "PT-A-AC-M01-011",
+      "Security Function": "PT",
+      "CSF Category": "Benutzerverwaltung, Authentifizierung und Zugriffskontrolle",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "A"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nEs wird empfohlen, Single Sign-On (SSO) zu konfigurieren, wenn mehrere SAP-Systeme in der Umgebung des Unternehmens laufen. SSO kann den Prozess der Verwaltung und Konfiguration von Benutzerberechtigungen f\u00fcr mehrere Systeme und Anwendungen vereinfachen. Einem einzelnen Benutzer den Zugriff auf mehrere Anwendungen zu gestatten, birgt eigene Sicherheitsrisiken und Bedrohungen; eine sichere Konfiguration der ausgestellten Anmeldetickets muss vorhanden sein, um potenzielle Bedrohungen zu vermeiden.  \n",
+      "Implementation": "\nUm ausgestellte Anmeldetickets w\u00e4hrend des Transports in ABAP-basierten Systemen zu sch\u00fctzen, m\u00fcssen die folgenden Profilparameter vorhanden sein.  \n\n- Verwenden Sie HTTPS, indem Sie login/ticket_only_by_https = 1 setzen.\n- Um sicherzustellen, dass das Anmeldeticket an den erstellenden Host zur\u00fcckgeschickt wird, setzen Sie login/ticket_only_to_host = 1\n- Deklarieren Sie ein Cookie als HTTPonly, indem Sie icf/set_HTTPonly_flag_on_cookies = 1 oder 3 setzen. Dadurch wird anderen Anwendungen wie Applets, Plug-ins usw. der Zugriff auf das ausgestellte Cookie vom Webbrowser des Clients verweigert.\n\n\nHinweis: Diese Kontrolle setzt voraus, dass SSO in der Organisation bereits konfiguriert ist und verwendet wird.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob der HTTPS-Profilparameter gesetzt ist, indem Sie login/ticket_only_by_https \u00fcberpr\u00fcfen.",
+        "- \u00dcberpr\u00fcfen Sie, ob nur der erstellende Host das Anmeldeticket erh\u00e4lt, indem Sie login/ticket_only_to_host \u00fcberpr\u00fcfen.",
+        "- Pr\u00fcfen Sie, ob der Profilparameter icf/set_HTTPonly_flag_on_cookies = 1 oder 3 ist.",
+        ""
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A31 Konfiguration von SAP Single-Sign-On (S) / Konfiguration von SAP Single-Sign-On (S)",
+        "- SAP Security Baseline Template V2.1: 2.3.2.4.1"
+      ]
+    },
+    {
+      "Shortcode": "PT-A-AC-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Benutzerverwaltung, Authentifizierung und Zugriffskontrolle",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "A"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDie SAP-Benutzerverwaltung sollte nur ausgew\u00e4hlten Administratoren gestattet sein und \u00fcber die entsprechenden Rechte verf\u00fcgen, um die Erstellung, das L\u00f6schen, die Zuweisung von Rollen und Profilen sowie die Passwortverwaltung von Benutzern durchzuf\u00fchren.\n",
+      "Implementation": "\nRechte zur Verwaltung von Benutzern in SAP sollten nur an Benutzer vergeben werden, die dieselbe Jobrolle haben oder von der Organisation ausgew\u00e4hlt wurden(1).\n\nDie Protokollierung und \u00dcberwachung von SAP-Administratoren erleichtert die Identifizierung von administrativem Missbrauch.\n\n(1) - Die meisten Benutzeradministratoren kommen aus der IT-Abteilung eines Unternehmens. Einige Unternehmen \u00fcberlassen die Benutzerverwaltung der Personalabteilung, was vorzuziehen ist.\n\n",
+      "Verification": [
+        "",
+        "- Identifizieren Sie die SAP-Benutzeradministratoren und \u00fcberpr\u00fcfen Sie, ob diese Rollen nur erlaubten Benutzern zugewiesen werden.",
+        "- Protokolle sind verf\u00fcgbar, um den Missbrauch von administrativen Aktionen zu \u00fcberpr\u00fcfen",
+        "- \u00dcberwachung ist verf\u00fcgbar, um jeglichen Missbrauch bei der Benutzerverwaltung aufzudecken"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A5 Konfiguration und Absicherung der SAP-Benutzerverwaltung / Konfiguration und Absicherung der SAP-Benutzerverwaltung",
+        "- SAP Security Baseline Template V2.1: 2.3.1",
+        "- CIS CSC 1, 5, 15, 16",
+        "- COBIT 5 DSS05.04, DSS06.03",
+        "- ISA 62443-2-1:2009 4.3.3.5.1",
+        "- ISA 62443-3-3:2013 SR 1.1, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9",
+        "- ISO/IEC 27001:2013 A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3",
+        "- NIST SP 800-53 Rev. 4 AC-1, AC-2, IA-1, IA-2, IA-3, IA-4, IA-5, IA-6, IA-7, IA-8, IA-9, IA-10, IA-11"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-DS-M01-003",
+      "Security Function": "PT",
+      "CSF Category": "Datensicherheit",
+      "Technology": "SAP Java",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nUm die Menge an Informationen zu reduzieren, die bei der Auskundschaftung durch Angreifer offengelegt werden, wird empfohlen, alle Informationen zur Systemversion oder detaillierte Fehlerprotokolle zu entfernen, die gesammelt werden k\u00f6nnen, um m\u00f6gliche Schwachstellen auszunutzen, die sich aus diesen Informationen ergeben k\u00f6nnten.\n",
+      "Implementation": "\nUm eine beliebige Version aus dem SAP Java-System Ihres Unternehmens zu entfernen, setzen Sie die Einstellung UseServerHeader sowohl im HTTP-Providerdienst (globale Konfiguration des Dispatchers) als auch in den Serverknoten auf false.\n\n",
+      "Verification": [
+        "",
+        "- Setzen Sie UserServerHeader im HTTP-Provider-Dienst in der globalen Konfiguration des Dispatchers auf false.",
+        "- Setzen Sie UserServerHeader in den Server-Knoten auf false."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Sichere Konfiguration des SAP-ABAP-Stacks (B) / Secure Konfiguration des SAP-ABAP-Stacks (B)",
+        "- SAP Security Baseline Template V2.1: 2.2.1.2.2"
+      ]
+    },
+    {
+      "Shortcode": "PT-I-IP-M01-005",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "I"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nRFC-Gateways sind h\u00e4ufig auf ABAP-, Java- und Standalone-Systemen zu finden. Die Sicherung des Zugriffs auf die RFC-Dienste verhindert den unauthentifizierten und nicht-berechtigten Zugriff.\n",
+      "Implementation": "\nF\u00fcr die verschiedenen Systeme sollten Profilparameter festgelegt werden, um den Zugriff von verschiedenen RFC-Verbindungen aus zu beschr\u00e4nken.\n\nProfil-Parameter:\n\n1. gw/sec_info muss auf Dateiname secinfo (ACL-Datei) gesetzt werden\n2. gw/reg_info muss auf den Dateinamen reginfo (ACL-Datei) gesetzt werden\n3. gw/reg_no_conn_info auf 1 oder h\u00f6here ungerade Zahlen gesetzt\n4. gw/acl_mode auf 1 gesetzt (anf\u00e4ngliche Sicherheitsumgebung), wenn Gateway-Zugriffslisten nicht existieren oder nicht mit den Profilparametern verkn\u00fcpft sind, kann das Setzen dieses Profilparameters Verbindungen unterbrechen.\n5. gw/monitor auf 1 gesetzt (\u00dcberwachung nur auf lokalen Zugriff eingestellt)\n6. gw/sim_mode auf 0 gesetzt (kann vor\u00fcbergehend auf 1 gesetzt werden, um ACL-Dateien zu testen und fehlende Eintr\u00e4ge zu finden, die der ACL hinzugef\u00fcgt werden m\u00fcssen. Belassen Sie den Wert nicht auf 1)\n7. gw/rem_start auf disable oder SSH_SHELL gesetzt (eine akzeptable Methode, um den Start von Programmen \u00fcber das RFC-Gateway zu erm\u00f6glichen)\n",
+      "Verification": [
+        "",
+        "- Profilparameter werden gem\u00e4\u00df dem Abschnitt zur Implementierung eingestellt",
+        "- Fehlende Eintr\u00e4ge werden \u00fcberpr\u00fcft und wenn n\u00f6tig der Zugriffskontrollliste hinzugef\u00fcgt (siehe Nr. 6 im Abschnitt zur Implementierung)"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Absicherung der SAP-RFC-Schnittstelle/ Absicherung der SAP-RFC-Schnittstelle",
+        "- SAP Security Baseline Template V2.0: 2.3.2.3.1",
+        "- SAP-Hinweis 1480644",
+        "- SAP-Hinweis 1408081",
+        "- SAP-Hinweis 1444282",
+        "- SAP-Hinweis 1298433",
+        "- SAP-Hinweis 64016",
+        "- SAP-Hinweis 1689663"
+      ]
+    },
+    {
+      "Shortcode": "DT-P-AE-M01-006",
+      "Security Function": "DT",
+      "CSF Category": "Anomalien und Ereignisse",
+      "Technology": "SAP ERP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nProtokollierung des Lesezugriffs:\n\nEin wichtiges Tool zur \u00dcberwachung und Aufzeichnung von Lesezugriffen auf geheime oder sensible Daten in SAP-Systemen. Das Tool hilft bei der Untersuchung einer Sicherheitsverletzung oder eines Informationslecks.  \n\n",
+      "Implementation": "\nDie folgenden Konfigurationsschritte m\u00fcssen durchgef\u00fchrt werden, um die Protokollierung des Read Access Logs (RAL) zu \u00fcberwachen und zu konfigurieren.\n\n1. Bestimmen Sie, welche Art von Daten \u00fcber RAL protokolliert werden soll\n2. Erkl\u00e4ren Sie einen Zweck f\u00fcr die Protokollierung der Daten, um Daten mit regulatorischer Relevanz zu identifizieren.\n3. Definieren Sie die zu \u00fcberwachenden Schnittstellen mittels RAL channels\n4. Definieren Sie die Log-Dom\u00e4nen der verschiedenen Kan\u00e4le\n5. Definieren Sie die Bedingungen f\u00fcr die Zugrifssprotokollierung\n\n",
+      "Verification": [
+        "",
+        "- Konfigurieren und \u00fcberwachen Sie die Protokollierung des Lesezugriffs \u00fcber die Transaktion SRALMANAGER"
+      ],
+      "References": []
+    },
+    {
+      "Shortcode": "IY-C-RA-M01-002",
+      "Security Function": "IY",
+      "CSF Category": "Risikobewertung",
+      "Technology": "ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "C"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nTestbarkeit von ABAP-Software-Implementierungen.\n\nEin zentrales Sicherheitskonzept des SAP-Standardsystems ist die Trennung von Entwicklungs-, Test- und Produktivsystemen.\nDas Testsystem spielt dabei eine wichtige Rolle. Im Testsystem wird die Entscheidung getroffen, ob eine Anwendung den Anforderungen des Unternehmens gerecht wird. Dabei werden sowohl funktionale als auch nicht-funktionale Qualit\u00e4tsaspekte der Anwendung gepr\u00fcft. Damit eine Qualit\u00e4tspr\u00fcfung zuverl\u00e4ssige Ergebnisse liefert, reicht es nicht aus, dass der Tester \u00fcber umfassende Fachkenntnisse im Bereich der Qualit\u00e4tssicherung verf\u00fcgt. Die Anwendung selbst muss auch testbar sein. Das bedeutet, dass ein Tester die Anwendung zu Testzwecken ausf\u00fchren kann und dass der Tester im Zweifelsfall den Quellcode der Anwendung analysieren kann.\n\nWenn eine bestimmte Funktionalit\u00e4t in einer Anwendung nicht (von einem Tester) im Testsystem ausgef\u00fchrt werden kann, kann der Tester nicht feststellen, ob sie die Qualit\u00e4tsanforderungen erf\u00fcllt. In diesem Fall w\u00fcrde ungepr\u00fcfter Code in ein produktives System \u00fcbertragen werden und das System einem ungepr\u00fcften Risiko aussetzen.\n",
+      "Implementation": "\n1. Alle Eigenentwicklungen, die in Systemen zur Verarbeitung produktiver Daten eingesetzt werden sollen, m\u00fcssen testbar sein. Das bedeutet, dass alle Funktionen dokumentiert sind und in einem Testsystem analysiert und ausgef\u00fchrt werden k\u00f6nnen.\n\n2. Kundenspezifische Entwicklungen, die nicht in Systemen zur Verarbeitung produktiver Daten verwendet werden sollten, d\u00fcrfen nicht in entsprechende Systemen ausgeliefert werden\n\n3. Im Rahmen der \u00dcberpr\u00fcfung von Code\u00e4nderungen muss der gesamte benutzerdefinierte Code daraufhin \u00fcberpr\u00fcft werden, dass:\n  - die Sicherheitsanforderungen mit standardisierten und nachvollziehbaren Verfahren umgesetzt werden. Verschleierung keine valide Sicherheitsstrategie.\n  - die \u00c4nderung eine Architektur implementiert und  Schnittstellen so verwendet, dass Sicherheitsmechanismen zum Schutz der Gesch\u00e4ftslogik nicht durch Seiteneffekte oder durch die Wiederverwendung von Komponenten der Implementierung umgangen werden k\u00f6nnen.\n  - eine Techniken zur Codeverschleierung wie die ab ABAP Release 7.4x verf\u00fcgbare Funktion zum Verbergen von Code verwendet wird.\n  - die Implementierung sich nicht darauf beschr\u00e4nkt, Code auf der Grundlage von systemspezifischen Variablen wie sy-mandt und sy-sysid auszuf\u00fchren. Dadurch erh\u00e4lt ein ABAP-Programm die Informationen \u00fcber das ausf\u00fchrende System, in dem es gerade ausgef\u00fchrt wird, den die Tests f\u00fcr Zielsystem nicht entsprechend simulieren k\u00f6nnen.\n",
+      "Verification": [
+        "",
+        "- Pr\u00fcfen Sie, ob Testausf\u00fchrungskriterien und -pfade festgelegt und dokumentiert sind und ihre Ausf\u00fchrung im Testprotokoll der \u00c4nderung dokumentiert ist.",
+        "- Pr\u00fcfen Sie, ob die \u00dcberpr\u00fcfung des Quellcodes f\u00fcr alle benutzerdefinierten Code\u00e4nderungen durchgef\u00fchrt und dokumentiert wird, um die korrekte Implementierung der Testbarkeit in der \u00c4nderung zu gew\u00e4hrleisten."
+      ],
+      "References": [
+        "",
+        "- CIS CSC 4",
+        "- COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04",
+        "- ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12",
+        "- ISO/IEC 27001:2013 Klausel 6.1.2",
+        "- NIST SP 800-53 Rev. 4 RA-3, SI-5, PM-12, PM-16",
+        "- BSI APP (Februar 2020) 4.6 A16, A21"
+      ]
+    },
+    {
+      "Shortcode": "PT-A-AC-M01-010",
+      "Security Function": "PT",
+      "CSF Category": "Benutzerverwaltung, Authentifizierung und Zugriffskontrolle",
+      "Technology": "SAP HANA",
+      "Maturity Level": "1",
+      "IPAC": [
+        "A"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nSAP-Standardbenutzer m\u00fcssen verwaltet und sicher konfiguriert werden, um jeglichen Missbrauch von SAP-Systemen zu verhindern. Dazu geh\u00f6rt das \u00c4ndern von Standardpassw\u00f6rtern und die Einschr\u00e4nkung von Standardbenutzern.\n",
+      "Implementation": "\nDie folgenden Standardbenutzer, die in HANA zu finden sind, m\u00fcssen verwaltet und sicher konfiguriert werden: (Der Abschnitt \u00dcberpr\u00fcfung der Ma\u00dfnahme hilft Unternehmen, die grundlegenden Anforderungen f\u00fcr die Sicherheit der Benutzer zu erf\u00fcllen)\n1. SYSTEM\n\n",
+      "Verification": [
+        "",
+        "- SYSTEM",
+        "  - Administrator-Benutzer wurden erstellt",
+        "  - SYSTEM-Benutzer soll deaktiviert werden",
+        "  - G\u00fcltige Zeitspanne des Benutzers SYSTEM nicht einschr\u00e4nken"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Konfiguration und Absicherung der SAP-Benutzerverwaltung / Konfiguration und Absicherung der SAP-Benutzerverwaltung",
+        "- SAP Security Baseline Template V2.1: 2.3.1.2.2"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-DS-M01-002",
+      "Security Function": "PT",
+      "CSF Category": "Datensicherheit",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nUm die Menge an Informationen, die bei der Auskundschaftung durch Angreifer offengelegt werden, zu reduzieren, wird empfohlen, alle Informationen zur Systemversion oder detaillierte Fehlerprotokolle zu entfernen, die gesammelt werden k\u00f6nnen, um m\u00f6gliche Schwachstellen auszunutzen, die sich aus diesen Informationen ergeben k\u00f6nnten.\n",
+      "Implementation": "\nUm alle detaillierten Fehler aus dem SAP ABAP-System Ihres Unternehmens zu entfernen, setzen Sie den Profilparameter login/show_detailed_errors auf 0.\n\nVerwenden Sie die nachstehenden Parameter, um die Parameter anzuzeigen und zu \u00e4ndern:\n\n- RZ11-Transaktion: zum Anzeigen von Informationen \u00fcber Parameter\n- RZ10-Transaktion: zum Anzeigen und \u00c4ndern von Profilparametern\n- RSPARAM-Bericht zum Anzeigen von Parametern (verwenden Sie Transaktion SA38)\n\n",
+      "Verification": [
+        "",
+        "- Profilparameter login/show_detailed_errors=0"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Sichere Konfiguration des SAP-ABAP-Stacks (B) / Secure Konfiguration des SAP-ABAP-Stacks (B)",
+        "- SAP Security Baseline Template V2.1: 2.2.1.2.1"
+      ]
+    },
+    {
+      "Shortcode": "DT-P-AE-M01-002",
+      "Security Function": "DT",
+      "CSF Category": "Anomalien und Ereignisse",
+      "Technology": "SAP ERP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nProtokolle der Sicherheits\u00fcberpr\u00fcfung:\n\nDie Identifizierung und Erfassung sicherheitsrelevanter Aktivit\u00e4ten ist wichtig f\u00fcr die Sammlung von Beweisen nach einem Sicherheitsvorfall oder Ereignis. Das Sicherheitsprotokoll kann sensible Daten enthalten, die ordnungsgem\u00e4\u00df gespeichert und verschl\u00fcsselt werden m\u00fcssen.  \n",
+      "Implementation": "\nDie Aktivierung von Sicherheitsauditprotokollen h\u00e4ngt davon ab, welche Protokolle Ihr Unternehmen sammeln m\u00f6chte. Die verf\u00fcgbaren Protokolle sind unten aufgef\u00fchrt:\n\n- Erfolgreiche und erfolglose Dialog-Anmeldeversuche\n- Erfolgreiche und erfolglose RFC-Anmeldeversuche\n- RFCs zu Funktionsbausteinen\n- \u00c4nderungen an Benutzerstamms\u00e4tzen\n- Erfolgreiche und erfolglose Transaktionsstarts\n- Erfolgreiche und erfolglose Reportstarts\n- \u00c4nderungen an der Audit-Konfiguration\n- Aktivierung und Deaktivierung der HTTP-Sicherheitssitzungsverwaltung oder Instanzen, in denen HTTP-Sicherheitsabschnitte hart verlassen wurden\n- Datei-Downloads\n- Zugriffe auf das Dateisystem, die mit den im System angegebenen g\u00fcltigen logischen Pfaden und Dateinamen \u00fcbereinstimmen (besonders hilfreich in einer Analysephase, um festzustellen, wo der Zugriff auf Dateien stattfindet, bevor die eigentliche \u00dcberpr\u00fcfung aktiviert wird)\n- ICF-Recorder-Eintr\u00e4ge oder \u00c4nderungen an den Verwaltungseinstellungen\n- Die Valididerung von digitalen Signaturen, die vom System durchgef\u00fchrt werden\n- Viren, die von der Viren-Scan-Schnittstelle gefunden wurden\n- Fehler, die in der Viren-Scan-Schnittstelle auftreten\n- Erfolglose Passwortpr\u00fcfungen f\u00fcr einen bestimmten Benutzer in einem bestimmten Client\n\nPersonenbezogene Daten k\u00f6nnen in bestimmten Sicherheitsprotokollen zu finden sein. Achten Sie darauf, dass Sie bei der Speicherung personenbezogener Daten alle Datenschutzbestimmungen einhalten, die f\u00fcr Ihr Unternehmen gelten.\n\nWarnungen k\u00f6nnen konfiguriert werden, wenn ein bestimmtes Ereignis eintritt oder ein Schwellenwert erreicht wird. Dies tr\u00e4gt dazu bei, den \u00dcberpr\u00fcfungsprozess von Sicherheitsauditprotokollen zu automatisieren und die Arbeitsbelastung der Administratoren zu verringern. Das Versenden von Protokollen an eine zentrale Stelle hilft bei der Einrichtung von Alarmen.\n",
+      "Verification": [
+        "",
+        "- Konfigurieren Sie Alarme f\u00fcr wichtige Ereignisse, um reaktiv auf Sicherheitsereignisse zu reagieren",
+        ""
+      ],
+      "References": []
+    },
+    {
+      "Shortcode": "PT-I-PT-M01-002",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnik",
+      "Technology": "SAProuter",
+      "Maturity Level": "1",
+      "IPAC": [
+        "I"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nWenn Sie SAPGUI- oder RFC-Verbindungen verwenden, um vom Internet oder von verschiedenen externen Netzwerken aus auf ver\u00f6ffentlichte SAP-Systeme zuzugreifen, die zu Ihrem Unternehmen geh\u00f6ren, muss SAProuter ordnungsgem\u00e4\u00df konfiguriert werden, um den Datenverkehr zuzulassen und zu verweigern. Der SAProuter muss auch mit der Firewall Hand in Hand arbeiten, um verschiedene Zugriffsregeln zu \u00fcbernehmen und eine Multi-Access-Control-Architektur zu erm\u00f6glichen.\n",
+      "Implementation": "\nDie Implementierung sicherer Verbindungen von externen Netzwerken oder dem Internet aus erfordert eine kontinuierliche Abstimmung und Anpassung, um unbefugten Zugriff auf SAP-Systeme zu verhindern. Die unten stehende Implementierung ist eine Basis, die es Unternehmen erm\u00f6glicht, sichere Verbindungen zu ihren internen Systemen zu implementieren.\n\n- Konfigurieren Sie Ihre Firewall so, dass sie nur einen Port zul\u00e4sst, 32NN, wobei NN die Instanznummer des Unternehmens f\u00fcr den SAProuter ist.\n- Konfigurieren Sie SNC(1), um dem SAP-Support eine sichere Anmeldung an Ihrem System zu erm\u00f6glichen. (Dies ist haupts\u00e4chlich f\u00fcr Supportzwecke gedacht)\n- Konfigurieren Sie ein implizites Deny in der letzten Zeile der ACL-Datei (routtab-Datei), (Verweigern Sie jeglichen Datenverkehr mit der folgenden Regel D * * *)\n- Konfigurieren Sie autorisierte Verbindungen \u00fcber SAPGUI, um SAProuter f\u00fcr die Verbindung zu verwenden\n- F\u00fcr den Fall, dass eine Verbindung von nicht verwalteten Ger\u00e4ten erforderlich ist, konfigurieren Sie eine bestimmte autorisierte Verbindung mit Hilfe eines sicheren Passworts (Aktualisieren Sie die routtab-Datei, z.B. P * * 3201 secure_password, erlaubt Anfragen an Port 3201, wenn ein Kennwort verwendet wird)\n- Kontinuierliche \u00dcberwachung des dev_route-Protokolls. Dies erm\u00f6glicht es den Sicherheitsteams, ihre ACLs auf ihre Bed\u00fcrfnisse abzustimmen.\n\n\n(1) - Referenzsteuerung PT-I-PT-M01-003 zur Konfiguration und Aktivierung von SNC\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie die ACL-Datei (routtab), um unerw\u00fcnschte oder falsch konfigurierte Regeln zuzuweisen.",
+        "- \u00dcberpr\u00fcfen Sie, ob in der ACL-Datei eine implizite Verweigerung vorhanden ist (d.h. D * * *)",
+        "- \u00dcberpr\u00fcfen Sie, ob ein sicheres Passwort f\u00fcr autorisierten Datenverkehr konfiguriert ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob Verbindungen, die von SAPGUI kommen, so konfiguriert sind, dass sie den SAProuter benutzen.",
+        "- \u00dcberpr\u00fcfen Sie, ob die Firewall so konfiguriert ist, dass sie die eine Portnummer f\u00fcr SAProuter zul\u00e4sst."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A3 Netzwerksicherheit/ Netzsicherheit",
+        "- CIS CSC 8, 12, 15",
+        "- COBIT 5 DSS05.02, APO13.01",
+        "- ISA 62443-3-3:2013 SR 3.1, SR 3.5, SR 3.8, SR 4.1, SR 4.3, SR 5.1, SR 5.2, SR 5.3, SR 7.1, SR 7.6",
+        "- ISO/IEC 27001:2013 A.13.1.1, A.13.2.1, A.14.1.3",
+        "- NIST SP 800-53 Rev. 4 AC-4, AC-17, AC-18, CP-8, SC-7, SC-19, SC-20, SC-21, SC-22, SC-23, SC-24, SC-25, SC-29, SC-32, SC-36, SC-37, SC- 38, SC-39, SC-40, SC-41, SC-43"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-PT-M01-010",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnologie",
+      "Technology": "SAP Java",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDer Schutz vor b\u00f6swilligem oder unerkanntem Zugriff auf die Anwendungsserver \u00fcber den Message Server ist entscheidend f\u00fcr die Aufrechterhaltung der Integrit\u00e4t, Verf\u00fcgbarkeit und Vertraulichkeit der verschiedenen Anfragen zwischen den Anwendungsservern eines SAP-System, dass in Form eines Clusters betrieben wird.\n",
+      "Implementation": "\nEin Netzwerkger\u00e4t, das als abtr\u00fcnniger Anwendungsserver fungiert, kann ein hohes Risiko f\u00fcr das Unternehmen darstellen, wenn die Kommunikation mit legitimen Anwendungsservern zugelassen wird..\n\nF\u00fcr den Message Server m\u00fcssen Zugriffskontrolllisten (ACLs) konfiguriert werden, um Angriffe auf die Vertrauensstellung zwischen legitimen Anwendungsservern einzud\u00e4mmen und abzuwehren.\n\n- Profilparameter ms/acl_info ist im Default Profil angelegt und verweist auf eine g\u00fcltige ACL-Datei.\n- ACL-Datei sollte keinen Eintrag enthalten, der alle Hosts zul\u00e4sst (d.h. HOST=* ist kritisch)\n- Trennen Sie die Ports auf dem Message-Server f\u00fcr interne (1) und externe Kommunikation (2)\n- Profilparameter rdisp/msserv_internal definiert die zu verwendenden internen Ports\n- Unterbinden der Kommunikation von anderen Netzwerkger\u00e4ten zu dem im Profilparameter rdisp/msserv_internal definierten Port\n- Externe \u00dcberwachung des Message Servers durch Setzen des Profilparameters ms/monitor=0 unterbinden\n- Externe Verwaltung des Message-Servers durch Setzen des Profilparameters ms/admin_port=0 verbieten\n\n(1) - Interne Kommunikation dient der Kommunikation zwischen verschiedenen Anwendungsdiensten im Unternehmen\n\n(2) - Externe Kommunikation dient der Kommunikation mit den Benutzern/Kunden\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie die ACLs f\u00fcr den Message Server anhand des Profilparameters ms/acl_info",
+        "- \u00dcberpr\u00fcfen Sie, dass HOST=* nicht in der ACL definiert ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob die Ports f\u00fcr internen und externen Datenverkehr aufgeteilt sind und ob die Firewall die Kommunikation zum internen Port blockiert.",
+        "- \u00dcberpr\u00fcfen Sie, dass der Profilparameter ms/monitor=0 ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob der Profilparameter ms/admin_port=0 ist."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A9 Absicherung und \u00dcberwachung des Message-Servers (B) / Protection and monitoring of the Message-Servers (B)",
+        "- SAP Security Baseline Template V2.1: 2.2.1.4, 2.2.1.4.1, 2.2.1.4.2"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-012",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "Linux",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDie St\u00e4rkung und H\u00e4rtung des Betriebssystems, auf dem das SAP-System des Unternehmens l\u00e4uft, ist entscheidend f\u00fcr die Sicherheit Ihrer SAP-Implementierung und Ihres Netzwerks.\n",
+      "Implementation": "\nWenn Ihr Unternehmen andere Anwendungen unter Linux einsetzt, sollte es bereits eine definierte Baseline f\u00fcr den Einsatz von Linux-Maschinen geben. Im Folgenden finden Sie einige Bereiche, die Sie bei der Absicherung von SAP-Systemen unter Linux im Auge behalten sollten.\n\n - Verbieten Sie externe Root-Anmeldungen\n - Entfernen Sie nicht ben\u00f6tigte Dienste und Konten\n - Entfernen Sie alle nicht ben\u00f6tigten Linux-Anwendungen, Funktionen, Rollen und Komponenten\n - Deaktivieren Sie die Verwendung von X-Window-Systemen (SAP-Anwendungen ben\u00f6tigen sie nicht)\n - Verwenden Sie kein Telnet oder FTP f\u00fcr die Datei\u00fcbertragung\n - Regelm\u00e4\u00dfig Updates einspielen\n - Vermeiden Sie die Verwendung von SUID/SGID mit m\u00f6glicherweise schwachstellenbehafteten Programmen\n - Dateien werden durch die Konfiguration der Standard-Dateimaske mit den entsprechenden Berechtigungen erstellt\n - \u00dcberpr\u00fcfen Sie regelm\u00e4\u00dfig Signaturen und Schl\u00fcssel von heruntergeladenen Anwendungen oder Patches\n\nEs wird empfohlen, die Vorgaben des Unternehmens f\u00fcr die Absicherung von Linux-Rechnern zu befolgen, sofern sie existieren.\n\nWenn Ihr Unternehmen SUSE Linux f\u00fcr das Hosting von SAP-Anwendungen verwendet, sollten Sie die folgenden Punkte beachten:\n\n- Installieren und konfigurieren Sie den SUSE Security Checker (seccheck), um Benachrichtigungen \u00fcber alle Sicherheits\u00e4nderungen zu aktivieren.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob unerw\u00fcnschte Anwendungen, Dienste, Funktionen, Rollen und Komponenten entfernt wurden",
+        "- \u00dcberpr\u00fcfen Sie, ob die Dateiberechtigungen richtig konfiguriert sind.",
+        "- \u00dcberpr\u00fcfen Sie, ob Telnet und FTP nicht verwendet werden",
+        "- \u00dcberpr\u00fcfen Sie, ob regelm\u00e4\u00dfig Sicherheitsupdates durchgef\u00fchrt werden"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementierung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Windows (S) / Umsetzung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Windows (S)"
+      ]
+    },
+    {
+      "Shortcode": "PT-PA-IP-M01-002",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP Java",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P",
+        "A"
+      ],
+      "Defender": [
+        "Prozess",
+        "&",
+        "Technologie"
+      ],
+      "Prerequisites": [
+        "PT-A-AC-M01-009"
+      ],
+      "Description": "\n Standard-Benutzer, die auf SAP-Systeme zugreifen d\u00fcrfen, sollten ordnungsgem\u00e4\u00df verwaltet und konfiguriert werden. Auf diese Weise k\u00f6nnen Unternehmen das Prinzip der geringsten Privilegien befolgen.\n",
+      "Implementation": "\nDie Standardpassw\u00f6rter f\u00fcr die Standard-Benutzer sollten ge\u00e4ndert werden und die Passwortrichtlinie des Unternehmens(1) sollte angewendet werden. Dies gilt insbesondere f\u00fcr die bei der Installation definierte Benutzer (Liste gem\u00e4\u00df SAP Namensvorschlag):\n- J2EE_ADM_\\<SID\\>\n- J2EE_GST_\\<SID\\> \n- SAPJSF_\\<SID\\>\n- Administrator\n- Guest\n- pcd_service\n- ume_service\n- SAP\\*\n\nStandard-Benutzer, die nicht ben\u00f6tigt werden, sollten gel\u00f6scht oder deaktiviert werden.\n\n(1) - Passwortrichtlinien \u00e4ndern sich von Unternehmen zu Unternehmen, abh\u00e4ngig von verschiedenen Kriterien wie der Kritikalit\u00e4t der Branche, lokalen oder bundesstaatlichen Gesetzen, Sicherheitsstandards, die f\u00fcr die Branche verbindlich sind, usw.\n",
+      "Verification": [
+        "",
+        "- Standard-Passwort f\u00fcr Standard-Benutzer-IDs wird ge\u00e4ndert",
+        "- Die Kennwortrichtlinie wird in allen SAP-Systemen ordnungsgem\u00e4\u00df angewendet.",
+        "- Standard-Benutzer werden gel\u00f6scht und deaktiviert, wenn sie nicht verwendet werden"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Absicherung der ausgelieferten SAP-Standardbenutzer-IDs / Absicherung der ausgelieferten SAP-Standardbenutzer-Kennungen",
+        "- SAP Security Baseline Template V2.0: 2.3.1"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-PT-M01-011",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnologie",
+      "Technology": "SAP Java",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDer Schutz vor b\u00f6swilligem oder unerkanntem Zugriff auf die Anwendungsserver \u00fcber den Message Server ist entscheidend f\u00fcr die Aufrechterhaltung der Integrit\u00e4t, Verf\u00fcgbarkeit und Vertraulichkeit der verschiedenen Anfragen zwischen den Anwendungsservern eines SAP-System, dass in Form eines Clusters betrieben wird.\n",
+      "Implementation": "\nEin Netzwerkger\u00e4t, das als abtr\u00fcnniger Anwendungsserver fungiert, kann ein hohes Risiko f\u00fcr das Unternehmen darstellen, wenn die Kommunikation mit legitimen Anwendungsservern zugelassen wird..\n\nF\u00fcr den Message Server m\u00fcssen Zugriffskontrolllisten (ACLs) konfiguriert werden, um Angriffe auf die Vertrauensstellung zwischen legitimen Anwendungsservern einzud\u00e4mmen und abzuwehren.\n\n- Profilparameter ms/acl_info ist im Default Profil angelegt und verweist auf eine g\u00fcltige ACL-Datei.\n- ACL-Datei sollte keinen Eintrag enthalten, der alle Hosts zul\u00e4sst (d.h. HOST=* ist kritisch)\n- Trennen Sie die Ports auf dem Message-Server f\u00fcr interne (1) und externe Kommunikation (2)\n- Profilparameter rdisp/msserv_internal definiert die zu verwendenden internen Ports\n- Unterbinden der Kommunikation von anderen Netzwerkger\u00e4ten zu dem im Profilparameter rdisp/msserv_internal definierten Port\n- Externe \u00dcberwachung des Message Servers durch Setzen des Profilparameters ms/monitor=0 unterbinden\n- Externe Verwaltung des Message-Servers durch Setzen des Profilparameters ms/admin_port=0 verbieten\n\n(1) - Interne Kommunikation dient der Kommunikation zwischen verschiedenen Anwendungsdiensten im Unternehmen\n\n(2) - Externe Kommunikation dient der Kommunikation mit den Benutzern/Kunden\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie die ACLs f\u00fcr den Message Server anhand des Profilparameters ms/acl_info",
+        "- \u00dcberpr\u00fcfen Sie, dass HOST=* nicht in der ACL definiert ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob die Ports f\u00fcr internen und externen Datenverkehr aufgeteilt sind und ob die Firewall die Kommunikation zum internen Port blockiert.",
+        "- \u00dcberpr\u00fcfen Sie, dass der Profilparameter ms/monitor=0 ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob der Profilparameter ms/admin_port=0 ist."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A9 Absicherung und \u00dcberwachung des Message-Servers (B) / Protection and monitoring of the Message-Servers (B)",
+        "- SAP Security Baseline Template V2.1: 2.2.1.4, 2.2.1.4.1, 2.2.1.4.2"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-013",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "Windows-Betriebssystem",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDie St\u00e4rkung und H\u00e4rtung des Betriebssystems, auf dem das SAP-System des Unternehmens l\u00e4uft, ist entscheidend f\u00fcr die Sicherheit Ihrer SAP-Implementierung und Ihres Netzwerks. Das Windows-Betriebssystem ist ber\u00fchmt f\u00fcr seine Vielzahl von Sicherheitsl\u00fccken, die t\u00e4glich gefunden werden.  \n",
+      "Implementation": "\nWenn Ihr Unternehmen eine Windows-Umgebung betreibt, sollte es bereits eine definierte Baseline f\u00fcr die Bereitstellung von Windows-Rechnern geben. Daher sollten Sie bei der Absicherung von SAP-Systemen, die unter Windows laufen, die folgenden Punkte beachten.\n\n - Remote Desktop deaktivieren oder sichern\n - Entfernen Sie nicht ben\u00f6tigte Dienste und Konten\n - Entfernen Sie alle nicht ben\u00f6tigten Windows-Anwendungen, Funktionen, Rollen und Komponenten\n - Lokale Administratorkonten m\u00fcssen deaktiviert oder gesichert werden\n - Regelm\u00e4\u00dfig zu installierende Updates\n\nEs wird empfohlen, die Grundregeln des Unternehmens f\u00fcr die Absicherung von Windows-Rechnern zu befolgen, sofern diese vorhanden sind.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob unerw\u00fcnschte Anwendungen, Dienste, Funktionen, Rollen und Komponenten entfernt wurden.",
+        "- \u00dcberpr\u00fcfen Sie, ob lokale Administratorkonten deaktiviert oder ordnungsgem\u00e4\u00df gesichert sind",
+        "- \u00dcberpr\u00fcfen Sie, ob Sicherheitsupdates regelm\u00e4\u00dfig durchgef\u00fchrt werden"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementierung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Windows (S) / Umsetzung von Sicherheitsanforderungen f\u00fcr das Betriebssystem Windows (S)"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-003",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess",
+        "/",
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nUm potenzielle Bedrohungen in anf\u00e4lligen SAP-Systemen zu reduzieren und das erforderliche Sicherheitsniveau des Unternehmens aufrechtzuerhalten, m\u00fcssen Sicherheitsexperten regelm\u00e4\u00dfig Sicherheits- und Software-Updates durchf\u00fchren.\n\n",
+      "Implementation": "\nSAP-Sicherheitshinweise werden normalerweise jeden zweiten Dienstag im Monat ver\u00f6ffentlicht. Diese Hinweise helfen dabei, entdeckte Schwachstellen in SAP-Systemen zu beseitigen.\n\nOrte, an denen Sie die neuesten SAP-Sicherheitshinweise und Support-Pakete erhalten:\n- SAP Software Update Manager (eine Lizenz ist erforderlich)\n- SAP Patch Management Tool (starten Sie mit der SPAM-Transaktion; daf\u00fcr ist ein Wartungszertifikat erforderlich)\n- Identifizieren Sie SAP Sicherheitshinweise f\u00fcr das System mit der Transaktion SNOTE\n- SAP Sicherheitshinweise aus dem SAP Support Launchpad\n\nUm die Verf\u00fcgbarkeit und Integrit\u00e4t von Produktionssystemen aufrechtzuerhalten, ist es notwendig, einen Patch-Management-Prozess [1] zu verfolgen.\n\n[1] - Es wird empfohlen, einen Prozess f\u00fcr die Patch-Verwaltung einzurichten, wenn in Ihrem Unternehmen noch kein Prozess existiert; der Prozess sollte auch auf Nicht-SAP-L\u00f6sungen angewendet werden.\n",
+      "Verification": [
+        "",
+        "- Planen Sie einen regelm\u00e4\u00dfigen Patching-Prozess f\u00fcr SAP-Systeme",
+        "- Erstellen/Befolgen eines Patch-Management-Prozesses zur Aufrechterhaltung der Integrit\u00e4t und Verf\u00fcgbarkeit von SAP-Systemen"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Sichere Konfiguration des SAP-ABAP-Stacks (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)",
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A10 Regelm\u00e4\u00dfige Implementierung von Sicherheitskorrekturen [Fachabteilung] (B) / Regelm\u00e4\u00dfige Implementierung von Sicherheitskorrekturen [Fachabteilung] (B)",
+        "- SAP Security Baseline Template V2.0: 2.2.2.1, 2.2.2.1.1, 2.2.2.1.2, 2.2.2.1.2 und 2.2.2.1.3"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-PT-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnologie",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nSecurity Audit Logs (SAL) m\u00fcssen in der gesamten SAP-Umgebung aktiviert und richtig konfiguriert sein. Dies hilft den Sicherheitsteams, potenzielle Bedrohungen zu erkennen, die ihre Umgebung beeintr\u00e4chtigen k\u00f6nnten.\n",
+      "Implementation": "\nEs ist wichtig, dass Sie die Profilparameter f\u00fcr die Sicherheitsauditprotokolle aktivieren und richtig konfigurieren. Die folgenden Parameter helfen Ihnen dabei:\n\n- Verwenden Sie die Transaktion RSAU_CONFIG oder SM19, um die erforderlichen Parameter einzustellen.\n- rsau/enable = 1\n- Geben Sie den Speicherort des Sicherheitsauditprotokolls an, indem Sie rsau/local/file setzen.\n- rsau/integrity = 1\n- rsau/log_peer_address = 1 (Hinweis: der Parameter kann zu Warnungen f\u00fchren, die aber problemlos ignoriert werden k\u00f6nnen)\n- rsau/selection_slots \u2265 10 5\n- rsau/user_selection = 1\n- Geben Sie die maximale L\u00e4nge des Protokolls an, indem Sie den Parameter rsau/max_diskspace_local setzen.\n\nDie folgenden Mindesteinstellungen des Security Audit Logs m\u00fcssen vorgenommen sein:\n\n- Auditing sollte aktiv sein\n- Aktiver Filter f\u00fcr alle Benutzer f\u00fcr alle kritischen Ereignisse\n- Protkollschutzformat aktiv\n\nEs wird empfohlen, die Protokolle an einen zentralen Protokollserver zu senden, um die Protokolle besser analysieren und filtern zu k\u00f6nnen. Dies hilft auch dabei, die Gr\u00f6\u00dfe auf dem eigentlichen System zu erhalten.\n\nMit der Transaktion RSAU_CONFIG k\u00f6nnen Sie je nach den Anforderungen Ihres Unternehmens weitere Parameter konfigurieren.\n\nHinweis: Referenz DT-P-AE-M01-002 Kontrollen zur Identifizierung von verf\u00fcgbaren Protokollen, die f\u00fcr Ihre Anforderungen gesammelt werden k\u00f6nnen\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob die Sicherheitsauditprotokolle aktiviert sind, indem Sie den Parameter rsau/enable \u00fcberpr\u00fcfen.",
+        "- \u00dcberpr\u00fcfen Sie, ob die Mindesteinstellungen f\u00fcr Security Audit Logs konfiguriert sind.",
+        "- \u00dcberpr\u00fcfen Sie, ob alle Ereignisse f\u00fcr kritische Benutzer, wie SAP*, DDIC, SAPCPIC, Notfall- und Support-Benutzer, f\u00fcr alle Clients gesammelt und gepr\u00fcft werden.",
+        "- Pr\u00fcfen Sie, ob alle kritischen Ereignisse f\u00fcr alle Clients gesammelt und gepr\u00fcft werden"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)",
+        "- SAP Security Baseline Template V2.1: 2.4.3.1.1",
+        "- CIS CSC 1, 3, 5, 6, 14, 15, 16",
+        "- COBIT 5 APO11.04, BAI03.05, DSS05.04, DSS05.07, MEA02.01",
+        "- ISA 62443-2-1:2009 4.3.3.3.9, 4.3.3.5.8, 4.3.4.4.7, 4.4.2.1, 4.4.2.2, 4.4.2.4",
+        "- ISA 62443-3-3:2013 SR 2.8, SR 2.9, SR 2.10, SR 2.11, SR 2.12",
+        "- ISO/IEC 27001:2013 A.12.4.1, A.12.4.2, A.12.4.3, A.12.4.4, A.12.7.1",
+        "- NIST SP 800-53 Rev. 4 AU Familie"
+      ]
+    },
+    {
+      "Shortcode": "PT-C-IP-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "C"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDie Implementierung von kundeneigenem Code im Unternehmen sollte einen definierten \u00c4nderungsmanagementprozess haben. Auf diese Weise k\u00f6nnen Unternehmen festlegen, ob benutzerdefinierte Anwendungen als Ersatz f\u00fcr bestehende Anwendungen verwendet oder aus dem Unternehmen entfernt werden sollen.\n",
+      "Implementation": "\nEin standardm\u00e4\u00dfiger und definierter \u00c4nderungsmanagementprozess sollte die unten definierten Kontrollen abdecken, wenn Sie kundenspezifische Anwendungen liefern oder bearbeiten, die in das SAP-\u00d6kosystem des Unternehmens integriert werden oder bereits integriert sind(1).\n\n(1) - Dies kann an das \u00c4nderungsmanagement der Organisation angepasst werden, falls vorhanden.\n",
+      "Verification": [
+        "",
+        "- Implementierung von Vorgaben, die die Installation von kundeneigenen Anwendungen klar definieren",
+        "- Modifizierung des kundeneigenem Codes ist begrenzt und wird nur bei Bedarf vorgenommen",
+        "- \u00c4nderungen werden getestet, um Auswirkungen auf den Betrieb zu vermeiden",
+        "- Installation und Entfernung kundeneigener Anwendungen werden ordnungsgem\u00e4\u00df dokumentiert und nachverfolgt",
+        "- Definition eines sicheren Softwareentwicklungszyklus (SSDLC) bei der Anpassung, \u00c4nderung, Entwicklung und Integration von Anwendungen"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A26 Schutz des kundeneigenen Codes im SAP-ERP-System (S) / Schutz des kundeneigenen Codes im SAP-ERP-System (S)",
+        "- CIS CSC 3, 11",
+        "- COBIT 5 BAI01.06, BAI06.01",
+        "- ISA 62443-2-1:2009 4.3.4.3.2, 4.3.4.3.3",
+        "- ISA 62443-3-3:2013 SR 7.6",
+        "- ISO/IEC 27001:2013 A.12.1.2, A.12.5.1, A.12.6.2, A.14.2.2, A.14.2.3, A.14.2.4",
+        "- NIST SP 800-53 Rev. 4 CM-3, CM-4, SA-10"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-010",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP Java",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess",
+        "/",
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nDie Festlegung einer strengen Kennwortrichtlinie ist unerl\u00e4sslich, um sich vor unbefugtem Zugriff auf Ihre Systeme durch gestohlene Anmeldedaten oder Hashes zu sch\u00fctzen. Eine schwache Passwortpolitik kann zu verschiedenen Bedrohungen f\u00fcr das Unternehmen f\u00fchren, die vom Zugang zu sensiblen Informationen bis zur Besch\u00e4digung eines ganzen Systems reichen.\n",
+      "Implementation": "\nNachfolgend finden Sie Informationen zur Festlegung von Passwortrichtlinien f\u00fcr ABAP-Systeme:\n\n- Setzen Sie die minimale Passwortl\u00e4nge (1) mit der UME-Eigenschaft ume.logon.security_policy.password_min_length >= 12\n- Erh\u00f6hen Sie die maximale Passwortl\u00e4nge mit der UME-Eigenschaft ume.logon.security_policy.password_max_length (Standard ist nur 14)\n- Legen Sie ein Verfallsdatum f\u00fcr zu \u00e4ndernde Kennw\u00f6rter mit der UME-Eigenschaft ume.logon.security_policy.password_expire_days <= 90 fest\n- Definieren Sie eine Gr\u00f6\u00dfe f\u00fcr den Passwortverlauf mit der UME-Eigenschaft ume.logon.security_policy.password_history >= 5\n- Um die Benutzer zur Einhaltung der Kennwortrichtlinie zu zwingen, setzen Sie die UME-Eigenschaft ume.logon.security_policy.enforce_policy_at_logon = TRUE\n- Setzen Sie die maximalen Anmeldeversuche durch die UME-Eigenschaft ume.logon.security_policy.lock_after_invalid_attempts <= 5\n- Verweigern Sie die Verwendung alter Passw\u00f6rter in neuen Passw\u00f6rtern, indem Sie die UME-Eigenschaft ume.logon.security_policy.oldpass_in_newpass_allowed = FALSE setzen\n- Erlauben Sie Benutzern, ihr eigenes Passwort zu \u00e4ndern ume.logon.security_policy.password_change_allowed = TRUE\n- Definieren Sie eine Liste bekannter Passw\u00f6rter, die von Benutzern nicht verwendet werden d\u00fcrfen, durch ume.logon.security_policy.password_impermissible\n- Verhindern Sie die Verwendung von Benutzer-IDs als Teil des Passworts, indem Sie die UME-Eigenschaftume.logon.security_policy.userid_in_password_allowed = FALSE setzen.\n\n\nPasswortkomplexit\u00e4t einstellen:\n- Setzen Sie UME propoerty ume.logon.security_policy.password_alpha_numeric_required >= 1\n- Setzen Sie UME ume.logon.security_policy.password_mix_case_required >= 1\n- Setzen Sie UME ume.logon.security_policy.password_special_char_required >= 1\n\n\n(1) - Die SAP-Basisrichtlinie empfiehlt eine Mindestl\u00e4nge von 8 Zeichen. Unsere Empfehlung und Untersuchungen zum Knacken von Passw\u00f6rtern zeigen, dass eine Mindestl\u00e4nge von 8 Zeichen mit den heutigen Computern leicht geknackt werden kann.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob eine Kennwortrichtlinie mit den im Abschnitt Implementierung empfohlenen Werten vorhanden ist."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A13 SAP-Passwortsicherheit (S) / SAP-Passwortsicherheit (S)",
+        "- SAP Security Baseline Template V2.1: 2.3.2.2, 2.3.2.2.2"
+      ]
+    },
+    {
+      "Shortcode": "PT-A-AC-M01-009",
+      "Security Function": "PT",
+      "CSF Category": "Benutzerverwaltung, Authentifizierung und Zugriffskontrolle",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "A"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nSAP-Standardbenutzer m\u00fcssen verwaltet und sicher konfiguriert werden, um jeglichen Missbrauch von SAP-Systemen zu verhindern. Dazu geh\u00f6rt das \u00c4ndern von Standardpassw\u00f6rtern und die Einschr\u00e4nkung von Standardbenutzern.\n",
+      "Implementation": "\nDie folgenden Standardbenutzer, die in ABAP-Systemen zu finden sind, m\u00fcssen verwaltet und sicher konfiguriert werden: (Der Abschnitt \u00dcberpr\u00fcfung der Ma\u00dfnahme hilft Unternehmen dabei, die grundlegenden Anforderungen zur Sicherung dieser Benutzer zu erf\u00fcllen)\n1. SAP*\n2. DDIC\n3. SAPCPIC\n4. TMSADM\n5. EARLYWATCH\n6. Vom SAP Solution Manager angelegte Benutzer\n\n",
+      "Verification": [
+        "",
+        "- SAP*",
+        "  - Muss in allen Mandanten vorhanden sein",
+        "  - Muss in allen Mandanten gesperrt sein",
+        "  - Standard-Passwort muss ge\u00e4ndert werden",
+        "  - Muss in allen Mandanten der Gruppe SUPER angeh\u00f6ren",
+        "  - Es darf kein Profil zugewiesen werden (insbesondere SAP_ALL)",
+        "  - der Profilparameter login/no_automatic_user_sapstar muss auf 1 gesetzt sein",
+        "",
+        "",
+        "- DDIC",
+        "  - Standard-Passwort muss ge\u00e4ndert werden",
+        "  - Muss in allen Clients zur Gruppe SUPER geh\u00f6ren",
+        "",
+        "- SAPCPIC",
+        "  - L\u00f6schen, wenn der Benutzer nicht ben\u00f6tigt wird",
+        "  - Falls erforderlich, muss das Standardkennwort ge\u00e4ndert werden",
+        "  - Muss in allen Mandanten der Gruppe SUPER angeh\u00f6ren",
+        "",
+        "- TMSADM",
+        "  - Standard-Passwort muss ge\u00e4ndert werden",
+        "  - Sollte nur in Mandant 000 existieren",
+        "  - Muss der Gruppe SUPER in Mandant 000 angeh\u00f6ren",
+        "  - Berechtigungsprofil S_A.TMSADM darf nur vergeben werden",
+        "",
+        "- EARLYWATCH",
+        "  - Der Benutzer sollte in keinem Client existieren",
+        "",
+        "- Andere vom SAP Solution Manager angelegte Benutzer (SOLMAN_BTC, CONTENTSERV, SMD_BI_RFC, SMD_RFC, SMDAGENT_SAPSolutionManagerSID, SMD_ADMIN, SMD_AGT, SAPSUPPORT, SOLMAN_ADMIN)",
+        "  - Standard-Passwort muss ge\u00e4ndert werden"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Konfiguration und Absicherung der SAP-Benutzerverwaltung / Konfiguration und Absicherung der SAP-Benutzerverwaltung",
+        "- SAP Security Baseline Template V2.1: 2.3.1"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-014",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP HANA",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nDie SAP-Datenbank enth\u00e4lt wichtige Informationen und Daten f\u00fcr verschiedene Abteilungen innerhalb eines Unternehmens. Die Daten m\u00fcssen immer gesichert, durch Verschl\u00fcsselung gesch\u00fctzt, regelm\u00e4\u00dfig gewartet und \u00fcberpr\u00fcft und regelm\u00e4\u00dfig getestet werden.   \n",
+      "Implementation": "\nBackups des Datenbanksystems und Backups der Mandanten m\u00fcssen regelm\u00e4\u00dfig und konsistent durchgef\u00fchrt werden. Eine vollst\u00e4ndige Datenbanksicherung sollte w\u00f6chentlich durchgef\u00fchrt werden, eine differenzielle oder inkrementelle Sicherung im Laufe der Woche.\n",
+      "Verification": [
+        "",
+        "- Eine w\u00f6chentlich geplante vollst\u00e4ndige Datenbanksicherung",
+        "- Differenzielle oder inkrementelle Backups, die t\u00e4glich unter der Woche eingeplant werden"
+      ],
+      "References": [
+        "- CIS CSC 10",
+        "- COBIT 5 APO13.01, DSS01.01, DSS04.07",
+        "- ISA 62443-2-1:2009 4.3.4.3.9",
+        "- ISA 62443-3-3:2013 SR 7.3, SR 7.4",
+        "- ISO/IEC 27001:2013 A.12.3.1, A.17.1.2, A.17.1.3, A.18.1.3",
+        "- NIST SP 800-53 Rev. 4 CP-4, CP-6, CP-9"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-004",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess",
+        "/",
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nDas Unternehmen ist daf\u00fcr verantwortlich, die definierten Sicherheitsrichtlinien bei der Installation eines SAP ERP-Systems ordnungsgem\u00e4\u00df zu dokumentieren und einzuhalten.\n",
+      "Implementation": "\nSicherheitskonzepte f\u00fcr verschiedene SAP-Funktionseinheiten, Technologien oder bestimmte Bereiche wie z.B. Berechtigungen m\u00fcssen mit den allgemeinen SAP-Sicherheitsvorgaben abgeglichen werden.\n\nEs ist wichtig, alle sicherheitsrelevanten Ma\u00dfnahemen zu dokumentieren, die bei der Installation oder im aktuellen Betrieb durchgef\u00fchrt wurden.\n\nDas f\u00fcr den Betrieb von SAP Systemen gew\u00e4hlte Betriebssystem sollte entsprechend den Sicherheitsrichtlinien des Unternehmens geh\u00e4rtet und angemessen gesichert sein.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie die Dokumentation der Sicherheitsrichtlinien f\u00fcr installierte SAP-Systeme"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A11 Sichere Installation eines SAP-ERP-Systems (S) / Secure Installation of a SAP-ERP-Systems (S)"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-PT-M01-007",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnologie",
+      "Technology": "SAP Java",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nSecurity Audit Logs (SAL) m\u00fcssen in der gesamten SAP-Umgebung aktiviert und richtig konfiguriert sein. Dies hilft den Sicherheitsteams, potenzielle Bedrohungen zu erkennen, die ihre Umgebung beeintr\u00e4chtigen k\u00f6nnten.\n",
+      "Implementation": "\nEs ist wichtig, dass Sie die UME-Eigenschaften in Bezug auf Sicherheitsauditprotokolle aktivieren und richtig konfigurieren. Die folgenden Parameter helfen Ihnen dabei:\n\n- ume.secaudit.get_object_name = TRUE\n- ume.secaudit.log_actor = TRUE\n- ume.logon.security_policy.log_client_hostaddress = TRUE\n- ume.logon.security_policy.log_client_hostname = FALSE (erfordert DNS-Lookup, was die Systemleistung beeintr\u00e4chtigt)\n- enable.xml.hardener = TRUE\n\nEs wird empfohlen, das Loglevel der protokollierten Informationen entsprechendem dem Schutzbedarf der Anwendung anzupassen. Der minimale Schweregrad sollte auf *\"Info\"* gesetzt werden..\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob die UME-Eigenschaften der Sicherheitsauditprotokolle konfiguriert sind.",
+        "- \u00dcberpr\u00fcfen Sie, was protokolliert wird, indem Sie sich beim Netweaver Administrator anmelden und dann zu -> Fehlerbehebung -> Protokolle und Traces -> Protokollkonfiguration navigieren und im Feld Anzeigen die Option 'Protokollierungskategorien' w\u00e4hlen.",
+        "- \u00dcberpr\u00fcfen Sie die Logleveleinstellungen auf den zu protokollierenden Schweregrad."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)",
+        "- SAP Security Baseline Template V2.1: 2.4.3.1.2",
+        "- CIS CSC 1, 3, 5, 6, 14, 15, 16",
+        "- COBIT 5 APO11.04, BAI03.05, DSS05.04, DSS05.07, MEA02.01",
+        "- ISA 62443-2-1:2009 4.3.3.3.9, 4.3.3.5.8, 4.3.4.4.7, 4.4.2.1, 4.4.2.2, 4.4.2.4",
+        "- ISA 62443-3-3:2013 SR 2.8, SR 2.9, SR 2.10, SR 2.11, SR 2.12",
+        "- ISO/IEC 27001:2013 A.12.4.1, A.12.4.2, A.12.4.3, A.12.4.4, A.12.7.1",
+        "- NIST SP 800-53 Rev. 4 AU Familie"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-005",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess",
+        "/",
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nDie Festlegung einer strengen Kennwortrichtlinie ist unerl\u00e4sslich, um sich vor unbefugtem Zugriff auf Ihre Systeme durch gestohlene Anmeldedaten oder Hashes zu sch\u00fctzen. Eine schwache Passwortpolitik kann zu verschiedenen Bedrohungen f\u00fcr das Unternehmen f\u00fchren, die vom Zugang zu sensiblen Informationen bis zur Besch\u00e4digung eines ganzen Systems reichen.\n",
+      "Implementation": "\nNachfolgend finden Sie Informationen zur Festlegung von Passwortrichtlinien f\u00fcr ABAP-Systeme:\n\n- Legen Sie die Mindestl\u00e4nge des Passworts (1) mit dem Profilparameter login/min_password_lng >= 12 fest.\n- Legen Sie mit dem Profilparameter login/password_max_idle_initial eine maximale Anzahl von Tagen fest, die ein Kennwort unbenutzt bleiben kann (zwischen 1 und 14)\n- Legen Sie mit dem Profilparameter login/password_expiration_time <= 90 ein Ablaufdatum f\u00fcr zu \u00e4ndernde Kennw\u00f6rter fest.\n- Legen Sie eine Gr\u00f6\u00dfe f\u00fcr den Passwortverlauf mit dem Profilparameter login/password_history_size >= 5 fest\n- Speichern Sie keine zu interpretierenden Passw\u00f6rter f\u00fcr alte Kernel, indem Sie den Profilparameter login/password_downwards_compatibility=0 setzen\n- Um Benutzer zur Einhaltung der Kennwortrichtlinie zu zwingen, setzen Sie den Profilparameter login/password_compliance_to_current_policy=1\n- Entfernen Sie alte abw\u00e4rtskompatible Passwort-Hashes in den Feldern BCODE und PASSCODE aus der Tabelle USR02\n- Maximale Anmeldeversuche durch Profilparameter login/fails_to_user_lock <= 5 festlegen\n- Deaktivieren der automatischen Entsperrung durch den Profilparameter login/failed_user_auto_unlock = 0\n- Festlegen eines maximalen Zeitraums, in dem ein unbenutztes produktives Kennwort g\u00fcltig bleibt durch den Profilparameter login/max_idle_productive <= 90\n- Anmeldung mit urspr\u00fcnglichen oder abgelaufenen Benutzerkonten verweigern durch Setzen des Profilparameters icf/reject_expired_passwd = 1\n- Anmeldung mit anf\u00e4nglichen oder abgelaufenen Benutzerkonten \u00fcber RFC verweigern, indem Sie den Profilparameter rfc/reject_expired_passwd = 1 setzen.\n- Deaktivieren Sie die Passwortanmeldung, wenn die Organisation andere Authentifizierungsmethoden verwendet, indem Sie den Profilparameter login/disable_password_logon > 0 setzen.\n- Bei der Verwendung der Authentifizierungsmethode Single Sign-on (SSO) muss mit dem Profilparameter login/password_change_for_SSO gepr\u00fcft werden, ob die Passw\u00f6rter eines Benutzers ge\u00e4ndert werden m\u00fcssen.\n- Legen Sie mit dem Profilparameter login/password_change_waittime > 0 eine Zeitspanne (gemessen in Tagen) fest, in der ein Benutzer sein Passwort erneut \u00e4ndern kann.\n- Legen Sie den Hash-Algorithmus und die Kodierung f\u00fcr das neue Passwort mit dem Profilparameter login/password_hash_algorithm = encoding=RFC2307, algorithm=iSSHA-512, iterations=15000, saltsize=256 fest (Der Profilparameter login/password_downwards_compatibility sollte nicht gleich 5 sein, sonst macht der Profilparameter f\u00fcr den Hash-Algorithmus keinen Sinn)\n\nPasswortkomplexit\u00e4t einstellen:\n- Setzen Sie den Profilparameter login/min_password_digits >= 1\n- Setzen Sie den Profilparameter login/min_password_letters >= 1\n- Setzen Sie den Profilparameter login/min_password_lowercase >= 1\n- Setzen Sie den Profilparameter login/min_password_uppercase >= 1\n- Setzen Sie den Profilparameter login/min_password_specials >= 1\n- Profilparameter login/min_password_diff >= 3 setzen\n\n\n(1) - Die SAP-Basisrichtlinie empfiehlt eine Mindestl\u00e4nge von 8 Zeichen. Unsere Empfehlung und Untersuchungen zum Knacken von Passw\u00f6rtern zeigen, dass eine Mindestl\u00e4nge von 8 Zeichen mit den heutigen Ger\u00e4ten leicht zu knacken ist.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob eine Kennwortrichtlinie mit den im Abschnitt Implementierung empfohlenen Werten vorhanden ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob die Tabelle USR02 alte abw\u00e4rtskompatible Passwort-Hashes in den Feldern BCODE und PASSCODE enth\u00e4lt.",
+        ""
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A13 SAP-Passwortsicherheit (S) / SAP-Passwortsicherheit (S)",
+        "- SAP Security Baseline Template V2.1: 2.3.2.2, 2.3.2.2.1",
+        "- SAP-Hinweis 1458262"
+      ]
+    },
+    {
+      "Shortcode": "PT-PA-IP-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P",
+        "A"
+      ],
+      "Defender": [
+        "Prozess",
+        "&",
+        "Technologie"
+      ],
+      "Prerequisites": [
+        "PT-A-AC-M01-009"
+      ],
+      "Description": "\n Standard-Benutzer, die auf SAP-Systeme zugreifen d\u00fcrfen, sollten ordnungsgem\u00e4\u00df verwaltet und konfiguriert werden. Auf diese Weise k\u00f6nnen Unternehmen das Prinzip der geringsten Privilegien befolgen.\n",
+      "Implementation": "\nDie Standardpassw\u00f6rter f\u00fcr die Standard-Benutzer sollten ge\u00e4ndert werden und die Passwortrichtlinie des Unternehmens(1) sollte angewendet werden.\n\nStandard-Benutzer, die nicht ben\u00f6tigt werden, sollten gel\u00f6scht oder deaktiviert werden.\n\nObsolete standard-Benutzer wie EARLYWATCH sollten in keinem Client existieren.\n\n(1) - Passwortrichtlinien \u00e4ndern sich von Unternehmen zu Unternehmen, abh\u00e4ngig von verschiedenen Kriterien wie der Kritikalit\u00e4t der Branche, lokalen oder bundesstaatlichen Gesetzen, Sicherheitsstandards, die f\u00fcr die Branche verbindlich sind, usw.\n",
+      "Verification": [
+        "",
+        "- Standard-Passwort f\u00fcr Standard-Benutzer-IDs wird ge\u00e4ndert",
+        "- Die Kennwortrichtlinie wird in allen SAP-Systemen ordnungsgem\u00e4\u00df angewendet.",
+        "- Standard-Benutzer werden gel\u00f6scht und deaktiviert, wenn sie nicht verwendet werden"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Absicherung der ausgelieferten SAP-Standardbenutzer-IDs / Absicherung der ausgelieferten SAP-Standardbenutzer-Kennungen",
+        "- SAP Security Baseline Template V2.0: 2.3.1"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-IP-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Identit\u00e4tsmanagement, Authentifizierung und Zugriffskontrolle",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "A"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDer Zugriff auf SAP-Datenbanken muss vor unberechtigtem Zugriff und Missbrauch gesch\u00fctzt werden.  \n",
+      "Implementation": "\nSAP Benutzer d\u00fcrfen grunds\u00e4tzliche keinen Zugriff auf die SAP-Systemdatenbank erhalten. Sonstige Benutzern m\u00fcssen spezifische Datenbankberechtigungen gem\u00e4\u00df des Minimalit\u00e4tsprinzips und der Aufgabentrennung erhalten.\n\n\u00dcberpr\u00fcfen Sie die Transaktionsprotokolldatei auf nicht ben\u00f6tigte Datenbankbenutzer. Die Transaktionsdatei k\u00f6nnen Sie durch Ausf\u00fchren von R3trans -d einsehen.\n\nBenutzer, die auf die Datenbank zugreifen d\u00fcrfen, sind nur auf die f\u00fcr Ihre Aufgabe notwendigen Tabellen zu beschr\u00e4nken\n",
+      "Verification": [
+        "",
+        "- SAPR3, SAPSID oder SAPABAP1 f\u00fcr den Zugriff auf die Datenbank deaktiviert.",
+        "- Benutzer, die nicht f\u00fcr den Zugriff auf die Datenbank ben\u00f6tigt werden, werden entfernt.",
+        "- Datenmanipulation sind nur dem SAP-Support gestattet",
+        "- Benutzer, die auf die Datenbank zugreifen m\u00fcssen, erhalten keine Berechtigungen f\u00fcr die Tabelle USR\\*, die Tabelle T000, SAPUSER, RFCDES, PA\\*, HCL\\* und alle anderen Tabellen, die f\u00fcr ihre Arbeit nicht erforderlich sind"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A7 Absicherung der SAP-Datenbank/ Absicherung der SAP-Datenbanken"
+      ]
+    },
+    {
+      "Shortcode": "IY-C-RA-M01-001",
+      "Security Function": "IY",
+      "CSF Category": "Risikobewertung",
+      "Technology": "ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "C"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nZugang & Autorisierung\n\nABAP verwendet ein meist explizites Berechtigungsmodell. Das bedeutet, dass eine Berechtigungspr\u00fcfung nur dann stattfindet, wenn ein Programm die Pr\u00fcfung explizit selbst durchf\u00fchrt. Mit anderen Worten: Wenn es keine explizite Berechtigungspr\u00fcfung im Code gibt, wird auch nicht gepr\u00fcft, ob ein Benutzer tats\u00e4chlich berechtigt ist.\nIn individuell entwickeltem Code werden Berechtigungspr\u00fcfungen h\u00e4ufig \u00fcbersehen. Das bedeutet, dass das Berechtigungskonzept keine Wirkung hat. Dies f\u00fchrt zu Compliance-Verst\u00f6\u00dfen, die im Falle eines Audits schwerwiegende Folgen haben k\u00f6nnen. Aus diesem Grund ist es von entscheidender Bedeutung, dass bei Eigenentwicklungen Berechtigungspr\u00fcfungen von den Programmen selbst durchgef\u00fchrt werden, wo immer dies erforderlich ist, und dass alle Berechtigungspr\u00fcfungen auch aus formaler Sicht korrekt programmiert sind.\nNeben dem Fehlen von Berechtigungspr\u00fcfungen kann auch die Strukturierung von Programmkomponenten die Tragf\u00e4higkeit des Berechtigungskonzepts beeinflussen. So sollten Sie z.B. hinterfragen, wie ausf\u00fchrbare Module zusammengesetzt sind, unter der Annahme, dass Schnittstellenberechtigungen nicht granular f\u00fcr die exponierte Gesch\u00e4ftsfunktionalit\u00e4t vergeben werden oder vergeben werden k\u00f6nnen.\nBerechtigungspr\u00fcfungen sind in der Regel der h\u00e4ufigste Sicherheitsfehler in ABAP-Anwendungsentwicklungen.\n",
+      "Implementation": "\n1. Die Spezifikation der \u00c4nderung enth\u00e4lt eine pr\u00e4zise Beschreibung der Anpassungen der Berechtigungsanforderungen entsprechend der \u00c4nderung.\n2. Als Teil des Code Change Review-Prozesses muss der gesamte benutzerdefinierte Code daraufhin \u00fcberpr\u00fcft werden:\n  - Alle Berechtigungspr\u00fcfungen verwenden SAP-Standardmechanismen. Dies bedeutet in der Regel, dass entweder:\n    - der Befehl AUTHORITY-CHECK OBJECT oder\n    - ein Modul, das speziell f\u00fcr die Pr\u00fcfung einer bestimmten Berechtigung entwickelt wurde (wie der SAP-Funktionsbaustein 'AUTHORITY_CHECK_DATASET'),\n    - oder eine Zugriffsdeklaration durch die Data Access Control (DAC)-Sprache f\u00fcr Core Data Services (CDS) muss verwendet werden.\n  - Alle direkt ausf\u00fchrbaren Module implementieren explizite Zugriffsbeschr\u00e4nkungen beim Ausf\u00fchrungsstart, indem sie die Benutzerberechtigungen zum Starten des Moduls \u00fcberpr\u00fcfen\n  - Bevor der Befehl CALL TRANSACTION ausgef\u00fchrt wird, sollte eine Berechtigungspr\u00fcfung stattfinden, um sicherzustellen, dass der aktuelle Benutzer tats\u00e4chlich berechtigt ist, die Transaktion zu starten. Wird eine Transaktion mit dem Ziel aufgerufen, nur einen eingeschr\u00e4nkten Zugriff auf die Funktionalit\u00e4t der Transaktion zu erm\u00f6glichen, z.B. mit vordefinierten Auswahlwerten und dem Zusatz SKIP FIRST SCREEN, kann es sinnvoll sein, keine Berechtigungspr\u00fcfung f\u00fcr die Benutzerrechte zum Starten der Transaktion durchzuf\u00fchren, da dies dem Benutzer unn\u00f6tig hohe Privilegien abverlangen kann.\n  - Die Implementierung pr\u00fcft die Berechtigung des Benutzers so nah wie m\u00f6glich an der Ausf\u00fchrung der gesch\u00fctzten Gesch\u00e4ftsfunktion.\n  - Die Implementierung verarbeitet das Ergebnis der \u00dcberpr\u00fcfung der Benutzerberechtigungen, um den rechtm\u00e4\u00dfigen Zugriff und die Ausf\u00fchrung zu erlauben und andere durch die \u00dcberpr\u00fcfung von R\u00fcckgabecodes wie sy-subrc und Ausnahmen entsprechend der Implementierung der Pr\u00fcfungen zu verbieten.\n",
+      "Verification": [
+        "",
+        "- Pr\u00fcfen Sie, ob negative und positive Zugriffskontrolltests spezifiziert sind und die Durchf\u00fchrung im Testprotokoll der \u00c4nderung dokumentiert ist.",
+        "- Pr\u00fcfen Sie, ob die \u00dcberpr\u00fcfung des Quellcodes f\u00fcr alle benutzerdefinierten Code\u00e4nderungen durchgef\u00fchrt und dokumentiert wird, um die korrekte Implementierung der Benutzerzugriffskontrolle in der \u00c4nderung zu gew\u00e4hrleisten.",
+        ""
+      ],
+      "References": [
+        "",
+        "- CIS CSC 4",
+        "- COBIT 5 APO12.05, APO13.02",
+        "- ISO/IEC 27001:2013 Klausel 6.1.3",
+        "- NIST SP 800-53 Rev. 4 PM-4, PM-9",
+        "- BSI APP (Februar 2020) 4.6 A1, A2, A3, A6, A7",
+        "- OWASP ASVS 2.0 V4.1.3, V4.1.4, V4.1.5"
+      ]
+    },
+    {
+      "Shortcode": "DT-P-AE-M01-005",
+      "Security Function": "DT",
+      "CSF Category": "Anomalien und Ereignisse",
+      "Technology": "SAP ERP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nWorkload Monitor:\n\nDer Workload-Monitor hilft bei der Analyse von Systemstatistiken in SAP-Systemen. Ein wichtiger Bestandteil des Workload-Monitors ist seine F\u00e4higkeit, die von Benutzern durchgef\u00fchrten Aktivit\u00e4ten auf dem System zu sammeln. Dies verhindert eine Abstreitbarkeit und hilft bei der Analyse von \u00c4nderungen oder Sicherheitsereignissen, die einen Vorfall verursacht haben.\n",
+      "Implementation": "\nDer Workload Monitor ist standardm\u00e4\u00dfig deaktiviert und muss aktiviert werden, wenn Sie von Benutzern verursachte Ereignisse oder Vorf\u00e4lle untersuchen.\n\nDie Verfolgung von Benutzeraktivit\u00e4ten ist in verschiedenen Teilen der Welt m\u00f6glicherweise nicht erlaubt. Achten Sie bei der Verfolgung von Nutzeraktivit\u00e4ten auf die Einhaltung der Datenschutzbestimmungen, unter die Ihr Unternehmen f\u00e4llt.\n",
+      "Verification": [
+        "",
+        "- Starten Sie den Systemlastmonitor mit der Transaktion STO3N"
+      ],
+      "References": []
+    },
+    {
+      "Shortcode": "PT-A-AC-M01-013",
+      "Security Function": "PT",
+      "CSF Category": "Benutzerverwaltung, Authentifizierung und Zugriffskontrolle",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "A"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nSpezifische Vorgaben in Bezug auf Autorisierungsbeschr\u00e4nkungen und Passw\u00f6rter sollten regelm\u00e4\u00dfig ver\u00f6ffentlicht, \u00fcberpr\u00fcft, kontrolliert und gegebenenfalls \u00fcberarbeitet werden.\n",
+      "Implementation": "\nEs ist wichtig, spezifische Vorgaben zu erstellen, die die verschiedenen Berechtigungs- und Passwortrichtlinien der Organisation ber\u00fccksichtigen.\n\n- Erstellen Sie eine Vorgaben zur Zugriffskontrolle, um Benutzer und ihre jeweiligen Benutzergruppen zu definieren.\n- Erstellen Sie eine Vorgaben f\u00fcr sichere SAP-Passw\u00f6rter f\u00fcr alle Benutzer.\n- Erstellen Sie Vorgaben f\u00fcr die Festlegung eines sicheren Passworts, die die Benutzer befolgen k\u00f6nnen.\n\nHinweis: Die Kontrollen PT-P-IP-M01-005 und PT-P-IP-M01-010 k\u00f6nnen beim Aufbau einer starken SAP-Passwortvorgabe helfen.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob die Berechtigungen und der Zugriff auf SAP-Systeme dokumentiert sind.",
+        "- \u00dcberpr\u00fcfen Sie, ob die Benutzer ihren jeweiligen Benutzergruppen entsprechend ihrer Arbeitsrolle zugeordnet sind.",
+        "- \u00dcberpr\u00fcfen Sie, ob eine strenge Kennwortvorgabe vorhanden ist und befolgt wird."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A19 Definition der Sicherheitsrichtlinien f\u00fcr Benutzer / Definition der Sicherheitsrichtlinien f\u00fcr Benutzer",
+        "- CIS CSC 3, 5, 12, 14, 15, 16, 18",
+        "- COBIT 5 DSS05.04",
+        "- ISA 62443-2-1:2009 4.3.3.7.3",
+        "- ISA 62443-3-3:2013 SR 2.1",
+        "- ISO/IEC 27001:2013 A.6.1.2, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5",
+        "- NIST SP 800-53 Rev. 4 AC-1, AC-2, AC-3, AC-5, AC-6, AC-14, AC-16, AC-24"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-PT-M01-008",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnologie",
+      "Technology": "SAP HANA",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nSecurity Audit Logs (SAL) m\u00fcssen in der gesamten SAP-Umgebung aktiviert und richtig konfiguriert sein. Dies hilft den Sicherheitsteams, potenzielle Bedrohungen, die ihre Umgebung beeintr\u00e4chtigen k\u00f6nnten, zu identifizieren und zu erkennen.\n",
+      "Implementation": "\nEs ist wichtig, dass Sie den Audit Trail f\u00fcr HANA in der SAP HANA Administration Console aktivieren und richtig konfigurieren. Die folgenden Parameter helfen Ihnen dabei:\n\n- global_auditing_state = true in der Datei global.ini, Abschnitt \u00dcberwachungskonfiguration\n- Die Audit-Richtlinien sollten entsprechend den Sicherheitsanforderungen des Unternehmens konfiguriert werden.\n- Setzen Sie default_audit_trail_type = SYSLOGPROTOCOL oder CSTABLE in der Datei global.ini, Abschnitt auditing configuration. Weitere Informationen zum Audit Trail Layout finden Sie [hier](https://help.sap.com/docs/SAP_HANA_PLATFORM/b3ee5778bc2e4a089d3299b82ec762a7/0a57444d217649bf94a19c0b68b470cc.html)\n\nHinweis: Kritische Benutzer m\u00fcssen \u00fcberwacht werden\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob die Sicherheitsauditprotokolle aktiviert sind, indem Sie den Parameter global_auditing_state = true in der Datei global.ini, Abschnitt auditing configuration, \u00fcberpr\u00fcfen.",
+        "- \u00dcberpr\u00fcfen Sie, ob alle Ereignisse f\u00fcr kritische Benutzer gesammelt und gepr\u00fcft werden.",
+        "- \u00dcberpr\u00fcfen Sie, dass die CSV-Datei nicht f\u00fcr die Protokollierung sicherheitskritischer Informationen verwendet wird."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)",
+        "- SAP Security Baseline Template V2.1: 2.4.3.1.3",
+        "- CIS CSC 1, 3, 5, 6, 14, 15, 16",
+        "- COBIT 5 APO11.04, BAI03.05, DSS05.04, DSS05.07, MEA02.01",
+        "- ISA 62443-2-1:2009 4.3.3.3.9, 4.3.3.5.8, 4.3.4.4.7, 4.4.2.1, 4.4.2.2, 4.4.2.4",
+        "- ISA 62443-3-3:2013 SR 2.8, SR 2.9, SR 2.10, SR 2.11, SR 2.12",
+        "- ISO/IEC 27001:2013 A.12.4.1, A.12.4.2, A.12.4.3, A.12.4.4, A.12.7.1",
+        "- NIST SP 800-53 Rev. 4 AU Familie"
+      ]
+    },
+    {
+      "Shortcode": "IY-C-RA-M01-005",
+      "Security Function": "IY",
+      "CSF Category": "Risikobewertung",
+      "Technology": "ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "C"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nEinsatz von Schutzmechanismen\n\nDas SAP-Standardsystem bietet Unternehmen verschiedene Mechanismen zum Schutz ihrer Daten. Aus diesem Grund basieren die Sicherheitsstrategien vieler Unternehmen auf dem Wissen, dass die Mechanismen in den SAP-Standardsystemen eine solide Grundlage bieten und nicht gef\u00e4hrdet sind (oder sein sollten).\nZu diesen Mechanismen geh\u00f6ren:\n- Trennung von Client und Mandant\n- Benutzerverwaltung\n- Rollen- und Berechtigungsverwaltung\n- Trennung von Entwicklung, Test und Produktion\n- Protokollierung von Sicherheitsereignissen\n",
+      "Implementation": "\n1. Im Rahmen des Code Change Review-Prozesses muss der gesamte benutzerdefinierte Code daraufhin \u00fcberpr\u00fcft werden, dass:\n    - er darf die Sicherheitsmechanismen des SAP-Standardsystems nicht untergraben.\n    - Wenn das SAP-Standardsystem einen Sicherheitsmechanismus f\u00fcr bestimmte Aufgaben vorgesehen hat, dann sollte dieser Sicherheitsmechanismus auch im Custom Code der \u00c4nderung verwendet werden.\n    - In der Zielsystemversion, in der die Anwendung ausgef\u00fchrt werden soll, sollte der ABAP-Code keine veralteten Sprachelemente verwenden.\n    - Die Codierung sollte mit der erweiterten Syntaxpr\u00fcfung getestet und etwaige Defizite beseitigt werden.\n    - Generell sollten kundeneigene Datenbanktabellen ausgeliefert werden, um eine manuelle Datenpflege durch SAP-Standardwerkzeuge auszuschlie\u00dfen. Wenn eine manuelle Tabellenpflege erforderlich ist, sollte eine Pflegeanwendung (Pflegeview) erstellt werden.\n",
+      "Verification": [
+        "",
+        "- Pr\u00fcfen Sie, ob die \u00dcberpr\u00fcfung des Quellcodes bei allen benutzerdefinierten Code\u00e4nderungen durchgef\u00fchrt und dokumentiert wird, um die korrekte Verwendung von Schutzmechanismen zu \u00fcberpr\u00fcfen."
+      ],
+      "References": [
+        "",
+        "- CIS CSC 4",
+        "- COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04",
+        "- ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12",
+        "- ISO/IEC 27001:2013 Klausel 6.1.2",
+        "- NIST SP 800-53 Rev. 4 RA-3, SI-5, PM-12, PM-16"
+      ]
+    },
+    {
+      "Shortcode": "DT-P-AE-M01-001",
+      "Security Function": "DT",
+      "CSF Category": "Anomalien und Ereignisse",
+      "Technology": "SAP ERP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nDie Organisation ist verantwortlich f\u00fcr die Festlegung von Richtlinien und Verfahren zur Identifizierung, Erfassung, Beschaffung und Aufbewahrung von Daten, die als Beweismittel verwendet werden.\n",
+      "Implementation": "\nBereiche, in denen Sie wichtige Protokolle innerhalb des SAP ERP des Unternehmens erwerben k\u00f6nnen:\n\n1. Sicherheitsauditprotokoll - DT-P-AE-M01-002\n2. Systemprotokoll - DT-P-AE-M01-003\n3. Tabellenprotokollierung - DT-P-AE-M01-004\n4. Arbeitslast-Monitor - DT-P-AE-M01-005\n5. Lesezugriffsprotokollierung - DT-P-AE-M01-006\n6. Benutzerinformationssystem - DT-P-AE-M01-007\n\nJeder Bereich dient der Extraktion und Analyse von Daten f\u00fcr verschiedene Aktivit\u00e4ten, die im System stattfinden.\n\nHinweis: Jeder Bereich wird in seinem jeweiligen Ma\u00dfnahme beschrieben.\n",
+      "Verification": [
+        "",
+        "- Es wurde eine Richtlinie definiert und erstellt, um Informationen aus verschiedenen Protokolltools zu identifizieren, zu sammeln, zu erfassen und aufzubewahren",
+        ""
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A32 Echtzeiterfassung und Alarmierung von irregul\u00e4ren Vorg\u00e4ngen (H)"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-DS-M01-005",
+      "Security Function": "PT",
+      "CSF Category": "Datensicherheit",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nVerzeichnis-/Pfad\u00fcberquerungsangriffe k\u00f6nnen unbefugten Zugriff auf Dateien oder Verzeichnisse erm\u00f6glichen, indem Anwendungen manipuliert werden, die physische oder logische Dateinamen als Eingabe verwenden. Dadurch k\u00f6nnen Angreifer sensible/kritische Dateien lesen oder beschreiben, was zur Offenlegung von Informationen und anderen Angriffen f\u00fchren kann, die das System weiter ausbeuten.\n",
+      "Implementation": "\nDie folgenden Schritte helfen, Schwachstellen zu entsch\u00e4rfen, bei denen ein Angreifer Dateinamen manipulieren kann, um von verschiedenen Anwendungsservern zu lesen oder zu schreiben.\n\n- Aktualisieren Sie Ihren Kernel auf den neuesten Sicherheits-Patch-Level.\n- \u00dcberpr\u00fcfen Sie alle logischen Dateinamen und Dateipfaddefinitionen aus den Listenprogrammen RSFILECR oder RSFILENA, um die erforderlichen Anpassungen zu ermitteln\n- Der Profilparameter abap/path_normalizartion sollte aktiviert sein (Wert 1).\n- Pfade m\u00fcssen normalisiert werden (siehe SAP-Hinweis 1497003 zur Normalisierung von Dateipfaden), wenn das Berechtigungsobjekt S_DATASET verwendet wird\n- Pfade m\u00fcssen normalisiert werden, wenn die Tabelle SPTH  Eintr\u00e4ge enth\u00e4lt\n- Wenn die Benutzeroberfl\u00e4chen die Eingabe von logischen Dateinamen erlaubt, definieren Sie Aliase f\u00fcr die verwendeten logischen Dateinamen\n\nHinweis: Stellen Sie sicher, dass Sie die \u00c4nderungen zun\u00e4chst in der Testumgebung implementieren, bevor Sie sie auf die Produktionssysteme anwenden. So vermeiden Sie Fehler oder Serviceunterbrechungen auf den Produktionssystemen.\n",
+      "Verification": [
+        "",
+        "- Identifizieren Sie logische Dateinamen aus dem Listenprogramm RSFILENA",
+        "- Identifizieren Sie logische Dateinamen und Dateipfaddefinitionen aus dem Listenprogramm RSFILECR",
+        "- \u00dcberpr\u00fcfen Sie, ob der Profilparameter abap/path_normalization nicht deaktiviert ist"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Sichere Konfiguration des SAP-ABAP-Stacks (B) / Secure Konfiguration des SAP-ABAP-Stacks (B)",
+        "- SAP Security Baseline Template V2.1: 2.2.1.3.1",
+        "- SAP-Hinweis 1497003"
+      ]
+    },
+    {
+      "Shortcode": "PT-I-PT-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Sch\u00fctzende Technologie",
+      "Technology": "Alle",
+      "Maturity Level": "1",
+      "IPAC": [
+        "I"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nSAP-Netzwerkimplementierungen sollten verwaltet, \u00fcberwacht und kontrolliert werden, um Informationen in Anwendungen und Systemen zu sch\u00fctzen.\n\nDie Kontrolle beinhaltet die Notwendigkeit, den SAP Router und den Web Dispatcher sicher zu konfigurieren, damit sie als Gateways auf Anwendungsebene in der DMZ-Zone fungieren.\n",
+      "Implementation": "\nExterner Verkehr:\n\nDer SAP-Router und der Web Dispatcher sollten in der demilitarisierten Zone (DMZ) betrieben werden, um den entsprechenden Datenverkehr zu filtern, bevor er durch eine weitere Firewall geleitet wird. \n\nInterner Verkehr:\n\nSAP-Systeme sollten in einem separaten Subnetz innerhalb des internen Netzwerks untergebracht werden. Dies erm\u00f6glicht eine einfachere Verwaltung von Netzwerkzugriffsrichtlinien f\u00fcr SAP-Systeme.\n\nKontrolle:\n\nDie Architektur von SAP-Systemen sollte ordnungsgem\u00e4\u00df dokumentiert werden, einschlie\u00dflich, aber nicht beschr\u00e4nkt auf Verbindungen, Kommunikation, Datenfluss, Benutzer und verwendete Protokolle.\n\n",
+      "Verification": [
+        "",
+        "- SAP Router und Web Dispatcher werden in demilitarisierter Zone betrieben",
+        "- ACLs sind eingerichtet, um unerw\u00fcnschten Datenverkehr zu filtern.",
+        "- Nur notwendige Ports d\u00fcrfen auf das Netzwerk zugreifen.  ",
+        "- SAP-Systeme befinden sich in einem separaten Subnetz innerhalb der Organisation",
+        "- Dokumentation, die einen anschaulichen \u00dcberblick \u00fcber die SAP-Architektur gibt"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A3 Netzwerksicherheit/ Netzsicherheit",
+        "- CIS CSC 8, 12, 15",
+        "- COBIT 5 DSS05.02, APO13.01",
+        "- ISA 62443-3-3:2013 SR 3.1, SR 3.5, SR 3.8, SR 4.1, SR 4.3, SR 5.1, SR 5.2, SR 5.3, SR 7.1, SR 7.6",
+        "- ISO/IEC 27001:2013 A.13.1.1, A.13.2.1, A.14.1.3",
+        "- NIST SP 800-53 Rev. 4 AC-4, AC-17, AC-18, CP-8, SC-7, SC-19, SC-20, SC-21, SC-22, SC-23, SC-24, SC-25, SC-29, SC-32, SC-36, SC-37, SC- 38, SC-39, SC-40, SC-41, SC-43"
+      ]
+    },
+    {
+      "Shortcode": "IY-C-RA-M01-004",
+      "Security Function": "IY",
+      "CSF Category": "Risikobewertung",
+      "Technology": "ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "C"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nPr\u00e4vention von Injektionsschwachstellen\n\nInjektionsschwachstellen beziehen sich auf Situationen, in denen ein Angreifer Steuerzeichen und/oder Befehle \u00fcber den Datenkanal (Eingabe) in eine Anwendung einschleust. Ein erfolgreicher Angriff kann sich durch unerwartete Befehle sch\u00e4dlich auf den geplanten Programmablauf auswirken.\nJe nach Art der Injektion kann ein Angreifer die vollst\u00e4ndige Kontrolle \u00fcber das betroffene SAP-System erlangen. F\u00fcr die Programmiersprache ABAP umfasst dies insbesondere Implementierungen mit:\n- Zugriff auf das Dateisystem von Dateiservern oder von den SAP-Betriebssystemen zum Austausch oder zur Verarbeitung von Daten erfolgt. Mit der Anzahl der Schnittstellen (Anwendungen) steigt f\u00fcr jede einzelne Schnittstelle das Risiko, kompromittierte Daten zur Verarbeitung zu erhalten oder solche Daten durch fehlerhafte Eingaben selbst zu erzeugen.\n\n- Verwendung von Betriebssystembefehlen \u00fcber ABAP-Programme. Der Systemzugriff erfolgt im Kontext des SAP-Systemdienstbenutzers. Dieser Benutzer verf\u00fcgt notwendigerweise \u00fcber weitreichende Privilegien im Betriebssystem. In Anbetracht des daraus resultierenden Gesamtrisikos sollte ABAP-Code, der Betriebssystembefehle ausf\u00fchrt, besonders gesch\u00fctzt werden.\n\n- Verwendung der dynamischen ABAP-Sprachfunktionen und des Datenbankzugriffs. Die M\u00f6glichkeiten zur Verwendung der dynamischen ABAP-Programmierung und des Zugriffs auf Datenbanken sind vielseitig einsetzbar. Sie sind jedoch auch mit besonderen Risiken verbunden. Wenn eine dynamische Programmierung notwendig ist, muss der Entwickler diesen Risiken durch besondere Schutzma\u00dfnahmen Rechnung tragen.\n",
+      "Implementation": "\n1. Im Rahmen der \u00c4nderungspr\u00fcfung muss das Design der Implementierung auf die folgenden Eigenschaften hin \u00fcberpr\u00fcft werden:\n    - Bei der Verarbeitung von Eingaben muss normalerweise eine ausreichende Plausibilit\u00e4tspr\u00fcfung durchgef\u00fchrt werden. Dies wird als \"Eingabevalidierung\" bezeichnet. Die Eingabevalidierung bietet nicht nur einen grundlegenden Sicherheitsschutz (da Steuerzeichen und Sonderzeichen in den meisten Datenfeldern unwirksam sind und entfernt werden k\u00f6nnen), sondern verbessert auch die Datenqualit\u00e4t im Allgemeinen. Die Eingabevalidierung sollte so implementiert werden, dass die Eingaben mit einer Liste zul\u00e4ssiger Werte verglichen werden, d.h. mit dem Ansatz des \"Allowlist-Filters\".\n    - Besondere Vorsicht ist geboten, wenn Benutzereingaben mit Steuerzeichen oder Sprachelementen (Semantik) vermischt werden und das Ergebnis dann als Ganzes verarbeitet oder ausgef\u00fchrt wird. In diesem Fall m\u00fcssen alle Steuerzeichen in den Daten, die im Kontext relevant sind, unsch\u00e4dlich gemacht werden. Dieser Vorgang wird je nach Ausgabekontext als \"Ausgabekodierung\" oder \"Sanitisierung\" bezeichnet.\n      Insbesondere die Umsetzung der folgenden Ma\u00dfnahmen sollte validiert werden:\n      - Indirektion: Die Ausf\u00fchrung von kritischem Code sollte so weit wie m\u00f6glich von der Eingabe entkoppelt werden\n      - Plausibilit\u00e4t: Bereichspr\u00fcfungen, Allowlists und/oder Denylists sollten verwendet werden, um den Wertebereich der Eingabe auf plausible Werte zu beschr\u00e4nken.\n      - Kontext-Validierung: Vor der Ausf\u00fchrung muss eine Kontrolllogik ablaufen, die die Ausf\u00fchrungsberechtigung des Programms, des Benutzers und der Eingabe ausreichend pr\u00fcft.\n      - Nachvollziehbarkeit: Es sollte in Betracht gezogen werden, die Ausf\u00fchrung sensibler Gesch\u00e4ftslogik f\u00fcr den Kontext des Benutzers, die Ausf\u00fchrungszeit und die Eingabe ausreichend zu protokollieren.\n      - \u00c4quivalenz: Bei dynamisch ausgef\u00fchrtem Code muss das gleiche Ma\u00df an Kontrolle ablaufen wie bei einer gleichwertigen statischen Implementierung, die den im Falle einer korrekten statischen Implementierung der Codeausf\u00fchrung entspricht.\n\n2. Im Rahmen des \u00c4nderungstests m\u00fcssen alle Implementierungen auf den Schutz vor eingabebasierten Angriffen \u00fcberpr\u00fcft werden, wenn geeignete ABAP-Techniken in der Implementierung verwendet werden.\n    - Traversierung von Verzeichnissen und Dateien.\n    - Injektion von Betriebssystembefehlen.\n    - SQL-Injektion.\n    - Ausprobier-Attacken.\n    - ABAP-Code-Injektion.\n",
+      "Verification": [
+        "",
+        "- Pr\u00fcfen Sie, ob f\u00fcr alle \u00c4nderungen am benutzerdefinierten Code eine \u00dcberpr\u00fcfung des Quellcodes durchgef\u00fchrt und dokumentiert wurde, um Schwachstellen bei Injektion und Bereinigung zu identifizieren.",
+        "- Pr\u00fcfen Sie, ob die \u00c4nderung ausreichend auf die oben genannten Sicherheitsl\u00fccken getestet und dokumentiert wurde."
+      ],
+      "References": [
+        "",
+        "- CIS CSC 4",
+        "- COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04",
+        "- ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12",
+        "- ISO/IEC 27001:2013 Klausel 6.1.2",
+        "- NIST SP 800-53 Rev. 4 RA-3, SI-5, PM-12, PM-16",
+        "- OWASP ASVS 2.0 V5.1, V5.3",
+        "- BSI APP (Februar 2020) 4.6 A7, A8, A11, A13, A18"
+      ]
+    },
+    {
+      "Shortcode": "PT-IP-PT-M01-001",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP GUI",
+      "Maturity Level": "1",
+      "IPAC": [
+        "I",
+        "P"
+      ],
+      "Defender": [
+        "Prozess",
+        "Technologie"
+      ],
+      "Prerequisites": [
+        ""
+      ],
+      "Description": "\nSAP GUI erm\u00f6glicht es Benutzern, von ihren eigenen Workstations aus direkt auf verschiedene SAP-Anwendungen zuzugreifen. Diese Funktionalit\u00e4t stellt ein weiteres Sicherheitsrisiko f\u00fcr SAP-Anwendungen dar, wenn sie nicht gem\u00e4\u00df den Sicherheitsrichtlinien verwaltet oder konfiguriert wird.\n",
+      "Implementation": "\nSAP GUI wird laufend f\u00fcr verschiedene Probleme und Schwachstellen aktualisiert. Daher ist es sehr wichtig, Updates f\u00fcr SAP GUI in die Patch-Zyklen des Unternehmens aufzunehmen.\n\n- Regelm\u00e4\u00dfige Aktualisierung der SAP GUI f\u00fcr alle Clients\n\nHinweis: PT-IP-PT-M01-002 enth\u00e4lt detaillierte Informationen zur Sicherung der SAP GUI\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob SAP GUI in die Patch-Verwaltung des Unternehmens einbezogen ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob die SAP GUI auf den Client-PCs aktuell ist."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A20 Sichere SAP-GUI-Einstellungen/ Sichere SAP-GUI-Einstellungen",
+        "- SAP Security Baseline Template V2.1: 2.2.2.1.4"
+      ]
+    },
+    {
+      "Shortcode": "DT-P-AE-M01-004",
+      "Security Function": "DT",
+      "CSF Category": "Anomalien und Ereignisse",
+      "Technology": "SAP ERP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nTabellenprotokollierung:\n\nDie Identifizierung und Sammlung von Protokollen zur Ermittlung von \u00c4nderungen in kritischen Tabellen ist notwendig, um die Integrit\u00e4t der in verschiedenen Tabellen verf\u00fcgbaren Daten zu erhalten.\n\n",
+      "Implementation": "\nAktivieren Sie die Tabellenprotokollierung \u00fcber den Profilparameter rec/client. Es wird empfohlen, diesen Parameter so einzustellen, dass die Protokollierung von allen Mandanten innerhalb Ihrer SAP-Umgebung erfolgt.\n\nAls Faustregel gilt: W\u00e4hlen Sie Tabellen aus, die entweder mit der h\u00f6chsten Schutzklasse klassifiziert sind, oder w\u00e4hlen Sie Tabellen je nach der Kritikalit\u00e4t der darin enthaltenen Daten.\n\nSie k\u00f6nnen Warnmeldungen konfigurieren, wenn ein bestimmtes Ereignis eintritt oder ein Schwellenwert erreicht wird. Dies tr\u00e4gt dazu bei, den \u00dcberpr\u00fcfungsprozess der Tabellenprotokolle zu automatisieren und die Arbeitsbelastung der Administratoren zu verringern. Das Versenden von Protokollen an eine zentrale Stelle hilft bei der Einrichtung von Warnmeldungen.\n",
+      "Verification": [
+        "",
+        "- Stellen Sie den Parameter rec/client so ein, dass die Protokollierung aktiviert wird.",
+        "- Setzen Sie den rec/client-Parameter, um von allen Clients zu sammeln",
+        "- Definieren Sie die zu protokollierenden Tabellen mit der Transaktion SE13",
+        "- Verwenden Sie Transaktion SCU3, um einen \u00dcberblick \u00fcber alle Tabellen zu erhalten, f\u00fcr die die Tabellenprotokollierung aktiviert ist, sowie \u00fcber die \u00c4nderungen an diesen Tabellen",
+        "- Konfigurieren Sie Alarme f\u00fcr wichtige Ereignisse, um auf \u00c4nderungen in den Tabellen zu reagieren"
+      ],
+      "References": []
+    },
+    {
+      "Shortcode": "PT-A-AC-M01-012",
+      "Security Function": "PT",
+      "CSF Category": "Benutzerverwaltung, Authentifizierung und Zugriffskontrolle",
+      "Technology": "SAP Java",
+      "Maturity Level": "1",
+      "IPAC": [
+        "A"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nEs wird empfohlen, Single Sign-On (SSO) zu konfigurieren, wenn mehrere SAP-Systeme in der Umgebung des Unternehmens laufen. SSO kann den Prozess der Verwaltung und Konfiguration von Benutzerberechtigungen f\u00fcr mehrere Systeme und Anwendungen vereinfachen. Einem einzelnen Benutzer den Zugriff auf mehrere Anwendungen zu gestatten, birgt eigene Sicherheitsrisiken und Bedrohungen; eine sichere Konfiguration der ausgestellten Anmeldetickets muss vorhanden sein, um potenzielle Bedrohungen zu vermeiden.  \n",
+      "Implementation": "\nUm ausgestellte Anmeldetickets w\u00e4hrend des Transports in Java-basierten Systemen zu sch\u00fctzen, m\u00fcssen die folgenden Profilparameter vorhanden sein.  \n\n- Verwenden Sie HTTPS, indem Sie ume.logon.security.enforce_secure_cookie = true setzen.\n- Legen Sie ein Ablaufdatum f\u00fcr das ausgestellte Ticket fest, indem Sie login.ticket_lifetime \u2264 8 (hh:mm) setzen.\n- Deklarieren Sie ein Cookie als HTTPonly, indem Sie ume.logon.httponlycookie = true setzen. Dadurch wird der Zugriff auf das ausgestellte Cookie vom Webbrowser des Clients durch andere Anwendungen wie z.B. Javascript-Zugriff, Plug-ins usw. verhindert.\n\n\nHinweis: Diese Kontrolle setzt voraus, dass SSO in der Organisation bereits konfiguriert ist und verwendet wird.\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie, ob der HTTPS-Profilparameter gesetzt ist, indem Sie ume.logon.security.enforce_secure_cookie = true \u00fcberpr\u00fcfen.",
+        "- \u00dcberpr\u00fcfen Sie, ob ein Ablaufdatum f\u00fcr ausgestellte Anmeldetickets existiert, indem Sie login.ticket_lifetime \u2264 8 \u00fcberpr\u00fcfen.",
+        "- Pr\u00fcfen Sie, ob der Profilparameter ume.logon.httponlycookie = true"
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A31 Konfiguration von SAP Single-Sign-On (S) / Konfiguration von SAP Single-Sign-On (S)",
+        "- SAP Security Baseline Template V2.1: 2.3.2.4.2"
+      ]
+    },
+    {
+      "Shortcode": "PT-I-IP-M01-006",
+      "Security Function": "PT",
+      "CSF Category": "Prozesse und Verfahren zum Schutz von Informationen",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "I"
+      ],
+      "Defender": [
+        "Prozess"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDie Verwaltung von RFC-Verbindungen zwischen verschiedenen Systemen mit unterschiedlichen Klassifizierungsstufen ist erforderlich, um die Ausweitung von Rechten auf sensible oder Produktionssysteme zu verhindern.\n",
+      "Implementation": "\nAls Faustregel gilt, dass Verbindungen von Systemen niedrigerer Klassifizierung, wie z.B. Entwicklungs- oder Testsystemen, zu Systemen hoher Klassifizierung, wie z.B. Produktionssystemen, keine Vertrauensstellungen (Trust Relations) zur Systemanmeldung verwenden oder Benutzeranmeldedaten des Zielsystems speichern sollten.\nDie Daten der Verbindungskonfiguration sind das einzige, was in den verschiedenen Systemen gespeichert werden kann. Entsprechend muss die Anmeldung mittels des jeweiligen Benutzers im Zielsystem durch Authentifizierung erfolgen.\n\n",
+      "Verification": [
+        "",
+        "- Authentifizierung ist bei jeder Verbindung von einem niedrigeren zu einem h\u00f6heren Klassifizierungssystem erforderlich",
+        "- Um RFC-Verbindungen zu ermitteln, die Benutzer-Credentials speichern, verwenden Sie den Report RSRFCCHK in allen Systemen lokal",
+        "- Schr\u00e4nken Sie die Berechtigung zur Pflege von RFC-Destinationen in Transaktion SM59 ein, indem Sie das Berechtigungsobjekt S_RFC_ADM streng kontrollieren."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Absicherung der SAP-RFC-Schnittstelle/ Absicherung der SAP-RFC-Schnittstelle",
+        "- SAP Security Baseline Template V2.0: 2.3.2.3"
+      ]
+    },
+    {
+      "Shortcode": "PT-P-PT-M01-009",
+      "Security Function": "PT",
+      "CSF Category": "Schutztechnologie",
+      "Technology": "SAP ABAP",
+      "Maturity Level": "1",
+      "IPAC": [
+        "P"
+      ],
+      "Defender": [
+        "Technologie"
+      ],
+      "Prerequisites": [],
+      "Description": "\nDer Schutz vor b\u00f6swilligem oder unerkanntem Zugriff auf die Anwendungsserver \u00fcber den Message Server ist entscheidend f\u00fcr die Aufrechterhaltung der Integrit\u00e4t, Verf\u00fcgbarkeit und Vertraulichkeit der verschiedenen Anfragen zwischen den Anwendungsservern eines SAP-System, dass in Form eines Clusters betrieben wird.\n",
+      "Implementation": "\nEin Netzwerkger\u00e4t, das als abtr\u00fcnniger Anwendungsserver fungiert, kann ein hohes Risiko f\u00fcr das Unternehmen darstellen, wenn die Kommunikation mit legitimen Anwendungsservern zugelassen wird..\n\nF\u00fcr den Message Server m\u00fcssen Zugriffskontrolllisten (ACLs) konfiguriert werden, um Angriffe auf die Vertrauensstellung zwischen legitimen Anwendungsservern einzud\u00e4mmen und abzuwehren.\n\n- ACL-Datei sollte keinen Eintrag enthalten, der alle Hosts zul\u00e4sst (d.h. HOST=* ist kritisch)\n- Trennen Sie die Ports auf dem Message-Server f\u00fcr interne (1) und externe Kommunikation (2)\n- Profilparameter rdisp/msserv_internal definiert die zu verwendenden internen Ports\n- Unterbinden der Kommunikation von anderen Netzwerkger\u00e4ten zu dem im Profilparameter rdisp/msserv_internal definierten Port\n- Externe \u00dcberwachung des Message Servers durch Setzen des Profilparameters ms/monitor=0 unterbinden\n- Externe Verwaltung des Message Servers durch Setzen des Profilparameters ms/admin_port=0 verbieten\n\n(1) - Interne Kommunikation dient der Kommunikation zwischen verschiedenen Anwendungsdiensten im Unternehmen\n\n(2) - Externe Kommunikation dient der Kommunikation mit den Benutzern/Kunden\n",
+      "Verification": [
+        "",
+        "- \u00dcberpr\u00fcfen Sie die ACLs f\u00fcr den Message Server anhand des Profilparameters ms/acl_info",
+        "- \u00dcberpr\u00fcfen Sie, dass HOST=* nicht in der ACL definiert ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob die Ports f\u00fcr internen und externen Datenverkehr aufgeteilt sind und ob die Firewall die Kommunikation zum internen Port f\u00fcr alle Hosts blockiert, die nicht zum Systemcluster geh\u00f6ren.",
+        "- \u00dcberpr\u00fcfen Sie, dass der Profilparameter ms/monitor=0 ist.",
+        "- \u00dcberpr\u00fcfen Sie, ob der Profilparameter ms/admin_port=0 ist."
+      ],
+      "References": [
+        "- BSI APP.4.2 SAP-ERP-System, APP.4.2.A9 Absicherung und \u00dcberwachung des Message-Servers (B) / Protection and monitoring of the Message-Servers (B)",
+        "- SAP Security Baseline Template V2.1: 2.2.1.4, 2.2.1.4.1, 2.2.1.4.2"
+      ]
+    }
+  ],
+  "Requirements": []
+}

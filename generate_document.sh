@@ -23,7 +23,7 @@ generate_docx() {
 # }
 
 lang="en"
-vers="0.8"
+vers="0.8.1"
 
 if [ -z "$1" ]
 then
@@ -39,7 +39,7 @@ else
       vers=$2
 fi
 
-echo -n "Generating OWASP CBAS SAP Security Maturity Model $vers ($lang)..."
+echo -n "Generating OWASP SAP Security Verification Standard $vers ($lang)..."
 if [ -d "$lang" ];
 then
 	cd "Controls_${lang}"

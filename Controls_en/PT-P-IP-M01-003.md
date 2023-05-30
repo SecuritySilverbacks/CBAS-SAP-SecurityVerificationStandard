@@ -1,7 +1,7 @@
 ---
 Security Function: PT
 Category: Information Protection Processes and Procedures
-Technology: SAP ABAP, SAP JAVA, SAP HANA
+Technology: SAP ABAP
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Process / Technology
@@ -29,8 +29,8 @@ It is necessary to follow a patch management process [1] in order to maintain th
 
 ## Verification of Control
 
-- [ ] Schedule a regular patching process to SAP systems
-- [ ] Create/Follow a patch management process to maintain integrity and availability of SAP systems
+- Schedule a regular patching process to SAP systems
+- Create/Follow a patch management process to maintain integrity and availability of SAP systems
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Secure configuration of the SAP ABAP stack (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)

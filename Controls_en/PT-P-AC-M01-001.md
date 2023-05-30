@@ -1,11 +1,11 @@
 ---
-Security Function: Protect
+Security Function: PT
 Category: Identity Management, Authentication and Access Control
-Technology: Windows OS, Linux
+Technology: Operating System
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
-Prerequisite: PT-P-IP-M01-012, PT-P-IP-M01-013
+Prerequisite: PT-P-IP-M01-012 PT-P-IP-M01-013
 ---
 
 ## Description
@@ -16,16 +16,16 @@ Authorization, permission, and access for SAP standard users must properly be se
 
 Like local users and domain users on a Windows machine, SAP standard users must have the appropriate permissions and authorizations within the OS.
 
-- [ ] Restrict access to root, SAPsid, and dbsid users on each system  
-- [ ] Lock dbsid user from all application serves after initial installation
-- [ ] SAPsid should not have any rights for interactive logon
+- Restrict access to root, SAPsid, and dbsid users on each system  
+- Lock dbsid user from all application serves after initial installation
+- SAPsid should not have any rights for interactive logon
 
-Note: SAP systems should not be installed on domain controllers
+Note: SAP systems must not be installed on domain controllers
 
 ## Verification of control
 
-- [ ] Verify SAP system is not install on the domain controller
-- [ ] Verify that all restrictions for SAP users are in place
+- Verify SAP system is not install on the domain controller
+- Verify that all restrictions for SAP users are in place
 
 
 ## References
