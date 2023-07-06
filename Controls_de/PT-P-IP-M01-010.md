@@ -20,6 +20,7 @@ Nachfolgend finden Sie Informationen zur Festlegung von Passwortrichtlinien für
 - Erhöhen Sie die maximale Passwortlänge mit der UME-Eigenschaft ume.logon.security_policy.password_max_length (Standard ist nur 14)
 - Legen Sie ein Verfallsdatum für zu ändernde Kennwörter mit der UME-Eigenschaft ume.logon.security_policy.password_expire_days <= 90 fest
 - Definieren Sie eine Größe für den Passwortverlauf mit der UME-Eigenschaft ume.logon.security_policy.password_history >= 5
+- Definieren Sie eine maximale Passwortgültigkeit mit der UME-Eigenschaft ume.logon.security_policy.password_max_idle_time zwischen 1 und 180
 - Um die Benutzer zur Einhaltung der Kennwortrichtlinie zu zwingen, setzen Sie die UME-Eigenschaft ume.logon.security_policy.enforce_policy_at_logon = TRUE
 - Setzen Sie die maximalen Anmeldeversuche durch die UME-Eigenschaft ume.logon.security_policy.lock_after_invalid_attempts <= 5
 - Verweigern Sie die Verwendung alter Passwörter in neuen Passwörtern, indem Sie die UME-Eigenschaft ume.logon.security_policy.oldpass_in_newpass_allowed = FALSE setzen
@@ -42,4 +43,4 @@ Passwortkomplexität einstellen:
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A13 SAP-Passwortsicherheit (S) / SAP-Passwortsicherheit (S)
-- SAP Security Baseline Template V2.1: 2.3.2.2, 2.3.2.2.2
+- SAP Security Baseline Template V2.4.1: 2.3.2.2, 2.3.2.2.2 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)

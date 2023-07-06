@@ -29,7 +29,7 @@ Die Protokollierung und Überwachung von SAP-Administratoren erleichtert die Ide
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A5 Konfiguration und Absicherung der SAP-Benutzerverwaltung / Konfiguration und Absicherung der SAP-Benutzerverwaltung
-- SAP Security Baseline Template V2.1: 2.3.1
+- SAP Security Baseline Template V2.4.1: 2.3.1, 2.3.3 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
 - CIS CSC 1, 5, 15, 16
 - COBIT 5 DSS05.04, DSS06.03
 - ISA 62443-2-1:2009 4.3.3.5.1

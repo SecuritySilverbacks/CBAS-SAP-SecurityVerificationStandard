@@ -19,6 +19,7 @@ Um ausgestellte Anmeldetickets während des Transports in Java-basierten Systeme
 - Verwenden Sie HTTPS, indem Sie ume.logon.security.enforce_secure_cookie = true setzen.
 - Legen Sie ein Ablaufdatum für das ausgestellte Ticket fest, indem Sie login.ticket_lifetime ≤ 8 (hh:mm) setzen.
 - Deklarieren Sie ein Cookie als HTTPonly, indem Sie ume.logon.httponlycookie = true setzen. Dadurch wird der Zugriff auf das ausgestellte Cookie vom Webbrowser des Clients durch andere Anwendungen wie z.B. Javascript-Zugriff, Plug-ins usw. verhindert.
+- Verwenden Sie ebenfalls HTTPS für die Portal Alias Cookies, indem Sie portal.alias.security.enforce_secure_cookie = true setzen.
 
 
 Hinweis: Diese Kontrolle setzt voraus, dass SSO in der Organisation bereits konfiguriert ist und verwendet wird.
@@ -28,7 +29,9 @@ Hinweis: Diese Kontrolle setzt voraus, dass SSO in der Organisation bereits konf
 - Überprüfen Sie, ob der HTTPS-Profilparameter gesetzt ist, indem Sie ume.logon.security.enforce_secure_cookie = true überprüfen.
 - Überprüfen Sie, ob ein Ablaufdatum für ausgestellte Anmeldetickets existiert, indem Sie login.ticket_lifetime ≤ 8 überprüfen.
 - Prüfen Sie, ob der Profilparameter ume.logon.httponlycookie = true
+- Prüfen Sie, ob der Profilparameter portal.alias.security.enforce_secure_cookie = true
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A31 Konfiguration von SAP Single-Sign-On (S) / Konfiguration von SAP Single-Sign-On (S)
-- SAP Security Baseline Template V2.1: 2.3.2.4.2
+- SAP Security Baseline Template V2.4.1: 2.3.2.4.2 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
+- [SAP-Hinweis 2068872](https://launchpad.support.sap.com/#/notes/2068872)

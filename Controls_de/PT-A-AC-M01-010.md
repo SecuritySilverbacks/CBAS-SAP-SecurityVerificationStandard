@@ -27,4 +27,4 @@ Die folgenden Standardbenutzer, die in HANA zu finden sind, müssen verwaltet un
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Konfiguration und Absicherung der SAP-Benutzerverwaltung / Konfiguration und Absicherung der SAP-Benutzerverwaltung
-- SAP Security Baseline Template V2.1: 2.3.1.2.2
+- SAP Security Baseline Template V2.4.1: 2.3.1.2.2 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)

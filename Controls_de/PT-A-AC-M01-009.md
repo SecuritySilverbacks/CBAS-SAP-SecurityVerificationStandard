@@ -57,4 +57,4 @@ Die folgenden Standardbenutzer, die in ABAP-Systemen zu finden sind, müssen ver
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Konfiguration und Absicherung der SAP-Benutzerverwaltung / Konfiguration und Absicherung der SAP-Benutzerverwaltung
-- SAP Security Baseline Template V2.1: 2.3.1
+- SAP Security Baseline Template V2.4.1: 2.3.1, 2.3.1.2.1 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)

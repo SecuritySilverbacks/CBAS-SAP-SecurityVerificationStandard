@@ -18,7 +18,7 @@ Die folgenden Schritte helfen, Schwachstellen zu entschärfen, bei denen ein Ang
 
 - Aktualisieren Sie Ihren Kernel auf den neuesten Sicherheits-Patch-Level.
 - Überprüfen Sie alle logischen Dateinamen und Dateipfaddefinitionen aus den Listenprogrammen RSFILECR oder RSFILENA, um die erforderlichen Anpassungen zu ermitteln
-- Der Profilparameter abap/path_normalizartion sollte aktiviert sein (Wert 1).
+- Der Profilparameter abap/path_normalization sollte aktiviert sein (Wert on, ab SAP_BASIS 753 ext).
 - Pfade müssen normalisiert werden (siehe SAP-Hinweis 1497003 zur Normalisierung von Dateipfaden), wenn das Berechtigungsobjekt S_DATASET verwendet wird
 - Pfade müssen normalisiert werden, wenn die Tabelle SPTH  Einträge enthält
 - Wenn die Benutzeroberflächen die Eingabe von logischen Dateinamen erlaubt, definieren Sie Aliase für die verwendeten logischen Dateinamen
@@ -29,9 +29,11 @@ Hinweis: Stellen Sie sicher, dass Sie die Änderungen zunächst in der Testumgeb
 
 - Identifizieren Sie logische Dateinamen aus dem Listenprogramm RSFILENA
 - Identifizieren Sie logische Dateinamen und Dateipfaddefinitionen aus dem Listenprogramm RSFILECR
-- Überprüfen Sie, ob der Profilparameter abap/path_normalization nicht deaktiviert ist
+- Überprüfen Sie, ob der Profilparameter abap/path_normalization nicht deaktiviert (=off) ist
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Sichere Konfiguration des SAP-ABAP-Stacks (B) / Secure Konfiguration des SAP-ABAP-Stacks (B)
-- SAP Security Baseline Template V2.1: 2.2.1.3.1
-- SAP-Hinweis 1497003
+- SAP Security Baseline Template V2.4.1: 2.2.1.3.1 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
+- [SAP-Hinweis 1497003](https://launchpad.support.sap.com/#/notes/1497003)
+- [SAP-Hinweis 2551541](https://launchpad.support.sap.com/#/notes/2551541)
+- [SAP-Hinweis 2562089](https://launchpad.support.sap.com/#/notes/2562089)

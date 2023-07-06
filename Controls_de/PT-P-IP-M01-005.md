@@ -25,13 +25,14 @@ Nachfolgend finden Sie Informationen zur Festlegung von Passwortrichtlinien für
 - Entfernen Sie alte abwärtskompatible Passwort-Hashes in den Feldern BCODE und PASSCODE aus der Tabelle USR02
 - Maximale Anmeldeversuche durch Profilparameter login/fails_to_user_lock <= 5 festlegen
 - Deaktivieren der automatischen Entsperrung durch den Profilparameter login/failed_user_auto_unlock = 0
-- Festlegen eines maximalen Zeitraums, in dem ein unbenutztes produktives Kennwort gültig bleibt durch den Profilparameter login/max_idle_productive <= 90
+- Festlegen eines maximalen Zeitraums, in dem ein unbenutztes produktives Kennwort gültig bleibt durch den Profilparameter login/password_max_idle_productive zwischen 1 und 90
 - Anmeldung mit ursprünglichen oder abgelaufenen Benutzerkonten verweigern durch Setzen des Profilparameters icf/reject_expired_passwd = 1
 - Anmeldung mit anfänglichen oder abgelaufenen Benutzerkonten über RFC verweigern, indem Sie den Profilparameter rfc/reject_expired_passwd = 1 setzen.
-- Deaktivieren Sie die Passwortanmeldung, wenn die Organisation andere Authentifizierungsmethoden verwendet, indem Sie den Profilparameter login/disable_password_logon > 0 setzen.
-- Bei der Verwendung der Authentifizierungsmethode Single Sign-on (SSO) muss mit dem Profilparameter login/password_change_for_SSO geprüft werden, ob die Passwörter eines Benutzers geändert werden müssen.
+- Deaktivieren Sie die Passwortanmeldung, wenn die Organisation andere Authentifizierungsmethoden verwendet, indem Sie den Profilparameter login/disable_password_logon > 0 setzen. Definieren Sie zusätzlich eine Regel mit dem Profilparameter login/password_logon_usergroup für Benutzergruppen, die sich weiterhin mit Passwort als Fallback-Lösung anmelden können, wie z.B. Administratoren.
+- Bei der Verwendung der Authentifizierungsmethode Single Sign-on (SSO) muss mit dem Profilparameter login/password_change_for_SSO = 1 geprüft werden, ob die Passwörter eines Benutzers geändert werden müssen.
 - Legen Sie mit dem Profilparameter login/password_change_waittime > 0 eine Zeitspanne (gemessen in Tagen) fest, in der ein Benutzer sein Passwort erneut ändern kann.
-- Legen Sie den Hash-Algorithmus und die Kodierung für das neue Passwort mit dem Profilparameter login/password_hash_algorithm = encoding=RFC2307, algorithm=iSSHA-512, iterations=15000, saltsize=256 fest (Der Profilparameter login/password_downwards_compatibility sollte nicht gleich 5 sein, sonst macht der Profilparameter für den Hash-Algorithmus keinen Sinn)
+- Legen Sie den Hash-Algorithmus und die Kodierung für das neue Passwort mit dem Profilparameter login/password_hash_algorithm = encoding=RFC2307, algorithm=iSSHA-512, iterations=15000, saltsize=256 fest (Der Profilparameter login/password_downwards_compatibility sollte nicht gleich 5 sein, ansonst kommt dieser Profilparameter nicht zum Tragen)
+- Entfernen Sie alte ungenutzte Passworthashes entsprechend dem SAP-Hinweis 1458262
 
 Passwortkomplexität einstellen:
 - Setzen Sie den Profilparameter login/min_password_digits >= 1
@@ -52,5 +53,5 @@ Passwortkomplexität einstellen:
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A13 SAP-Passwortsicherheit (S) / SAP-Passwortsicherheit (S)
-- SAP Security Baseline Template V2.1: 2.3.2.2, 2.3.2.2.1
-- SAP-Hinweis 1458262
+- SAP Security Baseline Template V2.4.1: 2.3.2.2, 2.3.2.2.1 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
+- [SAP-Hinweis 1458262](https://launchpad.support.sap.com/#/notes/1458262)

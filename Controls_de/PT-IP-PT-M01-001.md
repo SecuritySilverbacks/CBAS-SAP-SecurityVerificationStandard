@@ -16,7 +16,7 @@ SAP GUI ermöglicht es Benutzern, von ihren eigenen Workstations aus direkt auf 
 
 SAP GUI wird laufend für verschiedene Probleme und Schwachstellen aktualisiert. Daher ist es sehr wichtig, Updates für SAP GUI in die Patch-Zyklen des Unternehmens aufzunehmen.
 
-- Regelmäßige Aktualisierung der SAP GUI für alle Clients
+- Regelmäßige Aktualisierung der SAP GUI für alle Clients, mindestens einmal pro Jahr
 
 Hinweis: PT-IP-PT-M01-002 enthält detaillierte Informationen zur Sicherung der SAP GUI
 
@@ -27,4 +27,4 @@ Hinweis: PT-IP-PT-M01-002 enthält detaillierte Informationen zur Sicherung der 
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A20 Sichere SAP-GUI-Einstellungen/ Sichere SAP-GUI-Einstellungen
-- SAP Security Baseline Template V2.1: 2.2.2.1.4
+- SAP Security Baseline Template V2.4.1: 2.2.2.1.4 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
