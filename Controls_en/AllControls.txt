@@ -48,7 +48,7 @@ Prerequisite: DT-P-AE-M01-001
 
 Security audit logs:
 
-Identifying and collecting security-related activities is important for evidence collection following a security incident or event. The security audit log might contain sensitive data that needs to be stored and encrypted properly.  
+Identifying and collecting security-related activities is important for evidence collection following a security incident or event. The security audit log might contain sensitive data that needs to be stored and encrypted properly.
 
 ## Implementation
 
@@ -185,7 +185,7 @@ Prerequisite: DT-P-AE-M01-001
 
 Read access logging:
 
-An important tool used to monitor and record any read access to classified or sensitive data found in SAP systems. The tool helps when investigating a security breach or information leak.  
+An important tool used to monitor and record any read access to classified or sensitive data found in SAP systems. The tool helps when investigating a security breach or information leak.
 
 
 ## Implementation
@@ -615,11 +615,11 @@ Prerequisite:
 
 ## Description
 
-Single Sign-On (SSO) is recommended to be configured when multiple SAP systems are running in the organization's environment. SSO can simplify the process of managing and configuring user authorization to multiple systems and applications. Allowing a single user to access multiple applications comes with its own security risks and threats; a secure configuration of the issued logon tickets must be in place to avoid potential threats.  
+Single Sign-On (SSO) is recommended to be configured when multiple SAP systems are running in the organization's environment. SSO can simplify the process of managing and configuring user authorization to multiple systems and applications. Allowing a single user to access multiple applications comes with its own security risks and threats; a secure configuration of the issued logon tickets must be in place to avoid potential threats.
 
 ## Implementation
 
-In order to protect issued logon tickets during transport, in ABAP based systems, the below profile parameters are required to be in place.  
+In order to protect issued logon tickets during transport, in ABAP based systems, the below profile parameters are required to be in place.
 
 - [ ] Use HTTPS by setting login/ticket_only_by_https = 1
 - [ ] To make sure that the login ticket is sent back to the creating host set login/ticket_only_to_host = 1
@@ -650,11 +650,11 @@ Prerequisite:
 
 ## Description
 
-Single Sign-On (SSO) is recommended to be configured when multiple SAP systems are running in the organization's environment. SSO can simplify the process of managing and configuring user authorization to multiple systems and applications. Allowing a single user to access multiple applications comes with its own security risks and threats; a secure configuration of the issued logon tickets must be in place to avoid potential threats.  
+Single Sign-On (SSO) is recommended to be configured when multiple SAP systems are running in the organization's environment. SSO can simplify the process of managing and configuring user authorization to multiple systems and applications. Allowing a single user to access multiple applications comes with its own security risks and threats; a secure configuration of the issued logon tickets must be in place to avoid potential threats.
 
 ## Implementation
 
-In order to protect issued logon tickets during transport, in Java based systems, the below profile parameters are required to be in place.  
+In order to protect issued logon tickets during transport, in Java based systems, the below profile parameters are required to be in place.
 
 - [ ] Use HTTPS by setting ume.logon.security.enforce_secure_cookie = true
 - [ ] Set an expiry for the issued ticket by setting login.ticket_lifetime ≤ 8 (hh:mm)
@@ -692,7 +692,7 @@ It is important to create policies and guidelines which addresses the different 
 
 - [ ] Create an access control policy to define users and their respective user groups
 - [ ] Create a strong SAP password policy for all users
-- [ ] Guidelines on setting a strong password should be created for users to follow 
+- [ ] Guidelines on setting a strong password should be created for users to follow
 
 Note: Controls PT-P-IP-M01-005 and PT-P-IP-M01-010 can assist with building a strong SAP password policy
 
@@ -868,7 +868,7 @@ The control involves the need to securely configure the SAP Router and Web Dispa
 
 External traffic:
 
-The SAP router and web dispatcher should be available in the demilitarized (DMZ) zone in order to filter appropriate traffic before entering through the firewall.  
+The SAP router and web dispatcher should be available in the demilitarized (DMZ) zone in order to filter appropriate traffic before entering through the firewall.
 
 Internal traffic:
 
@@ -883,7 +883,7 @@ The architecture of SAP systems should be properly documented which should inclu
 
 - [ ] SAP Router and Web dispatcher placed in DMZ zone
 - [ ] ACLs are in place to filter unwanted traffic
-- [ ] Only recommended ports are allowed to access the network.  
+- [ ] Only recommended ports are allowed to access the network.
 - [ ] SAP systems are on a separate subnet inside the organization
 - [ ] Documentation providing an illustrative view of the SAP architecture
 
@@ -1014,9 +1014,9 @@ SAP GUI allows users to directly access different SAP applications from their ow
 
 ## Implementation
 
-SAP GUI is continuously being updated for different issues and vulnerabilities, which makes it very important to include updates for SAP GUI with the organizations patch cycles. 
+SAP GUI is continuously being updated for different issues and vulnerabilities, which makes it very important to include updates for SAP GUI with the organizations patch cycles.
 
-- [ ] Regularly update SAP GUI to all clients  
+- [ ] Regularly update SAP GUI to all clients
 
 Note: PT-IP-PT-M01-002 provides detailed information on securing SAP GUI
 
@@ -1046,7 +1046,7 @@ Authorization, permission, and access for SAP standard users must properly be se
 
 Like local users and domain users on a Windows machine, SAP standard users must have the appropriate permissions and authorizations within the OS.
 
-- [ ] Restrict access to root, SAPsid, and dbsid users on each system  
+- [ ] Restrict access to root, SAPsid, and dbsid users on each system
 - [ ] Lock dbsid user from all application serves after initial installation
 - [ ] SAPsid should not have any rights for interactive logon
 
@@ -1074,7 +1074,7 @@ Technology: SAP ABAP
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
-Prerequisite: 
+Prerequisite:
 ---
 
 ## Description
@@ -1106,7 +1106,7 @@ Technology: SAP Java
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
-Prerequisite: 
+Prerequisite:
 ---
 
 ## Description
@@ -1128,7 +1128,7 @@ To remove any version from your organization's SAP Java system set the UseServer
 - SAP Security Baseline Template V2.1: 2.2.1.2.2
 ---
 Security Function: PT
-Category: Data Security 
+Category: Data Security
 Technology: SAP ABAP
 Maturity Level: 1
 IPAC: Platform (P)
@@ -1175,7 +1175,7 @@ Prerequisite:
 
 ## Description
 
-Access to SAP databases must be protected from unauthorized access and misuse.  
+Access to SAP databases must be protected from unauthorized access and misuse.
 
 ## Implementation
 
@@ -1379,11 +1379,11 @@ Strengthening and hardening the OS running the organization's SAP system is crit
 
 If your organization deploys other application on Linux, there should already be a defined baseline when deploying Linux machines. With that in mind, the below are a few areas to keep in mind while hardening SAP systems running on Linux.
 
- - Prohibit root logons remotely 
+ - Prohibit root logons remotely
  - Remove unneeded services and accounts
  - Remove any unneeded Linux applications, features, roles, and components
  - Disable the use of X window systems (SAP applications do not require it)
- - Do not use telnet or FTP for file transfer  
+ - Do not use telnet or FTP for file transfer
  - Updates to be applied regularly
  - Avoid using SUID/SGID with vulnerable programs
  - Files are created with the appropriate permission through configuring the default file mask
@@ -1400,7 +1400,7 @@ If your organization is using SUSE Linux for hosting SAP applications, below are
 - [ ] Verify that unwanted applications, services, features, roles, and components are removed
 - [ ] Verify if file permissions are properly configured
 - [ ] Verify that telnet and FTP are not in use
-- [ ] Verify that security updates are done regularly  
+- [ ] Verify that security updates are done regularly
 
 ## References
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementation of security requirements for the Windows (S) operating system / Umsetzung von Sicherheitsanforderungen für das Betriebssystem Windows (S)
@@ -1416,7 +1416,7 @@ Prerequisite:
 
 ## Description
 
-Strengthening and hardening the OS running the organization's SAP system is critical to securing your SAP implementation and network. The windows operating system is quite famous for its abundance of vulnerabilities found daily.  
+Strengthening and hardening the OS running the organization's SAP system is critical to securing your SAP implementation and network. The windows operating system is quite famous for its abundance of vulnerabilities found daily.
 
 ## Implementation
 
@@ -1425,7 +1425,7 @@ If your organization runs a Windows environment, there should already be a defin
  - Disable or secure remote desktop
  - Remove unneeded services and accounts
  - Remove any unneeded Windows applications, features, roles, and components
- - Local administrator accounts to be disabled or secured  
+ - Local administrator accounts to be disabled or secured
  - Updates to be applied regularly
 
 It is recommended to follow the organization's baseline, if it exists, for securing Windows machines.
@@ -1434,7 +1434,7 @@ It is recommended to follow the organization's baseline, if it exists, for secur
 
 - [ ] Verify that unwanted applications, services, features, roles, and components are removed
 - [ ] Verify that local administrators accounts are disable or properly secure
-- [ ] Verify that security updates are done regularly  
+- [ ] Verify that security updates are done regularly
 
 ## References
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementation of security requirements for the Windows (S) operating system / Umsetzung von Sicherheitsanforderungen für das Betriebssystem Windows (S)
@@ -1450,7 +1450,7 @@ Prerequisite:
 
 ## Description
 
-SAP database contains critical information and data for different departments within an organization. The data must always be backed up, protected through encryption, maintained and reviewed on regular basis, and tested regularly.   
+SAP database contains critical information and data for different departments within an organization. The data must always be backed up, protected through encryption, maintained and reviewed on regular basis, and tested regularly.
 
 ## Implementation
 
@@ -1471,7 +1471,7 @@ Database system backups and tenant backups are required to be done on a schedule
 ---
 Security Function: PT
 Category: Protective Technology
-Technology: SAP ABAP  
+Technology: SAP ABAP
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
@@ -1526,7 +1526,7 @@ Note: Reference DT-P-AE-M01-002 controls for identifying available logs that can
 ---
 Security Function: PT
 Category: Protective Technology
-Technology: SAP Java  
+Technology: SAP Java
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
@@ -1606,7 +1606,7 @@ Note: Critical users must be monitored
 ---
 Security Function: PT
 Category: Protective Technology
-Technology: Message Server  
+Technology: Message Server
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Technology
@@ -1671,7 +1671,7 @@ Standard user IDs such as EARLYWATCH should not exist in any client.
 
 Self registration should not be allowed and turned off for better access control.
 
-(1) - Password policies changes across different organizations depending on several criteria's such criticality of the industry, local or federal laws, security standards that are mandatory to the industry and so on  
+(1) - Password policies changes across different organizations depending on several criteria's such criticality of the industry, local or federal laws, security standards that are mandatory to the industry and so on
 
 ## Verification of Control
 
@@ -1704,4 +1704,4 @@ Self registration should not be allowed and turned off for better access control
 
 ## Controls Updates
 
-We are continuously adding controls to cover the different maturity levels defined in the project. You can check our [projects](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/projects/1) page to stay updated for upcoming controls. 
+We are continuously adding controls to cover the different maturity levels defined in the project. You can check our [projects](https://github.com/NO-MONKEY/CBAS-SAP-SecurityMaturityModel/projects/1) page to stay updated for upcoming controls.
