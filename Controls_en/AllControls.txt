@@ -154,8 +154,6 @@ Defender: Process
 Prerequisite: DT-P-AE-M01-001
 ---
 
-Test
-
 ## Description
 
 Workload monitor:
