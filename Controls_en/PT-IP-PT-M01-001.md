@@ -3,9 +3,9 @@ Security Function: PT
 Category: Information Protection Processes and Procedures
 Technology: SAP GUI
 Maturity Level: 1
-IPAC: Integration / Platform
-Defender: Process / Technology
-Prerequisite: NA
+IPAC: Integration (I) Platform (P)
+Defender: Process Technology
+Prerequisite: 
 ---
 
 ## Description
@@ -16,14 +16,14 @@ SAP GUI allows users to directly access different SAP applications from their ow
 
 SAP GUI is continuously being updated for different issues and vulnerabilities, which makes it very important to include updates for SAP GUI with the organizations patch cycles. 
 
-- [ ] Regularly update SAP GUI to all clients  
+- Regularly update SAP GUI to all clients  
 
 Note: PT-IP-PT-M01-002 provides detailed information on securing SAP GUI
 
 ## Verification of Control
 
-- [ ] Verify if SAP GUI is included in the organizations patch management
-- [ ] Verify that SAP GUI is up-to-date in clients PCs
+- Verify if SAP GUI is included in the organizations patch management
+- Verify that SAP GUI is up-to-date in clients PCs
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A20 Secure SAP GUI settings/ Sichere SAP-GUI-Einstellungen

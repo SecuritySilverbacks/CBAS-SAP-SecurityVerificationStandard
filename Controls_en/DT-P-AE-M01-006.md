@@ -17,17 +17,17 @@ An important tool used to monitor and record any read access to classified or se
 
 ## Implementation
 
-The below configuration steps are required to be in place to monitor and configure different read access logs.
+The below configuration steps are required to be in place to monitor and configure read access logging (RAL).
 
 1. Identify what type of data to log through the read access logging
-2. Mention a purpose for logging the data; helps identify regulatory data
-3. Define the channels to monitor
+2. Declare a purpose for logging the data to help identify data of regulatory relevance
+3. Define the interfaces to monitor by RAL channels
 4. Define the log domains of the different channels
 5. Define a condition for the application to log the data
 
 
 ## Verification of Control
 
-- [ ] Configure and monitor the read access logging through the SRALMANAGER transaction
+- Configure and monitor the read access logging through the SRALMANAGER transaction
 
 ## References:

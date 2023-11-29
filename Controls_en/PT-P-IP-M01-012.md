@@ -1,5 +1,5 @@
 ---
-Security Function: Protect
+Security Function: PT
 Category: Information Protection Processes and Procedures
 Technology: Linux
 Maturity Level: 1
@@ -22,7 +22,7 @@ If your organization deploys other application on Linux, there should already be
  - Disable the use of X window systems (SAP applications do not require it)
  - Do not use telnet or FTP for file transfer  
  - Updates to be applied regularly
- - Avoid using SUID/SGID with vulnerable programs
+ - Avoid using SUID/SGID with potentially vulnerable programs
  - Files are created with the appropriate permission through configuring the default file mask
  - Regularly check signatures and keys on downloaded applications or patches
 
@@ -30,14 +30,14 @@ It is recommended to follow the organization's baseline, if it exists, for secur
 
 If your organization is using SUSE Linux for hosting SAP applications, below are additional points to consider:
 
-- [ ] Install and configure the SUSE security checker (seccheck) to enable notifications of any security changes
+- Install and configure the SUSE security checker (seccheck) to enable notifications of any security changes
 
 ## Verification of control
 
-- [ ] Verify that unwanted applications, services, features, roles, and components are removed
-- [ ] Verify if file permissions are properly configured
-- [ ] Verify that telnet and FTP are not in use
-- [ ] Verify that security updates are done regularly  
+- Verify that unwanted applications, services, features, roles, and components are removed
+- Verify if file permissions are properly configured
+- Verify that telnet and FTP are not in use
+- Verify that security updates are done regularly  
 
 ## References
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementation of security requirements for the Windows (S) operating system / Umsetzung von Sicherheitsanforderungen für das Betriebssystem Windows (S)

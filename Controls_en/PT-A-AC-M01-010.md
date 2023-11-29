@@ -20,10 +20,10 @@ The below standard user, found in HANA, are required to be managed and securely 
 
 ## Verification of Control
 
-- [ ] SYSTEM
-  - [ ] Administrator users have been created
-  - [ ] SYSTEM user to be deactivated
-  - [ ] Do not restrict the valid time range of user SYSTEM
+- SYSTEM
+  - Administrator users have been created
+  - SYSTEM user to be deactivated
+  - Do not restrict the valid time range of user SYSTEM
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Configuration and protection of the SAP user administration / Konfiguration und Absicherung der SAP-Benutzerverwaltung

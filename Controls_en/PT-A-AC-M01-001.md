@@ -23,9 +23,9 @@ Logging and monitoring SAP administrators allows easier identification of admini
 
 ## Verification of Control
 
-- [ ] Identify SAP user administrators and verify that these roles are given to only allowed users
-- [ ] Logs are available to verify the misuse of administrative actions
-- [ ] Monitoring is available to detect any misuse with user administration
+- Identify SAP user administrators and verify that these roles are given to only allowed users
+- Logs are available to verify the misuse of administrative actions
+- Monitoring is available to detect any misuse with user administration
 
 ## References:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A5 Configuration and protection of the SAP user administration / Konfiguration und Absicherung der SAP-Benutzerverwaltung

@@ -12,7 +12,7 @@ Prerequisite: DT-P-AE-M01-001
 
 Workload monitor:
 
-The workload monitor helps with analyzing system statistics in SAP systems. An important part of the workload monitor is its capability to collect activities performed by users against the system. This avoids nonrepudiation and helps in analyzing changes or security events that caused an incident to take place.
+The workload monitor helps with analyzing system statistics in SAP systems. An important part of the workload monitor is its capability to collect activities performed by users against the system. This avoids repudiation and helps in analyzing changes or security events that caused an incident to take place.
 
 ## Implementation
 
@@ -22,6 +22,6 @@ Tracking user activity may not be permitted in different parts of the world. Mak
 
 ## Verification of Control
 
-- [ ] Start the workload monitor using the STO3N transaction
+- Start the workload monitor using the STO3N transaction
 
 ## References:

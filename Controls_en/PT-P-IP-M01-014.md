@@ -5,7 +5,7 @@ Technology: SAP HANA
 Maturity Level: 1
 IPAC: Platform (P)
 Defender: Process
-Prerequisite: NA
+Prerequisite:
 ---
 
 ## Description
@@ -18,8 +18,8 @@ Database system backups and tenant backups are required to be done on a schedule
 
 ## Verification of Control
 
-- [ ] A full database backup scheduled on a weekly bases
-- [ ] Differential or incremental backups scheduled throughout the weekly
+- A full database backup scheduled on a weekly bases
+- Differential or incremental backups scheduled daily throughout the weekly
 
 ## References:
 - CIS CSC 10

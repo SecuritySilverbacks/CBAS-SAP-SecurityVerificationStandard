@@ -31,8 +31,8 @@ However, errors in custom developments can enable unauthorized accesses and data
 
 ## Verification of control
 
-- [ ] Review if data protection requirements are specified and documented, and their verification is documented in the test protocol of the change.
-- [ ] Audit if the source code review is carried out and documented on all custom code changes for the correct implementation of data protection criteria.
+- Review if data protection requirements are specified and documented, and their verification is documented in the test protocol of the change.
+- Audit if the source code review is carried out and documented on all custom code changes for the correct implementation of data protection criteria.
 
 ## References
 

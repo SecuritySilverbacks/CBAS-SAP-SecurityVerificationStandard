@@ -29,7 +29,7 @@ Note: each area is described in its respective control
 
 ## Verification of Control
 
-- [ ] A policy has been defined and created to identify, collect, acquire and preserve information from different log tools
+- A policy has been defined and created to identify, collect, acquire and preserve information from different log tools
 
 
 ## References:

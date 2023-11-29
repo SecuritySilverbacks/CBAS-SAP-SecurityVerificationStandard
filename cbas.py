@@ -29,6 +29,7 @@ import regex as re
 import json
 import csv
 import dicttoxml
+import copy
 
 try:
     from StringIO import StringIO
@@ -45,14 +46,16 @@ class CBASSMM:
     cbas['Controls'] = []
     boilerplate = "boilerplate"
     controls = "Controls"
+    source_language = 'en'
+    config = { }
 
-    cbas_flat = []
-
-    def __init__(self, language):
+    def __init__(self, source_language:str, config:dict):
 
         regex = re.compile('Version (([\d.]+){3})')
-        self.boilerplate = self.boilerplate + "_" + language
-        self.controls = self.controls + "_" + language
+        self.source_language = source_language
+        self.boilerplate = self.boilerplate + "_" + self.source_language
+        self.controls = self.controls + "_" + self.source_language
+        self.config = config
 
         for line in open(os.path.join(self.boilerplate, "0x01-Frontispiece.md"), encoding="utf8"):
             m = re.search(regex, line)
@@ -68,8 +71,8 @@ class CBASSMM:
                 self.cbas['Description'] = m.group(1)
 
         self.cbas['Requirements'] = chapters = []
-
-        for filename in os.listdir(self.controls):
+        files = [f for f in os.listdir(path = self.controls) if re.match('.*\.md', string=f) ]
+        for filename in files:
             control = {}
             control['Shortcode'] = ""
             control['Security Function'] = ""
@@ -104,51 +107,40 @@ class CBASSMM:
                 if m:
                     head = m[0]
                     for header in head.splitlines():
-                        if 'Security Function:' in header :
-                            control['Security Function'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                        attribute = header.split(sep=':', maxsplit=1)[0].strip()
+                        value = header.split(sep=':', maxsplit=1)[1]
+                        if self.get_ControlIdentifier_for_lang(identifier='Security Function', lang=self.source_language) == attribute :
+                            control['Security Function'] = value.strip()
                             continue
-                        elif 'Category:' in header :
-                            control['CSF Category'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                        elif self.get_ControlIdentifier_for_lang(identifier='Category', lang=self.source_language) == attribute :
+                            control['CSF Category'] = value.strip()
                             continue
-                        elif 'Technology:' in header :
-                            control['Technology'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                        elif self.get_ControlIdentifier_for_lang(identifier='Technology', lang=self.source_language) == attribute : 
+                            control['Technology'] = value.strip()
                             continue
-                        elif 'Maturity Level:' in header :
-                            control['Maturity Level'] = header.split(sep=':', maxsplit=1)[1].rstrip()
+                        elif self.get_ControlIdentifier_for_lang(identifier='Maturity Level', lang=self.source_language) == attribute :
+                            control['Maturity Level'] = value.strip()
                             continue
-                        elif 'IPAC:' in header :
+                        elif self.get_ControlIdentifier_for_lang(identifier='IPAC', lang=self.source_language) == attribute :
                             regex = re.compile('(?<=\()[IPAC](?=\))') #select the header
                             m = re.findall(regex, header)
                             for match in m:
                                 control['IPAC'].append(match)
                             continue
-                        elif 'Defender:' in header :
-                            for match in header.split(sep=':', maxsplit=1)[1].strip().split(sep=' '):
+                        elif self.get_ControlIdentifier_for_lang(identifier='Defender', lang=self.source_language) == attribute :
+                            for match in value.strip().split(sep=' '):
                                 control['Defender'].append(match)
                             continue
-                        elif 'Prerequisites:' in header :
-                            for match in header.split(sep=':', maxsplit=1)[1].strip().split(sep=' '):
+                        elif self.get_ControlIdentifier_for_lang(identifier='Prerequisites', lang=self.source_language) == attribute :
+                            for match in value.strip().split(sep=' '):
                                 control['Prerequisites'].append(match)
                             continue
 
                 self.cbas['Controls'].append(control)
 
-                control_flat = {}
-                control_flat['Shortcode'] = control['Shortcode']
-                control_flat['Security Function'] = control['Security Function']
-                control_flat['CSF Category'] = control['CSF Category']
-                control_flat['Technology'] = control['Technology']
-                control_flat['Maturity Level'] = control['Maturity Level']
-                control_flat['IPAC'] = "".join(control['IPAC'])
-                control_flat['Defender'] = "".join(control['Defender'])
-                control_flat['Prerequisites'] = "".join(control['Prerequisites'])
-
-                control_flat['Description'] = control['Description']
-                control_flat['Implementation'] = control['Implementation']
-                control_flat['Verification'] = "".join(control['Verification'])
-                control_flat['References'] = "".join(control['References'])
-
-                self.cbas_flat.append(control_flat)
+    
+    def get_Controls(self) ->list:
+        return self.cbas['Controls']
 
     def to_json(self):
         ''' Returns a JSON-formatted string '''
@@ -158,11 +150,105 @@ class CBASSMM:
         return dicttoxml.dicttoxml(self.cbas, attr_type=False).decode('utf-8')
 
     def to_csv(self):
-        ''' Returns CSV '''
-        si = StringIO()
+        # make flat structure first
+        cbas_flat = self.make_flat() 
 
-        writer = csv.DictWriter(si, ['Shortcode', 'Technology', 'Defender', 'Implementation', 'Security Function', 'Maturity Level', 'Description', 'CSF Category', 'Prerequisites', 'References', 'IPAC', 'Verification'])
+        # ''' Returns CSV '''
+        si = StringIO()
+        
+        writer = csv.DictWriter(si, [self.get_ControlIdentifier_for_lang(identifier = 'Shortcode'), 
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Security Function'),
+                                     self.get_ControlIdentifier_for_lang(identifier = 'CSF Category'), 
+                                     self.get_ControlIdentifier_for_lang(identifier = 'IPAC'),
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Technology'), 
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Maturity Level'),
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Defender'), 
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Prerequisites'), 
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Description'),
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Implementation'), 
+                                     self.get_ControlIdentifier_for_lang(identifier = 'Verification'),
+                                     self.get_ControlIdentifier_for_lang(identifier = 'References')])
+        
         writer.writeheader()
-        writer.writerows(self.cbas_flat)
+        
+        for row in cbas_flat:
+            keys = list(row.keys())
+            for key in keys:
+                row[self.get_ControlIdentifier_for_lang(identifier = key)] = row.pop(key)
+
+        writer.writerows(cbas_flat)
 
         return si.getvalue()
+    
+    def control_to_md(self, control: dict) -> dict:
+
+        filename = "{shortcode}.md".format(shortcode=control['Shortcode'])
+        md = "---\n\
+Security Function: {Security_Function}\n\
+Category: {CSF_Category}\n\
+Technology: {Technology}\n\
+Maturity Level: {Maturity_Level}\n\
+IPAC: {IPAC}\n\
+Defender: {Defender}\n\
+Prerequisite {Prerequisites}:\n\
+---\n\
+\n\
+## Description\n\
+\n\
+{Description}\n\
+\n\
+## Implementation\n\
+\n\
+{Implementation}\n\
+\n\
+## Verification of Control\n\
+\n\
+{Verification}\n\
+\n\
+## References:\n\
+\n\
+{References}".format(Security_Function = control['Security Function'],
+                                 CSF_Category = control['CSF Category'],
+                                 Technology = control["Technology"],
+                                 Maturity_Level = control['Maturity Level'],
+                                 IPAC = ''.join(str(i) for i in control['IPAC']),
+                                 Defender = ' '.join(str(d) for d in control['Defender']),
+                                 Prerequisites = '- \n'.join(str(p) for p in control['Prerequisites']),
+                                 Description = control['Description'],
+                                 Implementation = control['Implementation'],
+                                 Verification = '\n'.join(str(v) for v in control['Verification']),
+                                 References = '\n'.join(str(r) for r in control['References']))
+        return {'filename': filename, 'content': md}
+
+
+    def make_flat(self) -> list :
+
+        cbas_flat = [ ]
+        control_flat = {}
+
+        for control in self.cbas["Controls"]:
+            control_flat['Shortcode'] = control['Shortcode']
+            control_flat['Security Function'] = control['Security Function']
+            control_flat['CSF Category'] = control['CSF Category']
+            control_flat['Technology'] = control['Technology']
+            control_flat['Maturity Level'] = control['Maturity Level']
+            control_flat['IPAC'] = "".join(control['IPAC'])
+            control_flat['Defender'] = '\n'.join(control['Defender'])
+            control_flat['Prerequisites'] = '\n'.join(control['Prerequisites'])
+
+            control_flat['Description'] = control['Description']
+            control_flat['Implementation'] = control['Implementation']
+            control_flat['Verification'] = '\n'.join(control['Verification'])
+            control_flat['References'] = '\n'.join(control['References'])
+
+            cbas_flat.append(copy.copy(control_flat))
+            control_flat = {}
+
+        return cbas_flat
+    
+    def get_ControlIdentifier_for_lang(self, identifier: str, lang = None) -> str:
+
+        if identifier not in self.config.keys():
+            return identifier
+        return self.config[identifier][self.source_language if lang is None else lang]
+

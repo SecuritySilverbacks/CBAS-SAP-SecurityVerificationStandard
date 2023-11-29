@@ -1,0 +1,32 @@
+SAP: 
+  de: SAP
+sap: 
+  de: sap
+control:
+  de: Maßnahme
+read access logging:
+  de: Read Access Log
+CUA:
+  de: ZBV
+concise:
+  de: präzise
+Concealment:
+  de: Verschleierung
+side-effects:
+  de: Seiteneffekte
+adversary:
+  de: Angreifer
+Identity management:
+  de: Benutzerverwaltung
+custom code:
+  de: kundeneigenem Code
+privilege escalation:
+  de: ausweiten von Berechtigungen
+trusted system logon:
+  de: Vertrauensstellungen zur Anmeldung
+report:
+  de: Listenprogramm
+Security guidelines:
+  de: Sicherheitskonzept
+message server
+  de: Message Server

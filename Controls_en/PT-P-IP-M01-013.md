@@ -1,5 +1,5 @@
 ---
-Security Function: Protect
+Security Function: PT
 Category: Information Protection Processes and Procedures
 Technology: Windows OS
 Maturity Level: 1
@@ -26,9 +26,9 @@ It is recommended to follow the organization's baseline, if it exists, for secur
 
 ## Verification of control
 
-- [ ] Verify that unwanted applications, services, features, roles, and components are removed
-- [ ] Verify that local administrators accounts are disable or properly secure
-- [ ] Verify that security updates are done regularly  
+- Verify that unwanted applications, services, features, roles, and components are removed
+- Verify that local administrators accounts are disable or properly secure
+- Verify that security updates are done regularly  
 
 ## References
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A16 Implementation of security requirements for the Windows (S) operating system / Umsetzung von Sicherheitsanforderungen für das Betriebssystem Windows (S)

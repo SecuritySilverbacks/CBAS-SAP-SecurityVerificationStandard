@@ -19,11 +19,11 @@ Important tool for both internal and external audit. It helps identifying anomal
 It is recommended to regularly check the different information available through the user information system to keep your SAP system in compliance with internal policies or external regulations as well as determining any changes that have not been internally approved.
 
 Usage:
-- Show list of authorizations
-- Show list of users that are assigned to critical or high classification authorizations
-- Show transactions contained in specific roles
+- Maintenance of critical authorizations and authorization combinations
+- Assess list of users that are assigned to critical or high classification authorizations
+- Asses which transactions contained in specific roles
 - Compare roles, users, profiles, and authorizations in a single system or across systems
-- Display change documents for the authorization profile of users, security policies, and CUA settings
+- Assess display change documents for the authorization profile of users, security policies, and central user administration (CUA) settings
 
 
 ## Verification of Control

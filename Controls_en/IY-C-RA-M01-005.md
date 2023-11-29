@@ -16,9 +16,9 @@ The SAP standard system provides companies with various mechanisms to protect th
 These mechanisms include:
 - Client/tenant separation
 - Identity management
-- Roles and authorizations
+- Roles and authorizations management
 - Separation of development, test and production
-- Logging
+- Logging of security events
 
 ## Implementation
 

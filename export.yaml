@@ -1,0 +1,33 @@
+Security Function:
+  de: Sicherheitsfunktion
+  en: Security Function
+Category:
+  de: Kategorie
+  en: Category
+Technology:
+  de: Technologie
+  en: Technology
+Maturity Level:
+  de: Reifegrad
+  en: Maturity Level
+IPAC:
+  de: 'IPAC'
+  en: 'IPAC'
+Defender:
+  de: Verteidiger
+  en: Defender
+Prerequisites:
+  de: Voraussetzung
+  en: Prerequisites
+Description:
+  de: Beschreibung
+  en: Description
+Implementation:
+  de: Implementierung
+  en: Implementierung
+Verification:
+  de: Überprüfung der Maßnahme
+  en: Verification
+References:
+  de: Referenzen
+  en: References
