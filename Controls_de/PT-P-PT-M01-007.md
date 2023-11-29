@@ -32,7 +32,8 @@ Es wird empfohlen, das Loglevel der protokollierten Informationen entsprechendem
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)
-- SAP Security Baseline Template V2.1: 2.4.3.1.2
+- SAP Security Baseline Template V2.4.1: 2.4.3.1.2 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
+- [SAP-Hinweis 2372626](https://launchpad.support.sap.com/#/notes/2372626)
 - CIS CSC 1, 3, 5, 6, 14, 15, 16
 - COBIT 5 APO11.04, BAI03.05, DSS05.04, DSS05.07, MEA02.01
 - ISA 62443-2-1:2009 4.3.3.3.9, 4.3.3.5.8, 4.3.4.4.7, 4.4.2.1, 4.4.2.2, 4.4.2.4

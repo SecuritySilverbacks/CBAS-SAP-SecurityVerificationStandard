@@ -22,7 +22,7 @@ Für den Message Server müssen Zugriffskontrolllisten (ACLs) konfiguriert werde
 - ACL-Datei sollte keinen Eintrag enthalten, der alle Hosts zulässt (d.h. HOST=* ist kritisch)
 - Trennen Sie die Ports auf dem Message-Server für interne (1) und externe Kommunikation (2)
 - Profilparameter rdisp/msserv_internal definiert die zu verwendenden internen Ports
-- Unterbinden der Kommunikation von anderen Netzwerkgeräten zu dem im Profilparameter rdisp/msserv_internal definierten Port
+- Unterbinden der Kommunikation von anderen Netzwerkgeräten zu dem im Profilparameter rdisp/msserv_internal definierten Port; vor allem aus dem Client-Netzwerk
 - Externe Überwachung des Message Servers durch Setzen des Profilparameters ms/monitor=0 unterbinden
 - Externe Verwaltung des Message-Servers durch Setzen des Profilparameters ms/admin_port=0 verbieten
 
@@ -33,11 +33,12 @@ Für den Message Server müssen Zugriffskontrolllisten (ACLs) konfiguriert werde
 ## Überprüfung der Maßnahme
 
 - Überprüfen Sie die ACLs für den Message Server anhand des Profilparameters ms/acl_info
+- Überprüfen Sie, dass die durch den Profilparameters ms/acl_info referenzierte Datei in einem gesondert gesicherten Verzeichnis liegt.
 - Überprüfen Sie, dass HOST=* nicht in der ACL definiert ist.
-- Überprüfen Sie, ob die Ports für internen und externen Datenverkehr aufgeteilt sind und ob die Firewall die Kommunikation zum internen Port blockiert.
+- Überprüfen Sie, ob die Ports für internen und externen Datenverkehr aufgeteilt sind und ob die Firewall die Kommunikation zum internen Port blockiert, die nicht zum Systemcluster gehören.
 - Überprüfen Sie, dass der Profilparameter ms/monitor=0 ist.
 - Überprüfen Sie, ob der Profilparameter ms/admin_port=0 ist.
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A9 Absicherung und Überwachung des Message-Servers (B) / Protection and monitoring of the Message-Servers (B)
-- SAP Security Baseline Template V2.1: 2.2.1.4, 2.2.1.4.1, 2.2.1.4.2
+- SAP Security Baseline Template V2.4.1: 2.2.1.4, 2.2.1.4.1, 2.2.1.4.2 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)

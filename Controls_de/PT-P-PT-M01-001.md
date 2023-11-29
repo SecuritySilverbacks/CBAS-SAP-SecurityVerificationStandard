@@ -20,8 +20,8 @@ Es ist wichtig, dass Sie die Profilparameter für die Sicherheitsauditprotokolle
 - rsau/enable = 1
 - Geben Sie den Speicherort des Sicherheitsauditprotokolls an, indem Sie rsau/local/file setzen.
 - rsau/integrity = 1
-- rsau/log_peer_address = 1 (Hinweis: der Parameter kann zu Warnungen führen, die aber problemlos ignoriert werden können)
-- rsau/selection_slots ≥ 10 5
+- rsau/log_peer_address = 1 (Hinweis: der Parameter kann zu Warnungen führen, die aber problemlos ignoriert werden können). Lesen Sie hierzu auch den SAP-Hinweis 2190621
+- rsau/selection_slots ≥ 10
 - rsau/user_selection = 1
 - Geben Sie die maximale Länge des Protokolls an, indem Sie den Parameter rsau/max_diskspace_local setzen.
 
@@ -46,7 +46,8 @@ Hinweis: Referenz DT-P-AE-M01-002 Kontrollen zur Identifizierung von verfügbare
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A21 Configuration of the Security Audit Log (S) / Konfiguration des Security Audit Logs (S)
-- SAP Security Baseline Template V2.1: 2.4.3.1.1
+- SAP Security Baseline Template V2.4.1: 2.4.3.1.1 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
+- [SAP-Hinweis 2190621](https://launchpad.support.sap.com/#/notes/2190621)
 - CIS CSC 1, 3, 5, 6, 14, 15, 16
 - COBIT 5 APO11.04, BAI03.05, DSS05.04, DSS05.07, MEA02.01
 - ISA 62443-2-1:2009 4.3.3.3.9, 4.3.3.5.8, 4.3.4.4.7, 4.4.2.1, 4.4.2.2, 4.4.2.4

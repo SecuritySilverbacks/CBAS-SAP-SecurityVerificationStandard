@@ -19,7 +19,7 @@ SAP-Sicherheitshinweise werden normalerweise jeden zweiten Dienstag im Monat ver
 
 Orte, an denen Sie die neuesten SAP-Sicherheitshinweise und Support-Pakete erhalten:
 - SAP Software Update Manager (eine Lizenz ist erforderlich)
-- SAP Patch Management Tool (starten Sie mit der SPAM-Transaktion; dafür ist ein Wartungszertifikat erforderlich)
+- SAP Patch Management Tool (starten Sie mit der SPAM-Transaktion bzw. SAINT-Transaktion; dafür ist ein Wartungszertifikat erforderlich)
 - Identifizieren Sie SAP Sicherheitshinweise für das System mit der Transaktion SNOTE
 - SAP Sicherheitshinweise aus dem SAP Support Launchpad
 
@@ -35,4 +35,4 @@ Um die Verfügbarkeit und Integrität von Produktionssystemen aufrechtzuerhalten
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Sichere Konfiguration des SAP-ABAP-Stacks (B) / Sichere Konfiguration des SAP-ABAP-Stacks (B)
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A10 Regelmäßige Implementierung von Sicherheitskorrekturen [Fachabteilung] (B) / Regelmäßige Implementierung von Sicherheitskorrekturen [Fachabteilung] (B)
-- SAP Security Baseline Template V2.0: 2.2.2.1, 2.2.2.1.1, 2.2.2.1.2, 2.2.2.1.2 und 2.2.2.1.3
+- SAP Security Baseline Template V2.4.1: 2.2.2.1, 2.2.2.1.1 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
