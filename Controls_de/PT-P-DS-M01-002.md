@@ -14,7 +14,8 @@ Um die Menge an Informationen, die bei der Auskundschaftung durch Angreifer offe
 
 ## Implementierung
 
-Um alle detaillierten Fehler aus dem SAP ABAP-System Ihres Unternehmens zu entfernen, setzen Sie den Profilparameter login/show_detailed_errors auf 0.
+- Um alle detaillierten Fehler aus dem SAP ABAP-System Ihres Unternehmens zu entfernen, setzen Sie den Profilparameter login/show_detailed_errors auf 0.
+- Web-Methoden von sapstartsrv müssen durch Setzen des Profilparameters service/protectedwebmethods auf SDEFAULT (oder ALL) mit einer begrenzten Liste von Ausnahmen geschützt werden.
 
 Verwenden Sie die nachstehenden Parameter, um die Parameter anzuzeigen und zu ändern:
 
@@ -25,8 +26,9 @@ Verwenden Sie die nachstehenden Parameter, um die Parameter anzuzeigen und zu ä
 
 ## Überprüfung der Maßnahme
 
-- Profilparameter login/show_detailed_errors=0
+- Profilparameter login/show_detailed_errors = 0
+- Profilparameter service/protectedwebmethods = SDEFAULT
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A1 Sichere Konfiguration des SAP-ABAP-Stacks (B) / Secure Konfiguration des SAP-ABAP-Stacks (B)
-- SAP Security Baseline Template V2.1: 2.2.1.2.1
+- SAP Security Baseline Template V2.4.1: 2.2.1.2.1 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)

@@ -26,4 +26,4 @@ Die Daten der Verbindungskonfiguration sind das einzige, was in den verschiedene
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A8 Absicherung der SAP-RFC-Schnittstelle/ Absicherung der SAP-RFC-Schnittstelle
-- SAP Security Baseline Template V2.0: 2.3.2.3
+- SAP Security Baseline Template V2.4.1: 2.3.2.3 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)

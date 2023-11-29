@@ -30,4 +30,4 @@ Obsolete standard-Benutzer wie EARLYWATCH sollten in keinem Client existieren.
 
 ## Referenzen:
 - BSI APP.4.2 SAP-ERP-System, APP.4.2.A4 Absicherung der ausgelieferten SAP-Standardbenutzer-IDs / Absicherung der ausgelieferten SAP-Standardbenutzer-Kennungen
-- SAP Security Baseline Template V2.0: 2.3.1
+- SAP Security Baseline Template V2.4.1: 2.3.1 [via SAP Security Optimization Services Portfolio](https://support.sap.com/sos)
