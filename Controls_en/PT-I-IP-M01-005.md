@@ -1,9 +1,9 @@
 ---
-Security Function: PT
-Category: Information Protection Processes and Procedures
+Security Function: Protect (PT)
+Category: Information Protection Processes and Procedures (PT.IP)
 Technology: RFC Connections
 Maturity Level: 1
-IPAC: Integration
+IPAC: Integration (I)
 Defender: Technology
 Prerequisite: PT-I-P-M01-001
 ---

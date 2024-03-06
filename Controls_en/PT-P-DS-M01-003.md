@@ -1,6 +1,6 @@
 ---
-Security Function: PT
-Category: Data Security
+Security Function: Protect (PT)
+Category: Data Security (PT.DS)
 Technology: SAP Java
 Maturity Level: 1
 IPAC: Platform (P)

@@ -1,9 +1,9 @@
 ---
-Security Function: IY
-Category: Risk Assessment
-Technology: ABAP
+Security Function: Identify (IY)
+Category: Risk Assessment (IY.RA)
+Technology: SAP ABAP
 Maturity Level: 1
-IPAC: Customizing (C)
+IPAC: Customization (C)
 Defender: Process
 Prerequisite: IY-C-RA-M01-001, IY-C-RA-M01-004, IY-C-RA-M01-005
 ---

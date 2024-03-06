@@ -1,6 +1,6 @@
 ---
-Security Function: PT
-Category: Identity Management, Authentication and Access Control
+Security Function: Protect (PT)
+Category: Identity Management, Authentication and Access Control (PT.AC)
 Technology: SAP Java
 Maturity Level: 1
 IPAC: Access (A)

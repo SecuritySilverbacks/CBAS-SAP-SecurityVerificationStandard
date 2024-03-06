@@ -1,10 +1,10 @@
 ---
-Security Function: PT
-Category: Information Protection Processes and Procedures
+Security Function: Protect (PT)
+Category: Information Protection Processes and Procedures (PT.IP)
 Technology: SAP Java
 Maturity Level: 1
 IPAC: Platform (P)
-Defender: Process / Technology
+Defender: Process & Technology
 Prerequisite:
 ---
 

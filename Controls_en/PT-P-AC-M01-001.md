@@ -1,6 +1,6 @@
 ---
-Security Function: PT
-Category: Identity Management, Authentication and Access Control
+Security Function: Protect (PT)
+Category: Identity Management, Authentication and Access Control (PT.AC)
 Technology: Operating System
 Maturity Level: 1
 IPAC: Platform (P)

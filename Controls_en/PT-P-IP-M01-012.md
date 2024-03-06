@@ -1,6 +1,6 @@
 ---
-Security Function: PT
-Category: Information Protection Processes and Procedures
+Security Function: Protect (PT)
+Category: Information Protection Processes and Procedures (PT.IP)
 Technology: Linux
 Maturity Level: 1
 IPAC: Platform (P)

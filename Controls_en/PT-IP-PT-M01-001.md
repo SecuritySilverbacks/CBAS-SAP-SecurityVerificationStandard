@@ -1,10 +1,10 @@
 ---
-Security Function: PT
-Category: Information Protection Processes and Procedures
+Security Function: Protect (PT)
+Category: Information Protection Processes and Procedures (PT.IP)
 Technology: SAP GUI
 Maturity Level: 1
-IPAC: Integration (I) Platform (P)
-Defender: Process Technology
+IPAC: Integration (I) & Platform (P)
+Defender: Process & Technology
 Prerequisite: 
 ---
 

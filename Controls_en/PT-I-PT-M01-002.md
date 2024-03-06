@@ -1,6 +1,6 @@
 ---
-Security Function: PT
-Category: Protective Technology
+Security Function: Protect (PT)
+Category: Protective Technology (PT.PT)
 Technology: SAProuter
 Maturity Level: 1
 IPAC: Integration (I)

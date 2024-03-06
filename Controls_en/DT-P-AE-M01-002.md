@@ -1,6 +1,6 @@
 ---
-Security Function: DT
-Category: Anomalies and Events
+Security Function: Detect (DT)
+Category: Anomalies and Events (DT.AE)
 Technology: SAP ERP
 Maturity Level: 1
 IPAC: Platform (P)

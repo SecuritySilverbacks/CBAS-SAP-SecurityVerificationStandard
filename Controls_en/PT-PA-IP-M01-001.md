@@ -1,9 +1,9 @@
 ---
-Security Function: PT
-Category: Information Protection Processes and Procedures
+Security Function: Protect (PT)
+Category: Information Protection Processes and Procedures (PT.IP)
 Technology: SAP ABAP
 Maturity Level: 1
-IPAC: Platform (P)/ Access (A)
+IPAC: Platform (P) & Access (A)
 Defender: Process & Technology
 Prerequisite: PT-A-AC-M01-009
 ---
