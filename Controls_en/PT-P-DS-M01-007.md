@@ -4,9 +4,10 @@ Category: Data Security (PT.DS)
 Technology: SAP Java
 Maturity Level: 1
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
+
+## Description
 
 Compliance with cryptographic key generation requirements is critical to the security of an SAP system. Longer keys provide protection against brute force attacks, resist modern attack methods, ensure confidentiality and integrity of data, meet regulatory requirements and protect against future threats. They are a fundamental security measure to secure sensitive data and ensure the integrity of the system.
 

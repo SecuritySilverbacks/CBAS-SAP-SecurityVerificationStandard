@@ -4,7 +4,6 @@ Category: Anomalies and Events (DT.AE)
 Technology: SAP HANA
 Maturity Level: 1
 SAP Operational Area: Access (A)
-
 Prerequisite:
 ---
 

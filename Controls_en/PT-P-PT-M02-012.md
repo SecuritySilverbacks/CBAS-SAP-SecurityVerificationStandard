@@ -4,7 +4,6 @@ Category: Protective Technology (PT.PT)
 Technology: SAP ABAP
 Maturity Level: 2
 SAP Operational Area: Platform (P)
-
 Prerequisite:
 ---
 

@@ -4,7 +4,6 @@ Category: Protective Technology (PT.PT)
 Technology: SAP BTP
 Maturity Level: 2
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
 

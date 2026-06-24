@@ -4,7 +4,6 @@ Category: Data Security (PT.DS)
 Technology: SAP Java
 Maturity Level: 1
 SAP Operational Area: Integration (I)
-
 Prerequisite:
 ---
 

@@ -4,7 +4,6 @@ Category: Detection Processes (DT.DP)
 Technology: SAP BTP
 Maturity Level: 2
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
 

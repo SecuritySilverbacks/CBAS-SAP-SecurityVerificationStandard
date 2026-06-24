@@ -4,7 +4,6 @@ Category: Improvements (RR.IM)
 Technology: SAP HANA
 Maturity Level: 3
 SAP Operational Area: Platform (P)
-
 Prerequisite:
 ---
 

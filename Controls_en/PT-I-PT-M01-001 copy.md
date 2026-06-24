@@ -4,7 +4,6 @@ Category: Protective Technology (PT.PT)
 Technology: SAP HANA
 Maturity Level: 2
 SAP Operational Area: Integration (I)
-
 Prerequisite: 
 ---
 

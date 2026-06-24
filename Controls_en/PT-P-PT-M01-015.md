@@ -4,7 +4,6 @@ Category: Protective Technology (PT.PT)
 Technology: SAP Java
 Maturity Level: 1
 SAP Operational Area: Platform (P)
-
 Prerequisite:
 ---
 

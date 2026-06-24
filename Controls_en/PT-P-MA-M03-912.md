@@ -4,7 +4,6 @@ Category: Maintenance (PT.MA)
 Technology: SAP BTP
 Maturity Level: 1
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
 

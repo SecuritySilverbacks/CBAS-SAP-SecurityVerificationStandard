@@ -4,7 +4,6 @@ Category: Identity Management, Authentication and Access Control (PT.AC)
 Technology: SAP HANA
 Maturity Level: 1
 SAP Operational Area: Access (A)
-
 Prerequisite: PT-A-AC-M01-015
 ---
 

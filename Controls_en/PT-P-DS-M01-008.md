@@ -4,7 +4,6 @@ Category: Data Security (PT.DS)
 Technology: SAP HANA
 Maturity Level: 1
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
 
