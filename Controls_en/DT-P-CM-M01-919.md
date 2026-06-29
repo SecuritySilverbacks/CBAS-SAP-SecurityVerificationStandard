@@ -4,7 +4,6 @@ Category: Security Continuous Monitoring (DT.CM)
 Technology: SAP BTP
 Maturity Level: 2
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
 

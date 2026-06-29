@@ -18,9 +18,9 @@ generate_docx() {
 	# of the first Heading 1 so it is on the first page
 }
 
-# generate_html() {
-#     pandoc -s -f markdown_github -t html5 -o "../OWASP Application Security Verification Standard 4.0-$1.html" *.md
-# }
+generate_html() {
+	pandoc -s -f gfm -t html5 -o "../docs_$1/OWASP SAP Security Verification Standard $2-$1.html" *.md
+}
 
 lang="en"
 vers="0.8.1"
@@ -40,15 +40,15 @@ else
 fi
 
 echo -n "Generating OWASP SAP Security Verification Standard $vers ($lang)..."
-if [ -d "$lang" ];
+if [ -d "Controls_${lang}" ];
 then
 	cd "Controls_${lang}"
 	generate_docx $lang $vers
-	# generate_html $lang
+	generate_html $lang $vers
 	cd ..
 	echo " done."
 else
-	echo " No OWASP CBAS found in directory $lang"
+	echo " No OWASP CBAS found in directory Controls_${lang}"
 fi
 
 

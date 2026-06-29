@@ -4,7 +4,6 @@ Category: Information Protection Processes and Procedures (PT.IP)
 Technology: SAP BTP
 Maturity Level: 1
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
 

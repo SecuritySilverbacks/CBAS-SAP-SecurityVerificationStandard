@@ -4,7 +4,6 @@ Category: Protective Technology (PT.PT)
 Technology: SAP ABAP
 Maturity Level: 1
 SAP Operational Area: Platform (P)
-
 Prerequisite:
 ---
 
@@ -30,11 +29,13 @@ in the default profile:
 - enque/process_location=REMOTESA
 - enq/client/max_async_requests = 0
 in the ASCS instance profile:
-- enq/server/replication/enable = TRUE
-- _ENQ = enq.sap$(SAPSYSTEMNAME)_$(INSTANCE_NAME)
-- Execute_01 = local rm -f \$(_ENQ)
-- Execute_02 = local ln -s -f \$(DIR_EXECUTABLE)/enq_server$(FT_EXE) $(_ENQ)
-- Start_Program_01 = local \$(_ENQ) pf=$(_PF)
+```ini
+enq/server/replication/enable = TRUE
+_ENQ = enq.sap$(SAPSYSTEMNAME)_$(INSTANCE_NAME)
+Execute_01 = local rm -f $(_ENQ)
+Execute_02 = local ln -s -f $(DIR_EXECUTABLE)/enq_server$(FT_EXE) $(_ENQ)
+Start_Program_01 = local $(_ENQ) pf=$(_PF)
+```
 
 4. Configure the replication link between the enqueue server of the primary system and the ERS of the secondary system. Ensure that communication takes place via secure connections (e.g. SNC) to guarantee data integrity.
 4. Configure cluster software: Use cluster software to monitor the ERS and automatically switch over if the primary enqueue server fails. Use standalone gateway: Ensure that the standalone gateway is configured to forward client requests in the event of a failover.

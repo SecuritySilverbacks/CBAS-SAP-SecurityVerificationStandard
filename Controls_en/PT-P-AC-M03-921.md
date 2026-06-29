@@ -4,7 +4,6 @@ Category: Identity Management, Authentication and Access Control (PT.AC)
 Technology: SAP BTP
 Maturity Level: 1
 SAP Operational Area: Platform (P)
-
 Prerequisite: 
 ---
 
